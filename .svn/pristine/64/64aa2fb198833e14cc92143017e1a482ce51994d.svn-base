@@ -1,0 +1,441 @@
+﻿namespace ACA_System.UI
+{
+    partial class FrmFunction
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.ChkCurrent1 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ChkSetMeachineAge = new System.Windows.Forms.CheckBox();
+            this.ChkMeachineAge = new System.Windows.Forms.CheckBox();
+            this.ChkManualJudge = new System.Windows.Forms.CheckBox();
+            this.ChkBarCode = new System.Windows.Forms.CheckBox();
+            this.ChkManualCommunication = new System.Windows.Forms.CheckBox();
+            this.ChkModel2 = new System.Windows.Forms.CheckBox();
+            this.ChkAutoCommunication = new System.Windows.Forms.CheckBox();
+            this.ChkModel1 = new System.Windows.Forms.CheckBox();
+            this.ChkResidualCurrent5 = new System.Windows.Forms.CheckBox();
+            this.ChkResidualCurrent4 = new System.Windows.Forms.CheckBox();
+            this.ChkResidualCurrent3 = new System.Windows.Forms.CheckBox();
+            this.ChkResidualCurrent2 = new System.Windows.Forms.CheckBox();
+            this.ChkResidualCurrent1 = new System.Windows.Forms.CheckBox();
+            this.ChkVoltage5 = new System.Windows.Forms.CheckBox();
+            this.ChkVoltage4 = new System.Windows.Forms.CheckBox();
+            this.ChkVoltage3 = new System.Windows.Forms.CheckBox();
+            this.ChkVoltage2 = new System.Windows.Forms.CheckBox();
+            this.ChkVoltage1 = new System.Windows.Forms.CheckBox();
+            this.ChkCurrent5 = new System.Windows.Forms.CheckBox();
+            this.ChkCurrent4 = new System.Windows.Forms.CheckBox();
+            this.ChkCurrent3 = new System.Windows.Forms.CheckBox();
+            this.ChkCurrent2 = new System.Windows.Forms.CheckBox();
+            this.BtnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // ChkCurrent1
+            // 
+            this.ChkCurrent1.AutoSize = true;
+            this.ChkCurrent1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkCurrent1.Location = new System.Drawing.Point(31, 148);
+            this.ChkCurrent1.Name = "ChkCurrent1";
+            this.ChkCurrent1.Size = new System.Drawing.Size(140, 28);
+            this.ChkCurrent1.TabIndex = 0;
+            this.ChkCurrent1.Text = "电流校对1";
+            this.ChkCurrent1.UseVisualStyleBackColor = true;
+            this.ChkCurrent1.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ChkSetMeachineAge);
+            this.groupBox1.Controls.Add(this.ChkMeachineAge);
+            this.groupBox1.Controls.Add(this.ChkManualJudge);
+            this.groupBox1.Controls.Add(this.ChkBarCode);
+            this.groupBox1.Controls.Add(this.ChkManualCommunication);
+            this.groupBox1.Controls.Add(this.ChkModel2);
+            this.groupBox1.Controls.Add(this.ChkAutoCommunication);
+            this.groupBox1.Controls.Add(this.ChkModel1);
+            this.groupBox1.Controls.Add(this.ChkResidualCurrent5);
+            this.groupBox1.Controls.Add(this.ChkResidualCurrent4);
+            this.groupBox1.Controls.Add(this.ChkResidualCurrent3);
+            this.groupBox1.Controls.Add(this.ChkResidualCurrent2);
+            this.groupBox1.Controls.Add(this.ChkResidualCurrent1);
+            this.groupBox1.Controls.Add(this.ChkVoltage5);
+            this.groupBox1.Controls.Add(this.ChkVoltage4);
+            this.groupBox1.Controls.Add(this.ChkVoltage3);
+            this.groupBox1.Controls.Add(this.ChkVoltage2);
+            this.groupBox1.Controls.Add(this.ChkVoltage1);
+            this.groupBox1.Controls.Add(this.ChkCurrent5);
+            this.groupBox1.Controls.Add(this.ChkCurrent4);
+            this.groupBox1.Controls.Add(this.ChkCurrent3);
+            this.groupBox1.Controls.Add(this.ChkCurrent2);
+            this.groupBox1.Controls.Add(this.ChkCurrent1);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(32, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(965, 598);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "自动功能选择";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // ChkSetMeachineAge
+            // 
+            this.ChkSetMeachineAge.AutoSize = true;
+            this.ChkSetMeachineAge.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkSetMeachineAge.Location = new System.Drawing.Point(709, 407);
+            this.ChkSetMeachineAge.Name = "ChkSetMeachineAge";
+            this.ChkSetMeachineAge.Size = new System.Drawing.Size(224, 28);
+            this.ChkSetMeachineAge.TabIndex = 22;
+            this.ChkSetMeachineAge.Text = "设置机械寿命次数";
+            this.ChkSetMeachineAge.UseVisualStyleBackColor = true;
+            this.ChkSetMeachineAge.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkMeachineAge
+            // 
+            this.ChkMeachineAge.AutoSize = true;
+            this.ChkMeachineAge.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkMeachineAge.Location = new System.Drawing.Point(709, 321);
+            this.ChkMeachineAge.Name = "ChkMeachineAge";
+            this.ChkMeachineAge.Size = new System.Drawing.Size(128, 28);
+            this.ChkMeachineAge.TabIndex = 21;
+            this.ChkMeachineAge.Text = "机械寿命";
+            this.ChkMeachineAge.UseVisualStyleBackColor = true;
+            this.ChkMeachineAge.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkManualJudge
+            // 
+            this.ChkManualJudge.AutoSize = true;
+            this.ChkManualJudge.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkManualJudge.Location = new System.Drawing.Point(709, 232);
+            this.ChkManualJudge.Name = "ChkManualJudge";
+            this.ChkManualJudge.Size = new System.Drawing.Size(128, 28);
+            this.ChkManualJudge.TabIndex = 20;
+            this.ChkManualJudge.Text = "人工判断";
+            this.ChkManualJudge.UseVisualStyleBackColor = true;
+            this.ChkManualJudge.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkBarCode
+            // 
+            this.ChkBarCode.AutoSize = true;
+            this.ChkBarCode.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkBarCode.Location = new System.Drawing.Point(709, 148);
+            this.ChkBarCode.Name = "ChkBarCode";
+            this.ChkBarCode.Size = new System.Drawing.Size(80, 28);
+            this.ChkBarCode.TabIndex = 19;
+            this.ChkBarCode.Text = "扫码";
+            this.ChkBarCode.UseVisualStyleBackColor = true;
+            this.ChkBarCode.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkManualCommunication
+            // 
+            this.ChkManualCommunication.AutoSize = true;
+            this.ChkManualCommunication.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkManualCommunication.Location = new System.Drawing.Point(462, 70);
+            this.ChkManualCommunication.Name = "ChkManualCommunication";
+            this.ChkManualCommunication.Size = new System.Drawing.Size(128, 28);
+            this.ChkManualCommunication.TabIndex = 17;
+            this.ChkManualCommunication.Text = "手动通讯";
+            this.ChkManualCommunication.UseVisualStyleBackColor = true;
+            this.ChkManualCommunication.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkModel2
+            // 
+            this.ChkModel2.AutoSize = true;
+            this.ChkModel2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkModel2.Location = new System.Drawing.Point(246, 70);
+            this.ChkModel2.Name = "ChkModel2";
+            this.ChkModel2.Size = new System.Drawing.Size(116, 28);
+            this.ChkModel2.TabIndex = 16;
+            this.ChkModel2.Text = "型号630";
+            this.ChkModel2.UseVisualStyleBackColor = true;
+            this.ChkModel2.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkAutoCommunication
+            // 
+            this.ChkAutoCommunication.AutoSize = true;
+            this.ChkAutoCommunication.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkAutoCommunication.Location = new System.Drawing.Point(709, 70);
+            this.ChkAutoCommunication.Name = "ChkAutoCommunication";
+            this.ChkAutoCommunication.Size = new System.Drawing.Size(128, 28);
+            this.ChkAutoCommunication.TabIndex = 18;
+            this.ChkAutoCommunication.Text = "自动通讯";
+            this.ChkAutoCommunication.UseVisualStyleBackColor = true;
+            this.ChkAutoCommunication.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkModel1
+            // 
+            this.ChkModel1.AutoSize = true;
+            this.ChkModel1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkModel1.Location = new System.Drawing.Point(31, 70);
+            this.ChkModel1.Name = "ChkModel1";
+            this.ChkModel1.Size = new System.Drawing.Size(116, 28);
+            this.ChkModel1.TabIndex = 15;
+            this.ChkModel1.Text = "型号400";
+            this.ChkModel1.UseVisualStyleBackColor = true;
+            this.ChkModel1.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkResidualCurrent5
+            // 
+            this.ChkResidualCurrent5.AutoSize = true;
+            this.ChkResidualCurrent5.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkResidualCurrent5.Location = new System.Drawing.Point(462, 486);
+            this.ChkResidualCurrent5.Name = "ChkResidualCurrent5";
+            this.ChkResidualCurrent5.Size = new System.Drawing.Size(188, 28);
+            this.ChkResidualCurrent5.TabIndex = 14;
+            this.ChkResidualCurrent5.Text = "剩余电流校对5";
+            this.ChkResidualCurrent5.UseVisualStyleBackColor = true;
+            this.ChkResidualCurrent5.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkResidualCurrent4
+            // 
+            this.ChkResidualCurrent4.AutoSize = true;
+            this.ChkResidualCurrent4.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkResidualCurrent4.Location = new System.Drawing.Point(462, 407);
+            this.ChkResidualCurrent4.Name = "ChkResidualCurrent4";
+            this.ChkResidualCurrent4.Size = new System.Drawing.Size(188, 28);
+            this.ChkResidualCurrent4.TabIndex = 13;
+            this.ChkResidualCurrent4.Text = "剩余电流校对4";
+            this.ChkResidualCurrent4.UseVisualStyleBackColor = true;
+            this.ChkResidualCurrent4.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkResidualCurrent3
+            // 
+            this.ChkResidualCurrent3.AutoSize = true;
+            this.ChkResidualCurrent3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkResidualCurrent3.Location = new System.Drawing.Point(462, 321);
+            this.ChkResidualCurrent3.Name = "ChkResidualCurrent3";
+            this.ChkResidualCurrent3.Size = new System.Drawing.Size(188, 28);
+            this.ChkResidualCurrent3.TabIndex = 12;
+            this.ChkResidualCurrent3.Text = "剩余电流校对3";
+            this.ChkResidualCurrent3.UseVisualStyleBackColor = true;
+            this.ChkResidualCurrent3.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkResidualCurrent2
+            // 
+            this.ChkResidualCurrent2.AutoSize = true;
+            this.ChkResidualCurrent2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkResidualCurrent2.Location = new System.Drawing.Point(462, 232);
+            this.ChkResidualCurrent2.Name = "ChkResidualCurrent2";
+            this.ChkResidualCurrent2.Size = new System.Drawing.Size(188, 28);
+            this.ChkResidualCurrent2.TabIndex = 11;
+            this.ChkResidualCurrent2.Text = "剩余电流校对2";
+            this.ChkResidualCurrent2.UseVisualStyleBackColor = true;
+            this.ChkResidualCurrent2.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkResidualCurrent1
+            // 
+            this.ChkResidualCurrent1.AutoSize = true;
+            this.ChkResidualCurrent1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkResidualCurrent1.Location = new System.Drawing.Point(462, 148);
+            this.ChkResidualCurrent1.Name = "ChkResidualCurrent1";
+            this.ChkResidualCurrent1.Size = new System.Drawing.Size(188, 28);
+            this.ChkResidualCurrent1.TabIndex = 10;
+            this.ChkResidualCurrent1.Text = "剩余电流校对1";
+            this.ChkResidualCurrent1.UseVisualStyleBackColor = true;
+            this.ChkResidualCurrent1.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkVoltage5
+            // 
+            this.ChkVoltage5.AutoSize = true;
+            this.ChkVoltage5.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkVoltage5.Location = new System.Drawing.Point(246, 486);
+            this.ChkVoltage5.Name = "ChkVoltage5";
+            this.ChkVoltage5.Size = new System.Drawing.Size(140, 28);
+            this.ChkVoltage5.TabIndex = 9;
+            this.ChkVoltage5.Text = "电压校对5";
+            this.ChkVoltage5.UseVisualStyleBackColor = true;
+            this.ChkVoltage5.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkVoltage4
+            // 
+            this.ChkVoltage4.AutoSize = true;
+            this.ChkVoltage4.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkVoltage4.Location = new System.Drawing.Point(246, 407);
+            this.ChkVoltage4.Name = "ChkVoltage4";
+            this.ChkVoltage4.Size = new System.Drawing.Size(140, 28);
+            this.ChkVoltage4.TabIndex = 8;
+            this.ChkVoltage4.Text = "电压校对4";
+            this.ChkVoltage4.UseVisualStyleBackColor = true;
+            this.ChkVoltage4.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkVoltage3
+            // 
+            this.ChkVoltage3.AutoSize = true;
+            this.ChkVoltage3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkVoltage3.Location = new System.Drawing.Point(246, 321);
+            this.ChkVoltage3.Name = "ChkVoltage3";
+            this.ChkVoltage3.Size = new System.Drawing.Size(140, 28);
+            this.ChkVoltage3.TabIndex = 7;
+            this.ChkVoltage3.Text = "电压校对3";
+            this.ChkVoltage3.UseVisualStyleBackColor = true;
+            this.ChkVoltage3.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkVoltage2
+            // 
+            this.ChkVoltage2.AutoSize = true;
+            this.ChkVoltage2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkVoltage2.Location = new System.Drawing.Point(246, 232);
+            this.ChkVoltage2.Name = "ChkVoltage2";
+            this.ChkVoltage2.Size = new System.Drawing.Size(140, 28);
+            this.ChkVoltage2.TabIndex = 6;
+            this.ChkVoltage2.Text = "电压校对2";
+            this.ChkVoltage2.UseVisualStyleBackColor = true;
+            this.ChkVoltage2.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkVoltage1
+            // 
+            this.ChkVoltage1.AutoSize = true;
+            this.ChkVoltage1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkVoltage1.Location = new System.Drawing.Point(246, 148);
+            this.ChkVoltage1.Name = "ChkVoltage1";
+            this.ChkVoltage1.Size = new System.Drawing.Size(140, 28);
+            this.ChkVoltage1.TabIndex = 5;
+            this.ChkVoltage1.Text = "电压校对1";
+            this.ChkVoltage1.UseVisualStyleBackColor = true;
+            this.ChkVoltage1.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkCurrent5
+            // 
+            this.ChkCurrent5.AutoSize = true;
+            this.ChkCurrent5.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkCurrent5.Location = new System.Drawing.Point(31, 486);
+            this.ChkCurrent5.Name = "ChkCurrent5";
+            this.ChkCurrent5.Size = new System.Drawing.Size(140, 28);
+            this.ChkCurrent5.TabIndex = 4;
+            this.ChkCurrent5.Text = "电流校对5";
+            this.ChkCurrent5.UseVisualStyleBackColor = true;
+            this.ChkCurrent5.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkCurrent4
+            // 
+            this.ChkCurrent4.AutoSize = true;
+            this.ChkCurrent4.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkCurrent4.Location = new System.Drawing.Point(31, 407);
+            this.ChkCurrent4.Name = "ChkCurrent4";
+            this.ChkCurrent4.Size = new System.Drawing.Size(140, 28);
+            this.ChkCurrent4.TabIndex = 3;
+            this.ChkCurrent4.Text = "电流校对4";
+            this.ChkCurrent4.UseVisualStyleBackColor = true;
+            this.ChkCurrent4.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkCurrent3
+            // 
+            this.ChkCurrent3.AutoSize = true;
+            this.ChkCurrent3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkCurrent3.Location = new System.Drawing.Point(31, 321);
+            this.ChkCurrent3.Name = "ChkCurrent3";
+            this.ChkCurrent3.Size = new System.Drawing.Size(140, 28);
+            this.ChkCurrent3.TabIndex = 2;
+            this.ChkCurrent3.Text = "电流校对3";
+            this.ChkCurrent3.UseVisualStyleBackColor = true;
+            this.ChkCurrent3.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // ChkCurrent2
+            // 
+            this.ChkCurrent2.AutoSize = true;
+            this.ChkCurrent2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkCurrent2.Location = new System.Drawing.Point(31, 232);
+            this.ChkCurrent2.Name = "ChkCurrent2";
+            this.ChkCurrent2.Size = new System.Drawing.Size(140, 28);
+            this.ChkCurrent2.TabIndex = 1;
+            this.ChkCurrent2.Text = "电流校对2";
+            this.ChkCurrent2.UseVisualStyleBackColor = true;
+            this.ChkCurrent2.CheckedChanged += new System.EventHandler(this.ChkCurrent_CheckedChanged);
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BtnExit.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnExit.Location = new System.Drawing.Point(826, 9);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(194, 76);
+            this.BtnExit.TabIndex = 2;
+            this.BtnExit.Text = "退出";
+            this.BtnExit.UseVisualStyleBackColor = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(369, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 38);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "自动功能选择";
+            // 
+            // FrmFunction
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BtnExit);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "FrmFunction";
+            this.Text = "功能选择界面";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmFunction_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.CheckBox ChkCurrent1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox ChkCurrent5;
+        private System.Windows.Forms.CheckBox ChkCurrent4;
+        private System.Windows.Forms.CheckBox ChkCurrent3;
+        private System.Windows.Forms.CheckBox ChkCurrent2;
+        private System.Windows.Forms.CheckBox ChkVoltage5;
+        private System.Windows.Forms.CheckBox ChkVoltage4;
+        private System.Windows.Forms.CheckBox ChkVoltage3;
+        private System.Windows.Forms.CheckBox ChkVoltage2;
+        private System.Windows.Forms.CheckBox ChkVoltage1;
+        private System.Windows.Forms.CheckBox ChkResidualCurrent5;
+        private System.Windows.Forms.CheckBox ChkResidualCurrent4;
+        private System.Windows.Forms.CheckBox ChkResidualCurrent3;
+        private System.Windows.Forms.CheckBox ChkResidualCurrent2;
+        private System.Windows.Forms.CheckBox ChkResidualCurrent1;
+        private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox ChkSetMeachineAge;
+        private System.Windows.Forms.CheckBox ChkMeachineAge;
+        private System.Windows.Forms.CheckBox ChkManualJudge;
+        private System.Windows.Forms.CheckBox ChkBarCode;
+        private System.Windows.Forms.CheckBox ChkManualCommunication;
+        private System.Windows.Forms.CheckBox ChkModel2;
+        private System.Windows.Forms.CheckBox ChkAutoCommunication;
+        private System.Windows.Forms.CheckBox ChkModel1;
+    }
+}

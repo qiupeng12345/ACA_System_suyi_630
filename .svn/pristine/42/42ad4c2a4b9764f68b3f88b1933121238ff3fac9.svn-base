@@ -1,0 +1,251 @@
+﻿namespace ACA_System_InTest
+{
+    partial class FrmParameter
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.TextBox TxtCurrent;
+            System.Windows.Forms.TextBox TxtTime;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.TextBox TxtLowCurrent;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.TextBox TxtHighTime;
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.TextBox TxtHighCurrent;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.TextBox TxtLowTime;
+            System.Windows.Forms.Label label6;
+            this.GbxParameter = new System.Windows.Forms.GroupBox();
+            this.GbxControl = new System.Windows.Forms.GroupBox();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.BtnOK = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            TxtCurrent = new System.Windows.Forms.TextBox();
+            TxtTime = new System.Windows.Forms.TextBox();
+            label2 = new System.Windows.Forms.Label();
+            TxtLowCurrent = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            TxtHighTime = new System.Windows.Forms.TextBox();
+            label4 = new System.Windows.Forms.Label();
+            TxtHighCurrent = new System.Windows.Forms.TextBox();
+            label5 = new System.Windows.Forms.Label();
+            TxtLowTime = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            this.GbxParameter.SuspendLayout();
+            this.GbxControl.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label1.Location = new System.Drawing.Point(23, 60);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(208, 28);
+            label1.TabIndex = 0;
+            label1.Text = "10倍瞬时电流值";
+            // 
+            // TxtCurrent
+            // 
+            TxtCurrent.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtCurrent.Location = new System.Drawing.Point(248, 57);
+            TxtCurrent.Name = "TxtCurrent";
+            TxtCurrent.Size = new System.Drawing.Size(249, 38);
+            TxtCurrent.TabIndex = 1;
+            // 
+            // TxtTime
+            // 
+            TxtTime.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtTime.Location = new System.Drawing.Point(248, 133);
+            TxtTime.Name = "TxtTime";
+            TxtTime.Size = new System.Drawing.Size(249, 38);
+            TxtTime.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label2.Location = new System.Drawing.Point(23, 136);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(180, 28);
+            label2.TabIndex = 2;
+            label2.Text = "10倍瞬时时间";
+            // 
+            // TxtLowCurrent
+            // 
+            TxtLowCurrent.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtLowCurrent.Location = new System.Drawing.Point(248, 216);
+            TxtLowCurrent.Name = "TxtLowCurrent";
+            TxtLowCurrent.Size = new System.Drawing.Size(249, 38);
+            TxtLowCurrent.TabIndex = 5;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label3.Location = new System.Drawing.Point(23, 219);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(208, 28);
+            label3.TabIndex = 4;
+            label3.Text = "瞬时低倍电流值";
+            // 
+            // TxtHighTime
+            // 
+            TxtHighTime.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtHighTime.Location = new System.Drawing.Point(248, 466);
+            TxtHighTime.Name = "TxtHighTime";
+            TxtHighTime.Size = new System.Drawing.Size(249, 38);
+            TxtHighTime.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label4.Location = new System.Drawing.Point(23, 469);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(180, 28);
+            label4.TabIndex = 10;
+            label4.Text = "瞬时高倍时间";
+            // 
+            // TxtHighCurrent
+            // 
+            TxtHighCurrent.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtHighCurrent.Location = new System.Drawing.Point(248, 384);
+            TxtHighCurrent.Name = "TxtHighCurrent";
+            TxtHighCurrent.Size = new System.Drawing.Size(249, 38);
+            TxtHighCurrent.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label5.Location = new System.Drawing.Point(23, 387);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(208, 28);
+            label5.TabIndex = 8;
+            label5.Text = "瞬时高倍电流值";
+            // 
+            // TxtLowTime
+            // 
+            TxtLowTime.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            TxtLowTime.Location = new System.Drawing.Point(248, 297);
+            TxtLowTime.Name = "TxtLowTime";
+            TxtLowTime.Size = new System.Drawing.Size(249, 38);
+            TxtLowTime.TabIndex = 7;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            label6.Location = new System.Drawing.Point(23, 300);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(180, 28);
+            label6.TabIndex = 6;
+            label6.Text = "瞬时低倍时间";
+            // 
+            // GbxParameter
+            // 
+            this.GbxParameter.Controls.Add(TxtHighTime);
+            this.GbxParameter.Controls.Add(label4);
+            this.GbxParameter.Controls.Add(TxtHighCurrent);
+            this.GbxParameter.Controls.Add(label5);
+            this.GbxParameter.Controls.Add(TxtLowTime);
+            this.GbxParameter.Controls.Add(label6);
+            this.GbxParameter.Controls.Add(TxtLowCurrent);
+            this.GbxParameter.Controls.Add(label3);
+            this.GbxParameter.Controls.Add(TxtTime);
+            this.GbxParameter.Controls.Add(label2);
+            this.GbxParameter.Controls.Add(TxtCurrent);
+            this.GbxParameter.Controls.Add(label1);
+            this.GbxParameter.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxParameter.Location = new System.Drawing.Point(12, 12);
+            this.GbxParameter.Name = "GbxParameter";
+            this.GbxParameter.Size = new System.Drawing.Size(506, 529);
+            this.GbxParameter.TabIndex = 2;
+            this.GbxParameter.TabStop = false;
+            this.GbxParameter.Text = "参数设置";
+            // 
+            // GbxControl
+            // 
+            this.GbxControl.Controls.Add(this.BtnCancel);
+            this.GbxControl.Controls.Add(this.BtnOK);
+            this.GbxControl.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxControl.Location = new System.Drawing.Point(530, 23);
+            this.GbxControl.Name = "GbxControl";
+            this.GbxControl.Size = new System.Drawing.Size(241, 517);
+            this.GbxControl.TabIndex = 3;
+            this.GbxControl.TabStop = false;
+            this.GbxControl.Text = "用户控制";
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnCancel.Location = new System.Drawing.Point(31, 319);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(192, 108);
+            this.BtnCancel.TabIndex = 1;
+            this.BtnCancel.Text = "取消";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            // 
+            // BtnOK
+            // 
+            this.BtnOK.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnOK.Location = new System.Drawing.Point(31, 100);
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.Size = new System.Drawing.Size(192, 108);
+            this.BtnOK.TabIndex = 0;
+            this.BtnOK.Text = "确认";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            // 
+            // FrmParameter
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.GbxControl);
+            this.Controls.Add(this.GbxParameter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FrmParameter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "参数设置";
+            this.GbxParameter.ResumeLayout(false);
+            this.GbxParameter.PerformLayout();
+            this.GbxControl.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox GbxParameter;
+        private System.Windows.Forms.GroupBox GbxControl;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button BtnOK;
+    }
+}

@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+
+namespace ACA_System_InTest
+{
+    public partial class FrmMain : Form
+    {
+        public FrmMain()
+        {
+            InitializeComponent();
+            try
+            {
+                if (!Global.kv.Connect())
+                {
+                    MessageBox.Show("PLC连接失败");
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtnManual1_Click(object sender, EventArgs e)
+        {
+            FrmManual1 frmManual1 = new FrmManual1();
+            frmManual1.ShowDialog();
+        }
+
+        private void BtnManual2_Click(object sender, EventArgs e)
+        {
+            FrmManual2 frmManual2 = new FrmManual2();
+            frmManual2.ShowDialog();
+        }
+
+        private void BtnManual3_Click(object sender, EventArgs e)
+        {
+            FrmManual3 frmManual3 = new FrmManual3();
+            frmManual3.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}

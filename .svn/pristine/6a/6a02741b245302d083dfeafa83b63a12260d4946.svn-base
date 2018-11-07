@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+using ACA_Common;
+namespace Aca_System_WholeTest
+{
+    public partial class FrmAuto : Form
+    {
+        private ButtonNew[] btnArray = new ButtonNew[3];
+        public FrmAuto()
+        {
+            InitializeComponent();
+        }
+
+        private void FrmAuto_Load(object sender, EventArgs e)
+        {
+            btnArray[0] = BtnStart1;
+            btnArray[1] = BtnStop1;
+            btnArray[2] = BtnAlarm1;
+            TmrState.Enabled = true;
+        }
+
+        private void Btn_MouseDown(object sender, EventArgs e)
+        {
+            ButtonNew btn = (ButtonNew)sender;
+            try
+            {
+                if (Global.kv.Active)
+                {
+                    if (!Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, btn.Address, 1))
+                    {
+                        MessageBox.Show("plc通信异常");
+                    }
+
+                }
+                else MessageBox.Show("plc断开连接");
+               
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void Btn_MouseUp(object sender, MouseEventArgs e)
+        {
+            ButtonNew btn = (ButtonNew)sender;
+            try
+            {
+                if (Global.kv.Active)
+                {
+                    if (!Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, btn.Address, 0))
+                    {
+                        MessageBox.Show("plc通信异常");
+                    }
+
+                }
+                else MessageBox.Show("plc断开连接");
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void TmrState_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < btnArray.Length; i++)
+                {
+                    if (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, btnArray[i].StateAddress) == 1)
+                    {
+                        btnArray[i].BackColor = Color.Green;
+                    }
+                    else btnArray[i].BackColor = Color.Red;
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            TmrState.Enabled = false;
+            Close();
+        }
+    }
+}

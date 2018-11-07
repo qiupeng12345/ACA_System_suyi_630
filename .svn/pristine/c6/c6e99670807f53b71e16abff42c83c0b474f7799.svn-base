@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+
+namespace ACA_Common.Class
+{
+    /// <summary>
+    /// 全局类
+    /// </summary>
+   public static class Global  //定义全局变量
+    {
+        //需要对属性设置一下
+        public static KVDH1 kv = new KVDH1()
+        {
+            PLC = DATABUILDERAXLibLB.DBPlcId.DBPLC_DKV7K,
+            Peer="192.168.250.111:8500"
+        };
+        public static int currentProofNum;
+        public static int voltageProofNum;
+        public static int residualCurrentProofNum;
+        public static int erroCount = 3;
+        public static int presetCurrentValue1;
+        public static int presetCurrentValue2;
+        public static int presetCurrentValue3;
+        public static int presetCurrentValue4;
+        public static int presetCurrentValue5;
+        public static int presetVoltageValue1;
+        public static int presetVoltageValue2;
+        public static int presetVoltageValue3;
+        public static int presetVoltageValue4;
+        public static int presetVoltageValue5;
+        public static int closeSwitchVoltage;
+        public static int presetResidualCurrentValue1;
+        public static int presetResidualCurrentValue2;
+        public static int presetResidualCurrentValue3;
+        public static int presetResidualCurrentValue4;
+        public static int presetResidualCurrentValue5;
+        
+        public static int proofCurrentErrorRange; //电流校对误差范围
+        public static int proofVoltageErrorRange;//电压校对误差范围
+        public static int proofResidualCurrentErrorRange;//剩余电流校对误差范围
+        public static int currentCheck;  //电流校验设定输出值
+        public static int voltageCheck; //电压校验设定输出值
+        public static int residualCurrentCheck;//剩余电流检验设定输出值
+        //****************功能选择***********************//
+        public static bool doCurrent1;
+        public static bool doCurrent2;
+        public static bool doCurrent3;
+        public static bool doCurrent4;
+        public static bool doCurrent5;
+        public static bool doVoltage1;
+        public static bool doVoltage2;
+        public static bool doVoltage3;
+        public static bool doVoltage4;
+        public static bool doVoltage5;
+        public static bool doResidualCurrent1;
+        public static bool doResidualCurrent2;
+        public static bool doResidualCurrent3;
+        public static bool doResidualCurrent4;
+        public static bool doResidualCurrent5;
+        public static bool model1Select;
+        public static bool model2Select;
+        public static bool scan;
+        public static bool autoCommunication;
+        public static bool manualCommunication;
+        public static bool meachineAge;
+        public static bool setMeachineAge;
+        public static bool manualJudge;
+        // // // 半自动/////
+        public static bool communicationUseCurrent;
+        public static bool autoLoadingCurrent;
+        public static bool communicationUseVoltage;
+        public static bool autoLoadingVoltage;
+        public static bool communicationUseResidualCurrent;
+        public static bool autoLoadingResidualCurrent;
+        ///////瞬时电流测试//////////////
+        public static int lowTimesCurrent;
+        public static int lowTimesTime;
+        public static int highTimesCurrent;
+        public static int highTimesTime;
+        public static int outPutCurrent;
+        public static int outPutTime;
+        public static int instantaneousCloseSwitchTime;
+        //////整机测试/////////
+        public static int actionTest1Current;
+        public static int actionTest1Time;
+        public static int actionTest2StartCurrent;
+        public static int actionTest2Time;
+        public static int actionTest2EndCurrent;
+        public static int actionTest3Current;
+        public static int actionTest3Time;
+        public static int overVoltageValue;
+        public static int underVoltageValue;
+        public static int lowVoltageValue;
+        public static bool zeroPhase;
+        public static int wholeTestCloseSwitchTime;
+    }
+}

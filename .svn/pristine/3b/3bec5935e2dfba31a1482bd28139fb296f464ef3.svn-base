@@ -1,0 +1,162 @@
+﻿namespace ACA_System.UI
+{
+    partial class FrmMain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.BtnAuto = new System.Windows.Forms.Button();
+            this.BtnSetParameter = new System.Windows.Forms.Button();
+            this.BtnCurrentTest = new System.Windows.Forms.Button();
+            this.BtnVoltageTest = new System.Windows.Forms.Button();
+            this.Btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnTest = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // BtnAuto
+            // 
+            this.BtnAuto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnAuto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAuto.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnAuto.Location = new System.Drawing.Point(105, 132);
+            this.BtnAuto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnAuto.Name = "BtnAuto";
+            this.BtnAuto.Size = new System.Drawing.Size(209, 162);
+            this.BtnAuto.TabIndex = 0;
+            this.BtnAuto.Text = "全自动";
+            this.BtnAuto.UseVisualStyleBackColor = true;
+            this.BtnAuto.Click += new System.EventHandler(this.BtnAuto_Click);
+            // 
+            // BtnSetParameter
+            // 
+            this.BtnSetParameter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSetParameter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnSetParameter.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnSetParameter.Location = new System.Drawing.Point(441, 132);
+            this.BtnSetParameter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSetParameter.Name = "BtnSetParameter";
+            this.BtnSetParameter.Size = new System.Drawing.Size(208, 162);
+            this.BtnSetParameter.TabIndex = 1;
+            this.BtnSetParameter.Text = "自动参数设置";
+            this.BtnSetParameter.UseVisualStyleBackColor = true;
+            this.BtnSetParameter.Click += new System.EventHandler(this.BtnSetParameter_Click);
+            // 
+            // BtnCurrentTest
+            // 
+            this.BtnCurrentTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnCurrentTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCurrentTest.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnCurrentTest.Location = new System.Drawing.Point(773, 132);
+            this.BtnCurrentTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCurrentTest.Name = "BtnCurrentTest";
+            this.BtnCurrentTest.Size = new System.Drawing.Size(208, 162);
+            this.BtnCurrentTest.TabIndex = 2;
+            this.BtnCurrentTest.Text = "电流测试半自动";
+            this.BtnCurrentTest.UseVisualStyleBackColor = true;
+            // 
+            // BtnVoltageTest
+            // 
+            this.BtnVoltageTest.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnVoltageTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnVoltageTest.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnVoltageTest.Location = new System.Drawing.Point(105, 408);
+            this.BtnVoltageTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnVoltageTest.Name = "BtnVoltageTest";
+            this.BtnVoltageTest.Size = new System.Drawing.Size(209, 164);
+            this.BtnVoltageTest.TabIndex = 3;
+            this.BtnVoltageTest.Text = "电压测试半自动";
+            this.BtnVoltageTest.UseVisualStyleBackColor = true;
+            // 
+            // Btn
+            // 
+            this.Btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Btn.Location = new System.Drawing.Point(441, 408);
+            this.Btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Btn.Name = "Btn";
+            this.Btn.Size = new System.Drawing.Size(208, 162);
+            this.Btn.TabIndex = 4;
+            this.Btn.Text = "剩余电流测试半自动";
+            this.Btn.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(420, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 44);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "江苏苏益";
+            // 
+            // BtnTest
+            // 
+            this.BtnTest.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnTest.Location = new System.Drawing.Point(773, 408);
+            this.BtnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnTest.Name = "BtnTest";
+            this.BtnTest.Size = new System.Drawing.Size(208, 162);
+            this.BtnTest.TabIndex = 7;
+            this.BtnTest.Text = "电气测试";
+            this.BtnTest.UseVisualStyleBackColor = true;
+            // 
+            // FrmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1045, 701);
+            this.Controls.Add(this.BtnTest);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Btn);
+            this.Controls.Add(this.BtnVoltageTest);
+            this.Controls.Add(this.BtnCurrentTest);
+            this.Controls.Add(this.BtnSetParameter);
+            this.Controls.Add(this.BtnAuto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "主界面";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        protected System.Windows.Forms.Button BtnAuto;
+        protected System.Windows.Forms.Button BtnSetParameter;
+        protected System.Windows.Forms.Button BtnCurrentTest;
+        protected System.Windows.Forms.Button BtnVoltageTest;
+        protected System.Windows.Forms.Button Btn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnTest;
+    }
+}

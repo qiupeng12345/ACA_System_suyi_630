@@ -1,0 +1,106 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+
+namespace Test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            KVDH1 kv = new KVDH1();
+            //DATABUILDERAXLibLB.DBCommManagerClass kv = new DATABUILDERAXLibLB.DBCommManagerClass();
+            kv.PLC = DATABUILDERAXLibLB.DBPlcId.DBPLC_DKV7K;
+            kv.Peer = "192.168.250.60:8500";
+            try
+            {
+                kv.Connect();
+                //kv.WriteDevice(DATABUILDERAXLibLB.DBPlcDevice.DKV7KXYM_RLY_B, "170000", 1);
+                //kv.WriteDevice(DATABUILDERAXLibLB.DBPlcDevice.DKV7KXYM_RLY_B, "170001", 1);
+                //int i = kv.ReadDevice(DATABUILDERAXLibLB.DBPlcDevice.DKV7KXYM_RLY_W, "10");
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+            //uint a = 16;
+            //uint b = 17;
+            person a = new person();
+            a.Name = "duyangyang";
+            a.Age = 13;
+            a.eat();
+            person b = new person();
+            b.Name = "yanxiaocheng";
+            b.Age = 11;
+            b.eat();
+            Console.ReadLine();
+
+
+            ////double result = Dint_to_Real(b, a);
+            //double result1 = qp1(b, a);
+            //Console.WriteLine(result.ToString());
+            //Console.WriteLine(result1.ToString());
+            //Console.ReadKey();
+
+        }
+        public class person
+        {
+            private string name;
+            private int age;
+
+            public string Name { get => name; set => name = value; }
+            public int Age { get => age; set => age = value; }
+
+            public void eat()
+            {
+                Console.WriteLine(name + "吃饭");
+            }
+        }
+
+        public static double qp1(uint h, uint l)
+        {
+            UInt32 a = (UInt32)((h << 16) + l);
+            string b = ToBin(a);
+            char[] b1 = b.ToCharArray();
+            int c = 0;
+            string c1 = "1.";
+            for (int i = 1; i < 9; i++)
+            {
+                c = c * 2 + Convert.ToInt16(b1[i].ToString());
+            }
+            for (int i = 9; i < 32; i++)
+            {
+                c1 += b1[i].ToString();
+            }
+            int c2 = Convert.ToInt32(c1);
+            if (b1[0] == '1')
+            {
+                return c2 * Math.Pow(2, (c - 127));
+            }
+            else
+            {
+                return (c2 * Math.Pow(2, (c - 127))) * -1;
+            }
+
+        }
+        private static string ToBin(UInt32 c)
+        {
+            string result = "";
+            for (int i = 0; i < 32; i++)
+            {
+                if ((c & 0x80000000) == 0x80000000)
+                {
+                    result += "1";
+                }
+                else result += "0";
+                c = c << 1;
+            }
+            return result;
+        }
+    }
+}

@@ -1,0 +1,325 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+using System.Threading;
+
+namespace ACA_Common.Class
+{
+    class InstantaneousTest  //瞬时检验单元
+    {
+        private SuyiMCCB suyi;
+        private const int auto = 1;
+        private const int semiAuto = 2;
+        private const int stop = 3;
+        public const int cmdReady = 0;
+        public const int cmdInstantaneousStart = 1;
+        public const int cmdCommunicationTest = 2;
+        public const int cmdJudgeSwitchState1 = 3;
+        public const int cmdEnterProof = 4;
+        public const int cmdOutput1 = 5;
+        public const int cmdSendPeakValue1 = 6;
+        public const int cmdGetSwitchState1 = 7;
+        public const int cmdOutput2 = 8;
+        public const int cmdSendPeakValue2 = 9;
+        public const int cmdGetSwitchState2 = 10;
+        public const int cmdOutput3 = 11;
+        public const int cmdSendPeakValue3 = 12;
+        public const int cmdGetSwitchState3 = 13;
+        public const int cmdLowTimes = 14;
+        public const int cmdReadSwitch1 = 15;
+        public const int cmdHighTimes = 16;
+        public const int cmdReadSwitch2 = 17;
+        public const int cmdQuitProof = 18;
+        public const int cmdJudgeSwitchState2 = 19;
+        public const int cmdCloseSwitch = 20;
+        public const int cmdJudgeSwitchState3 = 21;
+        public const int cmdJudgeSwitchState4 = 22;
+        public const int cmdInstantaneousEnd = 23;
+        private const int ngReset = 0;
+        private const int ngCommunication = 1;
+        private const int ngCloseSwitch = 2;
+        private const int ngEnterProof = 3;
+        private const int ngProofFailB = 4;
+        private const int ngProofFailC = 5;
+        private const int ngProofFailA = 6;
+        private const int ngProofFailLow = 7;
+        private const int ngProofFailHigh = 8;
+        private const int ngQuitProof = 9;
+        private int actualPeakValue1 = 0;
+        private int actualPeakValue2 = 0;
+        private int actualPeakValue3 = 0;
+        public SuyiMCCB Suyi { get => suyi; set => suyi = value; }
+        public void AutoInstantaneousTest()
+        {
+           
+            WriteMemory(MemoryAddress.OutputTime,Global.outPutTime);
+            WriteMemory(MemoryAddress.OutputCurrent, Global.outPutCurrent);
+            WriteMemory(MemoryAddress.LowTimesCurrent, Global.lowTimesCurrent);
+            WriteMemory(MemoryAddress.LowTimesTime, Global.lowTimesTime);
+            WriteMemory(MemoryAddress.HighTimesCurrent, Global.highTimesCurrent);
+            WriteMemory(MemoryAddress.HighTimesTime, Global.highTimesTime);
+            while (GetWorkState()==auto)
+            {
+                if(GetResult()) //产品判定为正常
+                {
+                    int cmdId = GetCmdCode();
+                    switch (cmdId)
+                    {
+                        case cmdReady:
+                            SetCmdCode(cmdInstantaneousStart);
+                            break;
+                        case cmdInstantaneousStart:
+                            break;
+                        case cmdCommunicationTest:
+                            if (suyi.CommunicationTest()) //通信测试环节
+                            {
+                                SetCmdCode(cmdJudgeSwitchState1);
+                            }
+                            else SetResult(ngCommunication);
+                            break;
+                        case cmdJudgeSwitchState1:
+                            //plc进行开合闸状态判断
+                            break;
+                        case cmdEnterProof:
+                            if (suyi.Debugging(SuyiMCCB.DataIdentification.EnterTransientCurrentMode))//进入调试模式成功
+                            {
+                                SetCmdCode(cmdOutput1);  //输出预设值1
+                            }
+                            else SetResult(ngEnterProof);
+                            break;
+                        case cmdOutput1:
+                            //输出1
+                            break;
+
+                        case cmdSendPeakValue1:  ///发送实际峰值1给产品并等待返回
+                            actualPeakValue1 = ReadMemory(MemoryAddress.PeakValue1.ToString()); //从plc中获取实际峰值
+                            if (suyi.Write(SuyiMCCB.DataIdentification.SendPeakValue, actualPeakValue1)) //发送实际峰值有应答
+                            {
+                                SetCmdCode(cmdGetSwitchState1);
+                            }
+                            else SetResult(ngProofFailB);
+                            break;
+                        case cmdGetSwitchState1:
+                            int switchState = suyi.ReadSwitchState();
+                            WriteMemory(MemoryAddress.SwitchState1, switchState);//记录开合闸状态值
+                            if (switchState == 2) //产品为分闸
+                            {
+                                SetCmdCode(cmdOutput2);
+                            }
+                            else SetResult(ngProofFailB);
+                            break;
+                        case cmdOutput2:
+                            //输出2
+                            break;
+                        case cmdSendPeakValue2: ///发送实际峰值2给产品并等待返回
+                            actualPeakValue2 = ReadMemory(MemoryAddress.PeakValue2.ToString());
+                            if (suyi.Write(SuyiMCCB.DataIdentification.SendPeakValue, actualPeakValue2)) //发送实际峰值有应答
+                            {
+                                SetCmdCode(cmdGetSwitchState2);
+                            }
+                            else SetResult(ngProofFailC);
+                            break;
+                        case cmdGetSwitchState2:
+                            switchState = suyi.ReadSwitchState();
+                            WriteMemory(MemoryAddress.SwitchState2, switchState);
+                            if (switchState == 1) //如果为分闸
+                            {
+                                SetCmdCode(cmdOutput3);
+                            }
+                            else SetResult(ngProofFailB);
+                            break;
+                        case cmdOutput3:
+                            //输出3
+                            break;
+                        case cmdSendPeakValue3:  //获取实际峰值，发送实际峰值给产品，有应答为正常
+                            actualPeakValue3 = ReadMemory(MemoryAddress.PeakValue3.ToString());
+                            if (suyi.Write(SuyiMCCB.DataIdentification.SendPeakValue,actualPeakValue3)) //发送实际峰值有应答
+                            {
+                                SetCmdCode(cmdGetSwitchState3);
+                            }
+                            else SetResult(ngProofFailA);
+                            break;
+                        case cmdGetSwitchState3:
+                            switchState = suyi.ReadSwitchState();
+                            WriteMemory(MemoryAddress.SwitchState3, switchState);
+                            if (switchState == 1) //如果是分闸
+                            {
+                                SetCmdCode(cmdLowTimes);
+                            }
+                            else SetResult(ngProofFailA);
+                            break;
+                        case cmdLowTimes:
+                            //输出低倍
+                            break;
+                        case cmdReadSwitch1:
+                            switchState = suyi.ReadSwitchState();
+                            WriteMemory(MemoryAddress.SwitchState4, switchState);
+                            if (switchState == 1)//如果是合闸状态，为正常
+                            {
+                                SetCmdCode(cmdHighTimes);
+                            }
+                            else SetResult(ngProofFailLow);
+                            break;
+                        case cmdHighTimes:
+                            //输出高倍
+                            break;
+                        case cmdReadSwitch2:
+                            switchState = suyi.ReadSwitchState();
+                            WriteMemory(MemoryAddress.SwitchState5, switchState);
+                            if (switchState == 2)//如果是分闸状态，为正常
+                            {
+                                SetCmdCode(cmdQuitProof);
+                            }
+                            else SetResult(ngProofFailHigh);
+                            break;
+                        case cmdQuitProof:
+                            if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitTransientCurrentMode))//退出瞬时校对模式
+                            {
+                                SetCmdCode(cmdCloseSwitch);
+                            }
+                            break;
+                        case cmdJudgeSwitchState2:
+                            //plc输出判断分合闸状态
+                            break;
+                        case cmdCloseSwitch:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState3);//告诉plc进行分合闸检验
+                            }
+                            else SetResult(ngCloseSwitch);
+                            break;
+                        case cmdJudgeSwitchState3: //该判断需要上位机和plc都进行判断
+                            //Thread.Sleep(Global.instantaneousCloseSwitchTime);
+                            if (suyi.ReadSwitchState() == 1) //通信读取当前状态为合闸(另需输出判断结果)
+                            {
+                                SetCmdCode(cmdJudgeSwitchState4);
+                            }
+                            else SetResult(ngCloseSwitch);
+                            break;
+                        case cmdJudgeSwitchState4:
+                            //plc判断是否合闸
+                            break;
+                        case cmdInstantaneousEnd:  //瞬时校验结束                          
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+        }
+        private int GetWorkState()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.workState.ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+        private int GetCmdCode()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.CmdCode.ToString());
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+
+        }
+        private void SetCmdCode(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.CmdCode, data);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private bool GetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.TestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void SetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.TestResult, data);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        private void WriteMemory(MemoryAddress address, int data)
+        {
+            try
+            {
+                Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private int ReadMemory(string address)
+        {
+            try
+            {
+                return Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
+        }
+
+        private enum MemoryAddress : int
+        {
+            workState,
+            CmdCode,
+            TestResult,
+            PeakValue1,
+            PeakValue2,
+            PeakValue3,
+            OutputCurrent,
+            OutputTime,
+            LowTimesCurrent,
+            LowTimesTime,
+            HighTimesCurrent,
+            HighTimesTime,
+            SwitchState1,
+            SwitchState2,
+            SwitchState3,
+            SwitchState4,
+            SwitchState5,
+           
+
+        }
+    }
+}

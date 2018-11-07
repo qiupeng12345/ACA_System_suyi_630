@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DATABUILDERAXLibLB;
+
+namespace ACA_BreakCommunication
+{
+    public class KVDH1
+    {
+
+        
+
+        private DBCommManagerClass dbCm= new DBCommManagerClass();
+        public DBPlcId PLC
+        {
+            get => dbCm.PLC;
+            set =>  dbCm.PLC=value;
+        }
+        public string Peer
+        {
+            get => dbCm.Peer;
+            set =>  dbCm.Peer=value;
+        }
+
+
+        public KVDH1()
+        {
+
+        }
+        public bool Connect()
+        {
+            try
+            {
+                dbCm.Connect();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+        public int ReadMemory(DBPlcDevice dbPlc, string memoryStart)
+        {
+            int returndata = 0;
+            try
+            {
+                returndata = dbCm.ReadDevice(dbPlc, memoryStart);
+            }
+            catch (Exception)
+            {
+                returndata = -1;
+            }
+            return returndata;
+        }
+        public bool WriteMemory(DBPlcDevice dbPlc,string memoryStart,int data)
+        {
+            try
+            {
+                dbCm.WriteDevice(dbPlc, memoryStart, data);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+        //public void WriteMemoryBit()
+        //{
+        //    try
+        //    {
+        //        dbCm.WriteDevice(DBPlcDevice.DKV7K_DM_B)
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+       
+    }
+
+}

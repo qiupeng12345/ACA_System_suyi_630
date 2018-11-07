@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+    <add key="ApplicationName" value="苏益自动校对测试单元" />
+    <!--开发商名称-->
+    <add key="Manufacturer" value="无锡先驱自动化科技有限公司" />
+    <!--用户设置参数-->
+    <add key="CurrentProofNum" value="3" />
+    <add key="VoltageProofNum" value="3" />
+    <add key="ResidualCurrentProofNum" value="3" />
+    <add key="PresetCurrent1" value="0" />
+    <add key="PresetCurrent2" value="0" />
+    <add key="PresetCurrent3" value="0" />
+    <add key="PresetCurrent4" value="0" />
+    <add key="PresetCurrent5" value="0" />
+    <add key="PresetVoltage1" value="0" />
+    <add key="PresetVoltage2" value="0" />
+    <add key="PresetVoltage3" value="0" />
+    <add key="PresetVoltage4" value="0" />
+    <add key="PresetVoltage5" value="0" />
+    <add key="CloseSwitchVoltage" value="0" />
+    <add key="PresetResidualCurrent1" value="0" />
+    <add key="PresetResidualCurrent2" value="0" />
+    <add key="PresetResidualCurrent3" value="0" />
+    <add key="PresetResidualCurrent4" value="0" />
+    <add key="PresetResidualCurrent5" value="0" />
+    <add key="CurrentErrorRange" value="1" />
+    <add key="VoltageErrorRange" value="0" />
+    <add key="ResidualCurrentErrorRange" value="0" />
+    <add key="CheckValue1" value="0"/>
+    <add key="CheckValue2" value="0"/>
+    <add key="CheckValue3" value="0"/>
+    <!--用户功能筛选-->
+    <add key="DoCurrent1" value="1" />
+    <add key="DoCurrent2" value="1" />
+    <add key="DoCurrent3" value="1" />
+    <add key="DoCurrent4" value="1" />
+    <add key="DoCurrent5" value="1" />
+    <add key="DoVoltage1" value="1" />
+    <add key="DoVoltage2" value="1" />
+    <add key="DoVoltage3" value="1" />
+    <add key="DoVoltage4" value="1" />
+    <add key="DoVoltage5" value="1" />
+    <add key="DoResidualCurrent1" value="1" />
+    <add key="DoResidualCurrent2" value="1" />
+    <add key="DoResidualCurrent3" value="1" />
+    <add key="DoResidualCurrent4" value="1" />
+    <add key="DoResidualCurrent5" value="1" />
+    <add key="Model1" value="1" />
+    <add key="Model2" value="1" />
+    <add key="ManualCom" value="1" />
+    <add key="AutoCom" value="1" />
+    <add key="Scan" value="1" />
+    <add key="ManualJudge" value="1" />
+    <add key="MeachineAge" value="1" />
+    <add key="SetMeachineAge" value="1" />
+    <!--报警信息-->
+    <add key="alarm0" value="挡料气缸伸出不到位报警" />
+    <add key="alarm1" value="挡料气缸缩回不到位报警" />
+    <add key="alarm2" value="隔料气缸伸出不到位报警" />
+    <add key="alarm3" value="隔料气缸缩回不到位报警" />
+    <add key="alarm4" value="条码枪平移气缸伸出不到位报警" />
+    <add key="alarm5" value="条码枪平移气缸缩回不到位报警" />
+    <add key="alarm6" value="工位1挡停气缸伸出不到位报警" />
+    <add key="alarm7" value="工位1挡停气缸缩回不到位报警" />
+    <add key="alarm8" value="工位1产品举升气缸伸出不到位报警" />
+    <add key="alarm9" value="工位1产品举升气缸缩回不到位报警" />
+    <add key="alarm10" value="工位1电极加电气缸伸出不到位报警" />
+    <add key="alarm11" value="工位1电极加电气缸缩回不到位报警" />
+    <add key="alarm12" value="工位1通讯测试气缸伸出不到位报警" />
+    <add key="alarm13" value="工位1通讯测试气缸缩回不到位报警" />
+    <add key="alarm14" value="工位2挡停气缸伸出不到位报警" />
+    <add key="alarm15" value="工位2挡停气缸缩回不到位报警" />
+    <add key="alarm16" value="工位2产品举升气缸伸出不到位报警" />
+    <add key="alarm17" value="工位2产品举升气缸缩回不到位报警" />
+    <add key="alarm18" value="工位2电极加电气缸伸出不到位报警" />
+    <add key="alarm19" value="工位2电极加电气缸缩回不到位报警" />
+    <add key="alarm20" value="工位2通讯测试气缸伸出不到位报警" />
+    <add key="alarm21" value="工位2通讯测试气缸缩回不到位报警" />
+    <add key="alarm22" value="不合格品挡停气缸伸出不到位报警" />
+    <add key="alarm23" value="不合格品挡停气缸缩回不到位报警" />
+    <add key="alarm24" value="条码读取失败" />
+    <add key="alarm25" value="安全门被打开" />
+    <!--状态信息-->
+    <add key="state1" value="电流校对开始"/>
+    <add key="state2" value="电流校对通信测试"/>
+    <add key="state3" value="判断开合闸"/>
+    <add key="state4" value="判断开合闸"/>
+    <add key="state5" value="判断开合闸"/>
+    <add key="state6" value="电流校对合闸"/>
+    <add key="state7" value="进入电流校对模式"/>
+    <add key="state8" value="电流输出1"/>
+    <add key="state9" value="电流校对1准备"/>
+    <add key="state10" value="电流校对1开始"/>
+    <add key="state11" value="电流输出2"/>
+    <add key="state12" value="电流校对2准备"/>
+    <add key="state13" value="电流校对2开始"/>
+    <add key="state14" value="电流输出3"/>
+    <add key="state15" value="电流校对3准备"/>
+    <add key="state16" value="电流校对3开始"/>
+    <add key="state17" value="电流输出4"/>
+    <add key="state18" value="电流校对4准备"/>
+    <add key="state19" value="电流校对4开始"/>
+    <add key="state20" value="电流输出5"/>
+    <add key="state21" value="电流校对5准备"/>
+    <add key="state22" value="电流校对5开始"/>
+    <add key="state23" value="退出电流校对模式"/>
+    <add key="state24" value="输出检测电流"/>
+    <add key="state25" value="校对结果检测"/>
+    <add key="state26" value="电流校对扩展"/>
+    <add key="state27" value="电流校对扩展"/>
+    <add key="state28" value="电流校对扩展"/>
+    <add key="state29" value="电流校对扩展"/>
+    <add key="state30" value="电流校对扩展"/>
+    <add key="state31" value="电压校对开始"/>
+    <add key="state32" value="电压校对通信测试"/>
+    <add key="state33" value="判断开合闸"/>
+    <add key="state34" value="进入电压校对模式"/>
+    <add key="state35" value="电压输出1"/>
+    <add key="state36" value="电压校对1准备"/>
+    <add key="state37" value="电压校对1开始"/>
+    <add key="state38" value="电压输出2"/>
+    <add key="state39" value="电压校对2准备"/>
+    <add key="state40" value="电压校对2开始"/>
+    <add key="state41" value="电压输出3"/>
+    <add key="state42" value="电压校对3准备"/>
+    <add key="state43" value="电压校对3开始"/>
+    <add key="state44" value="电压输出4"/>
+    <add key="state45" value="电压校对4准备"/>
+    <add key="state46" value="电压校对4开始"/>
+    <add key="state47" value="电压输出5"/>
+    <add key="state48" value="电压校对5准备"/>
+    <add key="state49" value="电压校对5开始"/>
+    <add key="state50" value="退出电压校对模式"/>
+    <add key="state51" value="输出检测电压"/>
+    <add key="state52" value="校对结果检测"/>
+    <add key="state53" value="电压校对结束"/>
+    <add key="state54" value="保留"/>
+    <add key="state55" value="保留"/>
+    <add key="state56" value="保留"/>
+    <add key="state57" value="保留"/>
+    <add key="state58" value="保留"/>
+    <add key="state59" value="保留"/>
+    <add key="state60" value="电压校对结束"/>
+    <add key="state61" value="剩余电流校对开始"/>
+    <add key="state62" value="剩余电流校对通信测试"/>
+    <add key="state63" value="判断开合闸"/>
+    <add key="state64" value="进入剩余电流校对模式"/>
+    <add key="state65" value="剩余电流输出1"/>
+    <add key="state66" value="剩余电流校对1准备"/>
+    <add key="state67" value="剩余电流校对1开始"/>
+    <add key="state68" value="剩余电流输出2"/>
+    <add key="state69" value="剩余电流校对2准备"/>
+    <add key="state70" value="剩余电流校对2开始"/>
+    <add key="state71" value="剩余电流输出3"/>
+    <add key="state72" value="剩余电流校对3准备"/>
+    <add key="state73" value="剩余电流校对3开始"/>
+    <add key="state74" value="剩余电流输出4"/>
+    <add key="state75" value="剩余电流校对4准备"/>
+    <add key="state76" value="剩余电流校对4开始"/>
+    <add key="state77" value="剩余电流输出5"/>
+    <add key="state78" value="剩余电流校对5准备"/>
+    <add key="state79" value="剩余电流校对5开始"/>
+    <add key="state80" value="退出剩余电流校对模式"/>
+    <add key="state81" value="输出检测电流"/>
+    <add key="state82" value="校对结果检测"/>
+    <add key="state83" value="剩余电流校对结束"/>
+    <add key="state84" value="保留"/>
+    <add key="state85" value="保留"/>
+    <add key="state86" value="保留"/>
+    <add key="state87" value="保留"/>
+    <add key="state88" value="保留"/>
+    <add key="state89" value="保留"/>
+    <add key="state90" value="保留"/>
+
+
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

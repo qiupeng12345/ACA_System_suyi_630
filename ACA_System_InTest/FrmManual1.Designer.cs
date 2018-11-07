@@ -1,0 +1,418 @@
+﻿namespace ACA_System_InTest
+{
+    partial class FrmManual1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.buttonNew1 = new ACA_Common.ButtonNew();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonNew2 = new ACA_Common.ButtonNew();
+            this.buttonNew3 = new ACA_Common.ButtonNew();
+            this.buttonNew4 = new ACA_Common.ButtonNew();
+            this.buttonNew5 = new ACA_Common.ButtonNew();
+            this.buttonNew6 = new ACA_Common.ButtonNew();
+            this.buttonNew7 = new ACA_Common.ButtonNew();
+            this.buttonNew8 = new ACA_Common.ButtonNew();
+            this.buttonNew9 = new ACA_Common.ButtonNew();
+            this.buttonNew10 = new ACA_Common.ButtonNew();
+            this.buttonNew11 = new ACA_Common.ButtonNew();
+            this.buttonNew12 = new ACA_Common.ButtonNew();
+            this.buttonNew13 = new ACA_Common.ButtonNew();
+            this.buttonNew14 = new ACA_Common.ButtonNew();
+            this.buttonNew15 = new ACA_Common.ButtonNew();
+            this.buttonNew16 = new ACA_Common.ButtonNew();
+            this.buttonNew17 = new ACA_Common.ButtonNew();
+            this.buttonNew18 = new ACA_Common.ButtonNew();
+            this.BtnBack = new System.Windows.Forms.Button();
+            this.BtnDown = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // buttonNew1
+            // 
+            this.buttonNew1.Address = "140200";
+            this.buttonNew1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew1.Location = new System.Drawing.Point(36, 99);
+            this.buttonNew1.Name = "buttonNew1";
+            this.buttonNew1.No = 0;
+            this.buttonNew1.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew1.StateAddress = "462000";
+            this.buttonNew1.TabIndex = 0;
+            this.buttonNew1.Text = "C4-1-1隔料气缸伸出";
+            this.buttonNew1.UseVisualStyleBackColor = true;
+            this.buttonNew1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(419, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 50);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "手动界面1";
+            // 
+            // buttonNew2
+            // 
+            this.buttonNew2.Address = "140201";
+            this.buttonNew2.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew2.Location = new System.Drawing.Point(36, 199);
+            this.buttonNew2.Name = "buttonNew2";
+            this.buttonNew2.No = 0;
+            this.buttonNew2.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew2.StateAddress = "462001";
+            this.buttonNew2.TabIndex = 2;
+            this.buttonNew2.Text = "C4-1-1隔料气缸缩回";
+            this.buttonNew2.UseVisualStyleBackColor = true;
+            this.buttonNew2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew3
+            // 
+            this.buttonNew3.Address = "140202";
+            this.buttonNew3.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew3.Location = new System.Drawing.Point(36, 300);
+            this.buttonNew3.Name = "buttonNew3";
+            this.buttonNew3.No = 0;
+            this.buttonNew3.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew3.StateAddress = "462002";
+            this.buttonNew3.TabIndex = 3;
+            this.buttonNew3.Text = "C4-1-2上料挡料气缸缩回";
+            this.buttonNew3.UseVisualStyleBackColor = true;
+            this.buttonNew3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew4
+            // 
+            this.buttonNew4.Address = "140203";
+            this.buttonNew4.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew4.Location = new System.Drawing.Point(36, 400);
+            this.buttonNew4.Name = "buttonNew4";
+            this.buttonNew4.No = 0;
+            this.buttonNew4.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew4.StateAddress = "462003";
+            this.buttonNew4.TabIndex = 4;
+            this.buttonNew4.Text = "C4-1-2上料挡料气缸伸出";
+            this.buttonNew4.UseVisualStyleBackColor = true;
+            this.buttonNew4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew5
+            // 
+            this.buttonNew5.Address = "140204";
+            this.buttonNew5.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew5.Location = new System.Drawing.Point(36, 499);
+            this.buttonNew5.Name = "buttonNew5";
+            this.buttonNew5.No = 0;
+            this.buttonNew5.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew5.StateAddress = "462004";
+            this.buttonNew5.TabIndex = 5;
+            this.buttonNew5.Text = "C4-1-3扫码枪平移气缸伸出";
+            this.buttonNew5.UseVisualStyleBackColor = true;
+            this.buttonNew5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew6
+            // 
+            this.buttonNew6.Address = "140205";
+            this.buttonNew6.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew6.Location = new System.Drawing.Point(36, 600);
+            this.buttonNew6.Name = "buttonNew6";
+            this.buttonNew6.No = 0;
+            this.buttonNew6.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew6.StateAddress = "462005";
+            this.buttonNew6.TabIndex = 6;
+            this.buttonNew6.Text = "C4-1-3扫码枪平移气缸缩回";
+            this.buttonNew6.UseVisualStyleBackColor = true;
+            this.buttonNew6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew7
+            // 
+            this.buttonNew7.Address = "140211";
+            this.buttonNew7.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew7.Location = new System.Drawing.Point(386, 600);
+            this.buttonNew7.Name = "buttonNew7";
+            this.buttonNew7.No = 0;
+            this.buttonNew7.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew7.StateAddress = "462011";
+            this.buttonNew7.TabIndex = 12;
+            this.buttonNew7.Text = "C4-1-6工位1通讯测试气缸缩回";
+            this.buttonNew7.UseVisualStyleBackColor = true;
+            this.buttonNew7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew8
+            // 
+            this.buttonNew8.Address = "140210";
+            this.buttonNew8.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew8.Location = new System.Drawing.Point(386, 499);
+            this.buttonNew8.Name = "buttonNew8";
+            this.buttonNew8.No = 0;
+            this.buttonNew8.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew8.StateAddress = "462010";
+            this.buttonNew8.TabIndex = 11;
+            this.buttonNew8.Text = "C4-1-6工位1通信测试气缸伸出";
+            this.buttonNew8.UseVisualStyleBackColor = true;
+            this.buttonNew8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew9
+            // 
+            this.buttonNew9.Address = "140209";
+            this.buttonNew9.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew9.Location = new System.Drawing.Point(386, 400);
+            this.buttonNew9.Name = "buttonNew9";
+            this.buttonNew9.No = 0;
+            this.buttonNew9.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew9.StateAddress = "462009";
+            this.buttonNew9.TabIndex = 10;
+            this.buttonNew9.Text = "C4-1-5工位1举升气缸下降";
+            this.buttonNew9.UseVisualStyleBackColor = true;
+            this.buttonNew9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew10
+            // 
+            this.buttonNew10.Address = "140208";
+            this.buttonNew10.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew10.Location = new System.Drawing.Point(386, 300);
+            this.buttonNew10.Name = "buttonNew10";
+            this.buttonNew10.No = 0;
+            this.buttonNew10.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew10.StateAddress = "462008";
+            this.buttonNew10.TabIndex = 9;
+            this.buttonNew10.Text = "C4-1-5工位1举升气缸上升";
+            this.buttonNew10.UseVisualStyleBackColor = true;
+            this.buttonNew10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew11
+            // 
+            this.buttonNew11.Address = "140207";
+            this.buttonNew11.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew11.Location = new System.Drawing.Point(386, 199);
+            this.buttonNew11.Name = "buttonNew11";
+            this.buttonNew11.No = 0;
+            this.buttonNew11.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew11.StateAddress = "462007";
+            this.buttonNew11.TabIndex = 8;
+            this.buttonNew11.Text = "C4-1-4工位1电极加电气缸缩回";
+            this.buttonNew11.UseVisualStyleBackColor = true;
+            this.buttonNew11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew12
+            // 
+            this.buttonNew12.Address = "140206";
+            this.buttonNew12.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew12.Location = new System.Drawing.Point(386, 99);
+            this.buttonNew12.Name = "buttonNew12";
+            this.buttonNew12.No = 0;
+            this.buttonNew12.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew12.StateAddress = "462006";
+            this.buttonNew12.TabIndex = 7;
+            this.buttonNew12.Text = "C4-1-4工位1电极加电气缸伸出";
+            this.buttonNew12.UseVisualStyleBackColor = true;
+            this.buttonNew12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew13
+            // 
+            this.buttonNew13.Address = "140301";
+            this.buttonNew13.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew13.Location = new System.Drawing.Point(735, 600);
+            this.buttonNew13.Name = "buttonNew13";
+            this.buttonNew13.No = 0;
+            this.buttonNew13.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew13.StateAddress = "462101";
+            this.buttonNew13.TabIndex = 18;
+            this.buttonNew13.Text = "C4-1-9工位2举升气缸下降";
+            this.buttonNew13.UseVisualStyleBackColor = true;
+            this.buttonNew13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew14
+            // 
+            this.buttonNew14.Address = "140300";
+            this.buttonNew14.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew14.Location = new System.Drawing.Point(735, 499);
+            this.buttonNew14.Name = "buttonNew14";
+            this.buttonNew14.No = 0;
+            this.buttonNew14.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew14.StateAddress = "462100";
+            this.buttonNew14.TabIndex = 17;
+            this.buttonNew14.Text = "C4-1-9工位2举升气缸上升";
+            this.buttonNew14.UseVisualStyleBackColor = true;
+            this.buttonNew14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew15
+            // 
+            this.buttonNew15.Address = "140215";
+            this.buttonNew15.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew15.Location = new System.Drawing.Point(735, 400);
+            this.buttonNew15.Name = "buttonNew15";
+            this.buttonNew15.No = 0;
+            this.buttonNew15.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew15.StateAddress = "462015";
+            this.buttonNew15.TabIndex = 16;
+            this.buttonNew15.Text = "C4-1-8工位2电极加电气缸缩回";
+            this.buttonNew15.UseVisualStyleBackColor = true;
+            this.buttonNew15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew16
+            // 
+            this.buttonNew16.Address = "140214";
+            this.buttonNew16.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew16.Location = new System.Drawing.Point(735, 300);
+            this.buttonNew16.Name = "buttonNew16";
+            this.buttonNew16.No = 0;
+            this.buttonNew16.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew16.StateAddress = "462014";
+            this.buttonNew16.TabIndex = 15;
+            this.buttonNew16.Text = "C4-1-8工位2电极加电气缸伸出";
+            this.buttonNew16.UseVisualStyleBackColor = true;
+            this.buttonNew16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew17
+            // 
+            this.buttonNew17.Address = "140213";
+            this.buttonNew17.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew17.Location = new System.Drawing.Point(735, 199);
+            this.buttonNew17.Name = "buttonNew17";
+            this.buttonNew17.No = 0;
+            this.buttonNew17.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew17.StateAddress = "462013";
+            this.buttonNew17.TabIndex = 14;
+            this.buttonNew17.Text = "C4-1-7工位1挡停气缸上升";
+            this.buttonNew17.UseVisualStyleBackColor = true;
+            this.buttonNew17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // buttonNew18
+            // 
+            this.buttonNew18.Address = "140212";
+            this.buttonNew18.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonNew18.Location = new System.Drawing.Point(735, 99);
+            this.buttonNew18.Name = "buttonNew18";
+            this.buttonNew18.No = 0;
+            this.buttonNew18.Size = new System.Drawing.Size(252, 57);
+            this.buttonNew18.StateAddress = "462012";
+            this.buttonNew18.TabIndex = 13;
+            this.buttonNew18.Text = "C4-1-7工位1挡停气缸下降";
+            this.buttonNew18.UseVisualStyleBackColor = true;
+            this.buttonNew18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseDown);
+            this.buttonNew18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_MouseUp);
+            // 
+            // BtnBack
+            // 
+            this.BtnBack.BackColor = System.Drawing.SystemColors.Info;
+            this.BtnBack.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnBack.Location = new System.Drawing.Point(833, -1);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(187, 69);
+            this.BtnBack.TabIndex = 19;
+            this.BtnBack.Text = "退出";
+            this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
+            // BtnDown
+            // 
+            this.BtnDown.BackColor = System.Drawing.SystemColors.Info;
+            this.BtnDown.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnDown.Location = new System.Drawing.Point(36, -1);
+            this.BtnDown.Name = "BtnDown";
+            this.BtnDown.Size = new System.Drawing.Size(166, 69);
+            this.BtnDown.TabIndex = 20;
+            this.BtnDown.Text = "下一页";
+            this.BtnDown.UseVisualStyleBackColor = false;
+            this.BtnDown.Click += new System.EventHandler(this.BtnDown_Click);
+            // 
+            // FrmManual1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.BtnDown);
+            this.Controls.Add(this.BtnBack);
+            this.Controls.Add(this.buttonNew13);
+            this.Controls.Add(this.buttonNew14);
+            this.Controls.Add(this.buttonNew15);
+            this.Controls.Add(this.buttonNew16);
+            this.Controls.Add(this.buttonNew17);
+            this.Controls.Add(this.buttonNew18);
+            this.Controls.Add(this.buttonNew7);
+            this.Controls.Add(this.buttonNew8);
+            this.Controls.Add(this.buttonNew9);
+            this.Controls.Add(this.buttonNew10);
+            this.Controls.Add(this.buttonNew11);
+            this.Controls.Add(this.buttonNew12);
+            this.Controls.Add(this.buttonNew6);
+            this.Controls.Add(this.buttonNew5);
+            this.Controls.Add(this.buttonNew4);
+            this.Controls.Add(this.buttonNew3);
+            this.Controls.Add(this.buttonNew2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonNew1);
+            this.Name = "FrmManual1";
+            this.Text = "手动界面1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmManual1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private ACA_Common.ButtonNew buttonNew1;
+        private System.Windows.Forms.Label label1;
+        private ACA_Common.ButtonNew buttonNew2;
+        private ACA_Common.ButtonNew buttonNew3;
+        private ACA_Common.ButtonNew buttonNew4;
+        private ACA_Common.ButtonNew buttonNew5;
+        private ACA_Common.ButtonNew buttonNew6;
+        private ACA_Common.ButtonNew buttonNew7;
+        private ACA_Common.ButtonNew buttonNew8;
+        private ACA_Common.ButtonNew buttonNew9;
+        private ACA_Common.ButtonNew buttonNew10;
+        private ACA_Common.ButtonNew buttonNew11;
+        private ACA_Common.ButtonNew buttonNew12;
+        private ACA_Common.ButtonNew buttonNew13;
+        private ACA_Common.ButtonNew buttonNew14;
+        private ACA_Common.ButtonNew buttonNew15;
+        private ACA_Common.ButtonNew buttonNew16;
+        private ACA_Common.ButtonNew buttonNew17;
+        private ACA_Common.ButtonNew buttonNew18;
+        private System.Windows.Forms.Button BtnBack;
+        private System.Windows.Forms.Button BtnDown;
+    }
+}

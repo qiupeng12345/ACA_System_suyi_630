@@ -1,0 +1,324 @@
+﻿namespace Aca_System_WholeTest
+{
+    partial class FrmParameter
+    {
+        /// <summary>
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows 窗体设计器生成的代码
+
+        /// <summary>
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.GbxParameter = new System.Windows.Forms.GroupBox();
+            this.ChkLosePhase = new System.Windows.Forms.CheckBox();
+            this.TxtLowVoltage = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TxtUnderVoltage = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtOverVoltage = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtTimeQuick = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtCurrentQuick = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtTimeSlow = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtCurrentSlowEnd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtCurrentSlowStart = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtTimeNoAction = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtCurrentNoAction = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnOk = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.GbxParameter.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // GbxParameter
+            // 
+            this.GbxParameter.Controls.Add(this.ChkLosePhase);
+            this.GbxParameter.Controls.Add(this.TxtLowVoltage);
+            this.GbxParameter.Controls.Add(this.label10);
+            this.GbxParameter.Controls.Add(this.TxtUnderVoltage);
+            this.GbxParameter.Controls.Add(this.label9);
+            this.GbxParameter.Controls.Add(this.TxtOverVoltage);
+            this.GbxParameter.Controls.Add(this.label8);
+            this.GbxParameter.Controls.Add(this.TxtTimeQuick);
+            this.GbxParameter.Controls.Add(this.label7);
+            this.GbxParameter.Controls.Add(this.TxtCurrentQuick);
+            this.GbxParameter.Controls.Add(this.label6);
+            this.GbxParameter.Controls.Add(this.TxtTimeSlow);
+            this.GbxParameter.Controls.Add(this.label5);
+            this.GbxParameter.Controls.Add(this.TxtCurrentSlowEnd);
+            this.GbxParameter.Controls.Add(this.label4);
+            this.GbxParameter.Controls.Add(this.TxtCurrentSlowStart);
+            this.GbxParameter.Controls.Add(this.label3);
+            this.GbxParameter.Controls.Add(this.TxtTimeNoAction);
+            this.GbxParameter.Controls.Add(this.label2);
+            this.GbxParameter.Controls.Add(this.TxtCurrentNoAction);
+            this.GbxParameter.Controls.Add(this.label1);
+            this.GbxParameter.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxParameter.Location = new System.Drawing.Point(12, 12);
+            this.GbxParameter.Name = "GbxParameter";
+            this.GbxParameter.Size = new System.Drawing.Size(991, 496);
+            this.GbxParameter.TabIndex = 0;
+            this.GbxParameter.TabStop = false;
+            this.GbxParameter.Text = "参数设置";
+            // 
+            // ChkLosePhase
+            // 
+            this.ChkLosePhase.AutoSize = true;
+            this.ChkLosePhase.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkLosePhase.Location = new System.Drawing.Point(36, 417);
+            this.ChkLosePhase.Name = "ChkLosePhase";
+            this.ChkLosePhase.Size = new System.Drawing.Size(174, 32);
+            this.ChkLosePhase.TabIndex = 20;
+            this.ChkLosePhase.Text = "缺零相检测";
+            this.ChkLosePhase.UseVisualStyleBackColor = true;
+            // 
+            // TxtLowVoltage
+            // 
+            this.TxtLowVoltage.Location = new System.Drawing.Point(729, 354);
+            this.TxtLowVoltage.Name = "TxtLowVoltage";
+            this.TxtLowVoltage.Size = new System.Drawing.Size(202, 34);
+            this.TxtLowVoltage.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(497, 357);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(226, 24);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "低压合闸电压设定值";
+            // 
+            // TxtUnderVoltage
+            // 
+            this.TxtUnderVoltage.Location = new System.Drawing.Point(728, 285);
+            this.TxtUnderVoltage.Name = "TxtUnderVoltage";
+            this.TxtUnderVoltage.Size = new System.Drawing.Size(202, 34);
+            this.TxtUnderVoltage.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(526, 288);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(178, 24);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "欠压电压设定值";
+            // 
+            // TxtOverVoltage
+            // 
+            this.TxtOverVoltage.Location = new System.Drawing.Point(728, 214);
+            this.TxtOverVoltage.Name = "TxtOverVoltage";
+            this.TxtOverVoltage.Size = new System.Drawing.Size(202, 34);
+            this.TxtOverVoltage.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(526, 217);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 24);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "过压电压设定值";
+            // 
+            // TxtTimeQuick
+            // 
+            this.TxtTimeQuick.Location = new System.Drawing.Point(728, 144);
+            this.TxtTimeQuick.Name = "TxtTimeQuick";
+            this.TxtTimeQuick.Size = new System.Drawing.Size(202, 34);
+            this.TxtTimeQuick.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(526, 147);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(178, 24);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "快启动持续时间";
+            // 
+            // TxtCurrentQuick
+            // 
+            this.TxtCurrentQuick.Location = new System.Drawing.Point(728, 68);
+            this.TxtCurrentQuick.Name = "TxtCurrentQuick";
+            this.TxtCurrentQuick.Size = new System.Drawing.Size(202, 34);
+            this.TxtCurrentQuick.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(526, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(178, 24);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "快启动设定电流";
+            // 
+            // TxtTimeSlow
+            // 
+            this.TxtTimeSlow.Location = new System.Drawing.Point(216, 354);
+            this.TxtTimeSlow.Name = "TxtTimeSlow";
+            this.TxtTimeSlow.Size = new System.Drawing.Size(215, 34);
+            this.TxtTimeSlow.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 357);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 24);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "慢启动持续时间";
+            // 
+            // TxtCurrentSlowEnd
+            // 
+            this.TxtCurrentSlowEnd.Location = new System.Drawing.Point(216, 285);
+            this.TxtCurrentSlowEnd.Name = "TxtCurrentSlowEnd";
+            this.TxtCurrentSlowEnd.Size = new System.Drawing.Size(215, 34);
+            this.TxtCurrentSlowEnd.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 288);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(178, 24);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "慢启动终止电流";
+            // 
+            // TxtCurrentSlowStart
+            // 
+            this.TxtCurrentSlowStart.Location = new System.Drawing.Point(216, 214);
+            this.TxtCurrentSlowStart.Name = "TxtCurrentSlowStart";
+            this.TxtCurrentSlowStart.Size = new System.Drawing.Size(215, 34);
+            this.TxtCurrentSlowStart.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 217);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(178, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "慢启动起始电流";
+            // 
+            // TxtTimeNoAction
+            // 
+            this.TxtTimeNoAction.Location = new System.Drawing.Point(216, 144);
+            this.TxtTimeNoAction.Name = "TxtTimeNoAction";
+            this.TxtTimeNoAction.Size = new System.Drawing.Size(215, 34);
+            this.TxtTimeNoAction.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "极限不驱动时间";
+            // 
+            // TxtCurrentNoAction
+            // 
+            this.TxtCurrentNoAction.Location = new System.Drawing.Point(216, 71);
+            this.TxtCurrentNoAction.Name = "TxtCurrentNoAction";
+            this.TxtCurrentNoAction.Size = new System.Drawing.Size(215, 34);
+            this.TxtCurrentNoAction.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "极限不驱动电流";
+            // 
+            // BtnOk
+            // 
+            this.BtnOk.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnOk.Location = new System.Drawing.Point(200, 565);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Size = new System.Drawing.Size(174, 84);
+            this.BtnOk.TabIndex = 1;
+            this.BtnOk.Text = "确认 <<";
+            this.BtnOk.UseVisualStyleBackColor = true;
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnCancel.Location = new System.Drawing.Point(629, 565);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(174, 84);
+            this.BtnCancel.TabIndex = 2;
+            this.BtnCancel.Text = "取消 <<";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            // 
+            // FrmParameter
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnOk);
+            this.Controls.Add(this.GbxParameter);
+            this.Name = "FrmParameter";
+            this.Text = "参数设置";
+            this.GbxParameter.ResumeLayout(false);
+            this.GbxParameter.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox GbxParameter;
+        private System.Windows.Forms.CheckBox ChkLosePhase;
+        private System.Windows.Forms.TextBox TxtLowVoltage;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TxtUnderVoltage;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TxtOverVoltage;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TxtTimeQuick;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TxtCurrentQuick;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtTimeSlow;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtCurrentSlowEnd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtCurrentSlowStart;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtTimeNoAction;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtCurrentNoAction;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnOk;
+        private System.Windows.Forms.Button BtnCancel;
+    }
+}
+

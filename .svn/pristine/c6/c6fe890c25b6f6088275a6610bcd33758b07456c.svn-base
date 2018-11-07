@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ApplicationName" value="苏益自动校对测试单元"/>
+    <!--开发商名称-->
+    <add key="Manufacturer" value="无锡先驱自动化科技有限公司"/>
+    <add key="CurrentProofNum" value="3"/>
+    <add key="VoltageProofNum" value="3"/>
+    <add key="ResidualCurrentProofNum" value="3"/>
+    <add key="PresetCurrent1" value="0"/>
+    <add key="PresetCurrent2" value="0"/>
+    <add key="PresetCurrent3" value="0"/>
+    <add key="PresetCurrent4" value="0"/>
+    <add key="PresetCurrent5" value="0"/>
+    <add key="PresetVoltage1" value="0"/>
+    <add key="PresetVoltage2" value="0"/>
+    <add key="PresetVoltage3" value="0"/>
+    <add key="PresetVoltage4" value="0"/>
+    <add key="PresetVoltage5" value="0"/>
+    <add key="PresetResidualCurrent1" value="0"/>
+    <add key="PresetResidualCurrent2" value="0"/>
+    <add key="PresetResidualCurrent3" value="0"/>
+    <add key="PresetResidualCurrent4" value="0"/>
+    <add key="PresetResidualCurrent5" value="0"/>
+    <add key="CurrentErrorRange" value="0"/>
+    <add key="VoltageErrorRange" value="0"/>
+    <add key="ResidualCurrentErrorRange" value="0"/>
+  </appSettings>
+</configuration>

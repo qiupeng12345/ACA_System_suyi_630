@@ -1,0 +1,1589 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+using System.Threading;
+
+namespace ACA_Common.Class
+{
+    public class ProofTest
+    {
+        private int CmdId;
+        private SuyiMCCB suyi;
+        private bool autoWork;
+        private const int auto = 1;
+        private const int semiAuto = 2;
+        private const int stop = 3;
+        public const int cmdCurrentStart = 1;
+        public const int cmdCurrentCommunicationTest = 2;
+        public const int cmdJudgeSwitchStateCurrent1 = 3;
+        public const int cmdJudgeSwitchStateCurrent2 = 4;
+        public const int cmdJudgeSwitchStateCurrent3 = 5;
+        public const int cmdCurrentCloseSwitch = 6;
+        public const int cmdEnterCurrentProof = 7;
+        public const int cmdCurrentOutput1 = 8;
+        public const int cmdCurrentProof1Ready = 9;
+        public const int cmdCurrentProof1Start = 10;
+        public const int cmdCurrentOutput2 = 11;
+        public const int cmdCurrentProof2Ready = 12;
+        public const int cmdCurrentProof2Start = 13;
+        public const int cmdCurrentOutput3 = 14;
+        public const int cmdCurrentProof3Ready = 15;
+        public const int cmdCurrentProof3Start = 16;
+        public const int cmdCurrentOutput4 = 17;
+        public const int cmdCurrentProof4Ready = 18;
+        public const int cmdCurrentProof4Start = 19;
+        public const int cmdCurrentOutput5 = 20;
+        public const int cmdCurrentProof5Ready = 21;
+        public const int cmdCurrentProof5Start = 22;
+        public const int cmdQuitCurrentProof = 23;
+        public const int cmdCurrentCheckOutput = 24;
+        public const int cmdCurrentProofCheck = 25;
+        public const int cmdCurrentEnd = 26;
+        public const int cmdVoltageStart = 31;
+        public const int cmdVoltageCommunicationTest = 32;
+        public const int cmdJudgeSwitchStateVoltage = 33;
+        public const int cmdEnterVoltageProof = 34;
+        public const int cmdVoltageOutput1 = 35;
+        public const int cmdVoltageProof1Ready = 36;
+        public const int cmdVoltageProof1Start = 37;
+        public const int cmdVoltageOutput2 = 38;
+        public const int cmdVoltageProof2Ready = 39;
+        public const int cmdVoltageProof2Start = 40;
+        public const int cmdVoltageOutput3 = 41;
+        public const int cmdVoltageProof3Ready = 42;
+        public const int cmdVoltageProof3Start = 43;
+        public const int cmdVoltageOutput4 = 44;
+        public const int cmdVoltageProof4Ready = 45;
+        public const int cmdVoltageProof4Start = 46;
+        public const int cmdVoltageOutput5 = 47;
+        public const int cmdVoltageProof5Ready = 48;
+        public const int cmdVoltageProof5Start = 49;
+        public const int cmdQuitVoltageProof = 50;
+        public const int cmdVoltageCheckOutput = 51;
+        public const int cmdVoltageProofCheck = 52;
+        public const int cmdVoltageEnd = 53;
+        public const int cmdResidualCurrentStart = 61;
+        public const int cmdResidualCurrentCommunicationTest = 62;
+        public const int cmdJudgeSwitchStateResidualCurrent = 63;
+        public const int cmdEnterResidualCurrentProof = 64;
+        public const int cmdResidualCurrentOutput1 = 65;
+        public const int cmdResidualCurrentProof1Ready = 66;
+        public const int cmdResidualCurrentProof1Start = 67;
+        public const int cmdResidualCurrentOutput2 = 68;
+        public const int cmdResidualCurrentProof2Ready = 69;
+        public const int cmdResidualCurrentProof2Start = 70;
+        public const int cmdResidualCurrentOutput3 = 71;
+        public const int cmdResidualCurrentProof3Ready = 72;
+        public const int cmdResidualCurrentProof3Start = 73;
+        public const int cmdResidualCurrentOutput4 = 74;
+        public const int cmdResidualCurrentProof4Ready = 75;
+        public const int cmdResidualCurrentProof4Start = 76;
+        public const int cmdResidualCurrentOutput5 = 77;
+        public const int cmdResidualCurrentProof5Ready = 78;
+        public const int cmdResidualCurrentProof5Start = 79;
+        public const int cmdQuitResidualCurrentProof = 80;
+        public const int cmdResidualCurrentCheckOutput = 81;
+        public const int cmdResidualCurrentProofCheck = 82;
+        public const int cmdResidualCurrentEnd = 83;
+        public const int ngReset = 0;
+        public const int ngCommunication = 1;
+        public const int ngCloseSwitch = 2;
+        public const int ngEnterProof = 3;
+        public const int ngProofFail = 4;
+        public const int ngCheckFail = 5;
+
+
+        public SuyiMCCB Suyi { get => suyi; set => suyi = value; }
+        public bool AutoWork { get => autoWork; set => autoWork = value; }
+
+        public void AutoTest()
+        {
+            int proofErro = 0;
+            //将校对次数和预设值写给plc
+            SetCmdCode(cmdCurrentStart);//告诉PLC开始进行测试
+            while (AutoWork)//当前为自动工作状态
+            {
+                CmdId = GetCmdCode();  //从plc中获取命令
+                switch (CmdId)
+                {
+                    case cmdCurrentStart:    //开始测试环节
+                        proofErro = 0;
+                        break;
+
+                    case cmdCurrentCommunicationTest:
+                        if (suyi.CommunicationTest()) //通信测试环节
+                        {
+                            SetCmdCode(cmdJudgeSwitchStateCurrent1);
+                        }
+                        else
+                        {
+                            CurrentSetResult(ngCommunication);
+                            
+                        }
+                        break;
+                    case cmdJudgeSwitchStateCurrent1:
+                        ///判断是否为分闸，由下位机开始做
+                        break;
+                    case cmdCurrentCloseSwitch:
+                        if (suyi.CloseSwitch())
+                        {
+                            SetCmdCode(cmdJudgeSwitchStateCurrent2);
+                        }
+                        else
+                        {
+                            CurrentSetResult(ngCloseSwitch);
+                        }
+                            //for (int i = 0; i < 30; i++)
+                            //{
+                            //    if (suyi.CloseSwitch())
+                            //    {
+                            //        if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                            //        {
+                            //            SetCmdCode(cmdEnterCurrentProof);
+                            //            closeSwitchErro = 0;
+                            //            break;
+                            //        }
+                            //        else closeSwitchErro++;
+                            //        if (closeSwitchErro == 30) //如果合闸失败次数达到30次
+                            //        {
+                            //            CurrentSetResult(ngCloseSwitch);//告诉plc NG
+                            //            
+                            //        }
+                            //        Thread.Sleep(2000);
+                            //    }
+                            //}
+                        break;
+                    case cmdJudgeSwitchStateCurrent2: //判断产品合闸信号
+                        if (suyi.ReadSwitchState() == 1)//合闸状态
+                        {
+                            SetCmdCode(cmdJudgeSwitchStateCurrent3); //告诉plc输出判定开合闸状态
+                        }
+                        else CurrentSetResult(ngCloseSwitch);
+                        break;
+                    case cmdJudgeSwitchStateCurrent3:
+                        //plc进行合闸判断
+                        break;
+                    case cmdEnterCurrentProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.EnterCurrentDebuggingMode))//进入调试模式成功
+                        {
+                            ///给plc里写设定的输出值
+                            WriteMemory(MemoryAddress.CurrentProofNum, Global.currentProofNum);
+                            WriteMemory(MemoryAddress.Preset1CurrentValue, Global.presetCurrentValue1);
+                            WriteMemory(MemoryAddress.Preset2CurrentValue, Global.presetCurrentValue2);
+                            WriteMemory(MemoryAddress.Preset3CurrentValue, Global.presetCurrentValue3);
+                            WriteMemory(MemoryAddress.Preset4CurrentValue, Global.presetCurrentValue4);
+                            WriteMemory(MemoryAddress.Preset5CurrentValue, Global.presetCurrentValue5);
+                            if (Global.doCurrent1)
+                            {
+                                SetCmdCode(cmdCurrentOutput1);  //输出预设值1
+                            }
+                            else if (Global.doCurrent2)
+                            {
+                                SetCmdCode(cmdCurrentOutput2);  //输出预设值2
+                            }
+                            else if (Global.doCurrent3)
+                            {
+                                SetCmdCode(cmdCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doCurrent4)
+                            {
+                                SetCmdCode(cmdCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doCurrent5)
+                            {
+                                SetCmdCode(cmdCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitCurrentProof);
+                        }
+                        else
+                        {
+                            CurrentSetResult(ngEnterProof);
+                            
+                        }
+                        break;
+                    case cmdCurrentOutput1:
+                        //plc输出预设电流1
+                        break;
+                    case cmdCurrentProof1Ready:
+                        //plc输出预设电流1 记录输出值和产品校对前值
+                        int readCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if (readCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.CurrentProof1Record1, readCurrent); //记录校验前的值
+                            SetCmdCode(cmdCurrentProof1Start);
+                        }
+                        break;
+                    ////////////////////////
+                    case cmdCurrentProof1Start:    //校验1环节
+
+                        int proofCurrentValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading1);
+                        WriteMemory(MemoryAddress.CurrentProof1Record2, proofCurrentValue1);//记录校验后的电流值
+                        if ((proofCurrentValue1 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue1) && (proofCurrentValue1 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue1)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.doCurrent2)
+                            {
+                                SetCmdCode(cmdCurrentOutput2);//通知plc输出预设电流2
+                            }
+                            else if (Global.doCurrent3)
+                            {
+                                SetCmdCode(cmdCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doCurrent4)
+                            {
+                                SetCmdCode(cmdCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doCurrent5)
+                            {
+                                SetCmdCode(cmdCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitCurrentProof);
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                CurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdCurrentOutput2:
+                        //plc输出预设电流2
+
+                        break;
+                    case cmdCurrentProof2Ready:
+                         readCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if (readCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.CurrentProof2Record1, readCurrent); //记录校验前的值
+                            SetCmdCode(cmdCurrentProof2Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////////
+                    case cmdCurrentProof2Start:  //校验2环节
+                        int proofCurrentValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading2);
+                        WriteMemory(MemoryAddress.CurrentProof2Record2, proofCurrentValue2);//记录校验后的电流值
+                        if ((proofCurrentValue2 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue2) && (proofCurrentValue2 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue2)) //反馈的值在误差范围内
+                        {
+                            if (Global.doCurrent3)
+                            {
+                                SetCmdCode(cmdCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doCurrent4)
+                            {
+                                SetCmdCode(cmdCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doCurrent5)
+                            {
+                                SetCmdCode(cmdCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitCurrentProof);
+                        }
+                        else
+                        {
+                            //SetCmdCode(cmdCurrentOutput1);
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                CurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdCurrentOutput3:
+                        //plc输出预设电流3
+                        break;
+                    case cmdCurrentProof3Ready:
+                        readCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if (readCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.CurrentProof3Record1, readCurrent); //记录校验前的值
+                            SetCmdCode(cmdCurrentProof1Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////////////////////////////
+                    case cmdCurrentProof3Start:  //校验3环节
+                        int proofCurrentValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading3);
+                        WriteMemory(MemoryAddress.CurrentProof3Record2, proofCurrentValue3);
+                        if ((proofCurrentValue3 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue3) && (proofCurrentValue3 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue3)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.currentProofNum > 3)  //如果校验档位大于3
+                            {
+                                if (Global.doCurrent4)
+                                {
+                                    SetCmdCode(cmdCurrentOutput4);  //输出预设值4
+                                }
+                                else if (Global.currentProofNum == 5 && Global.doCurrent5)
+                                {
+                                    SetCmdCode(cmdCurrentOutput5);  //输出预设值5
+                                }
+                                else SetCmdCode(cmdQuitCurrentProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                CurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdCurrentOutput4:
+                        //plc输出预设电流4
+                        break;
+                    case cmdCurrentProof4Ready:
+                        readCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if (readCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.CurrentProof4Record1, readCurrent); //记录校验前的值
+                            SetCmdCode(cmdCurrentProof4Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////
+                    case cmdCurrentProof4Start:  //校验4环节
+                        int proofCurrentValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading4);
+                        WriteMemory(MemoryAddress.CurrentProof4Record2, proofCurrentValue4);//记录校验后的值
+                        if ((proofCurrentValue4 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue4) && (proofCurrentValue4 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue4)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.currentProofNum > 4)  //如果校验档位大于4
+                            {
+                                if (Global.doCurrent5)
+                                {
+                                    SetCmdCode(cmdCurrentOutput5);//通知plc输出预设电流5
+                                }
+                                else SetCmdCode(cmdQuitCurrentProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                CurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdCurrentOutput5:
+                        //plc输出预设电流5
+                        break;
+                    case cmdCurrentProof5Ready:  //该命令由plc记录输出值之后给出
+                        readCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if (readCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.CurrentProof5Record1, readCurrent); //记录校验前的值
+                            SetCmdCode(cmdCurrentProof5Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////
+                    case cmdCurrentProof5Start:  //校验5环节
+                        int proofCurrentValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading5);
+                        WriteMemory(MemoryAddress.CurrentProof5Record2, proofCurrentValue5);//记录校验后的值
+                        if ((proofCurrentValue5 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue5) && (proofCurrentValue5 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue5)) //反馈的值在误差范围内
+                        {
+                            if (Global.currentProofNum == 5)  //如果校验档位等于5
+                            {
+                                SetCmdCode(cmdQuitCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                CurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdQuitCurrentProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitCurrentDebuggingMode))//退出电流校对模式
+                        {
+
+                            SetCmdCode(cmdCurrentCheckOutput);
+                        }
+                        break;
+                    case cmdCurrentCheckOutput:
+                        //plc输出设定的检验电流
+                        break;
+                    case cmdCurrentProofCheck:
+                        int CurrentTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                        if ((CurrentTestValue >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue3) && (CurrentTestValue <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue3)) //判断是否在误差范围内
+                        {
+                            //记录校验成功检验时断路器反馈的值
+                            WriteMemory(MemoryAddress.CurrentCheckValue, CurrentTestValue);
+                            SetCmdCode(cmdCurrentEnd); //调试完成
+                        }
+                        else
+                        {
+                            //不在误差范围内
+                            CurrentSetResult(ngProofFail);
+                        }
+                        break;
+
+                    case cmdCurrentEnd:  //电流校对测试结束
+                        //告诉plc校验成功，并且记录输出的检测值
+                        proofErro = 0;
+                        break;
+                    case cmdVoltageStart:    //开始测试环节
+                        proofErro = 0;
+                        break;
+
+                    case cmdVoltageCommunicationTest:
+                        if (suyi.CommunicationTest()) //通信测试环节
+                        {
+                            SetCmdCode(cmdJudgeSwitchStateVoltage);
+                        }
+                        else
+                        {
+                            VoltageSetResult(ngCommunication);
+                            
+                        }
+                        break;
+                    case cmdJudgeSwitchStateVoltage:
+                        //plc检测是否分合闸
+                        break;
+                    case cmdEnterVoltageProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.EnterVoltageDebuggingMode))//进入电压调试模式成功
+                        {
+                            ///给plc里写设定的输出值
+                            WriteMemory(MemoryAddress.VoltageProofNum, Global.voltageProofNum);
+                            WriteMemory(MemoryAddress.Preset1VoltageValue, Global.presetVoltageValue1);
+                            WriteMemory(MemoryAddress.Preset2VoltageValue, Global.presetVoltageValue2);
+                            WriteMemory(MemoryAddress.Preset3VoltageValue, Global.presetVoltageValue3);
+                            WriteMemory(MemoryAddress.Preset4VoltageValue, Global.presetVoltageValue4);
+                            WriteMemory(MemoryAddress.Preset5VoltageValue, Global.presetVoltageValue5);
+                            if (Global.doVoltage1)
+                            {
+                                SetCmdCode(cmdVoltageOutput1);  //输出预设值1
+                            }
+                            else if (Global.doVoltage2)
+                            {
+                                SetCmdCode(cmdVoltageOutput2);  //输出预设值2
+                            }
+                            else if (Global.doVoltage3)
+                            {
+                                SetCmdCode(cmdVoltageOutput3);  //输出预设值3
+                            }
+                            else if (Global.doVoltage4)
+                            {
+                                SetCmdCode(cmdVoltageOutput4);  //输出预设值4
+                            }
+                            else if (Global.doVoltage5)
+                            {
+                                SetCmdCode(cmdVoltageOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitVoltageProof);
+                        }
+                        else
+                        {
+                            VoltageSetResult(ngEnterProof);
+                            
+                        }
+                        break;
+                    case cmdVoltageOutput1:
+                        //plc输出预设电压1
+                    case cmdVoltageProof1Ready:
+                        //plc输出预设电压1 记录输出值(plc给出信号)
+                        //记录产品校对前值
+                        int readVoltage = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if (readVoltage != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof1Record1, readVoltage); //记录校验前的值
+                            SetCmdCode(cmdVoltageProof1Start);
+                        }
+                        break;
+                    ////////////////////////
+                    case cmdVoltageProof1Start:    //校验1环节
+
+                        int proofVoltageValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading1);
+                        WriteMemory(MemoryAddress.VoltageProof1Record2, proofVoltageValue1);
+                        if ((proofVoltageValue1 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue1) && (proofVoltageValue1 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue1)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.doVoltage2)
+                            {
+                                SetCmdCode(cmdVoltageOutput2);//通知plc输出预设电流2
+                            }
+                            else if (Global.doVoltage3)
+                            {
+                                SetCmdCode(cmdVoltageOutput3);  //输出预设值3
+                            }
+                            else if (Global.doVoltage4)
+                            {
+                                SetCmdCode(cmdVoltageOutput4);  //输出预设值4
+                            }
+                            else if (Global.doVoltage5)
+                            {
+                                SetCmdCode(cmdVoltageOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitVoltageProof);
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                VoltageSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdVoltageOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdVoltageOutput2:
+                       //输出预设电压2
+                        break;
+                    case cmdVoltageProof2Ready:
+                        readVoltage = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if (readVoltage != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof2Record1, readVoltage); //记录校验前的值
+                            SetCmdCode(cmdVoltageProof2Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////////
+                    case cmdVoltageProof2Start:  //校验2环节
+                        int proofVoltageValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading2);
+                        WriteMemory(MemoryAddress.VoltageProof2Record2, proofVoltageValue2); //记录校验后的值
+                        if ((proofVoltageValue2 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue2) && (proofVoltageValue2 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue2)) //反馈的值在误差范围内
+                        {
+                           
+                            if (Global.doVoltage3)
+                            {
+                                SetCmdCode(cmdVoltageOutput3);  //输出预设值3
+                            }
+                            else if (Global.doVoltage4)
+                            {
+                                SetCmdCode(cmdVoltageOutput4);  //输出预设值4
+                            }
+                            else if (Global.doVoltage5)
+                            {
+                                SetCmdCode(cmdVoltageOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitVoltageProof);
+                        }
+                        else
+                        {
+                            //SetCmdCode(cmdVoltageOutput1);
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                VoltageSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdVoltageOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdVoltageOutput3:
+                        //输出预设电压3
+                        break;
+                    case cmdVoltageProof3Ready:
+                        readVoltage = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if (readVoltage != -1) //获取当前电压值
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof3Record1, readVoltage); //记录校验前的值
+                            SetCmdCode(cmdVoltageProof3Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////////////////////////////
+                    case cmdVoltageProof3Start:  //校验3环节
+                        int proofVoltageValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading3);
+                        WriteMemory(MemoryAddress.VoltageProof3Record2, proofVoltageValue3);
+                        if ((proofVoltageValue3 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue3) && (proofVoltageValue3 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue3)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.voltageProofNum > 3)  //如果校验档位大于3
+                            {
+                                if (Global.doVoltage4)
+                                {
+                                    SetCmdCode(cmdVoltageOutput4);  //输出预设值4
+                                }
+                                else if (Global.voltageProofNum == 5 && Global.doVoltage5)
+                                {
+                                    SetCmdCode(cmdVoltageOutput5);  //输出预设值5
+                                }
+                                else SetCmdCode(cmdQuitVoltageProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitVoltageProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                VoltageSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdVoltageOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdVoltageOutput4:
+                        //输出预设电压4
+                        break;
+                    case cmdVoltageProof4Ready:
+                        readVoltage = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if (readVoltage != -1) //获取当前电压值
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof4Record1, readVoltage); //记录校验前的值
+                            SetCmdCode(cmdVoltageProof4Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////
+                    case cmdVoltageProof4Start:  //校验4环节
+                        int proofVoltageValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading4);
+                        WriteMemory(MemoryAddress.VoltageProof4Record2, proofVoltageValue4);
+                        if ((proofVoltageValue4 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue4) && (proofVoltageValue4 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue4)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.voltageProofNum > 4)  //如果校验档位大于4
+                            {
+                                if (Global.doVoltage5)
+                                {
+                                    SetCmdCode(cmdVoltageOutput5);//通知plc输出预设电压5
+                                }
+                                else SetCmdCode(cmdQuitVoltageProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitVoltageProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                VoltageSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdVoltageOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdVoltageOutput5:
+                        //输出预设电压5
+
+                        break;
+                    case cmdVoltageProof5Ready:
+                        readVoltage = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if (readVoltage != -1) //获取当前电压值
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof5Record1, readVoltage); //记录校验前的值
+                            SetCmdCode(cmdVoltageProof5Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////
+                    case cmdVoltageProof5Start:  //校验5环节
+                        int proofVoltageValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading5);
+                        if ((proofVoltageValue5 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue5) && (proofVoltageValue5 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue5)) //反馈的值在误差范围内
+                        {
+                            WriteMemory(MemoryAddress.VoltageProof5Record2, proofVoltageValue5); //记录校验后的值
+                            if (Global.voltageProofNum == 5)  //如果校验档位等于5
+                            {
+                                SetCmdCode(cmdQuitVoltageProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                VoltageSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdVoltageOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdQuitVoltageProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitVoltageDebuggingMode))//退出电压校对模式
+                        {
+                            SetCmdCode(cmdVoltageCheckOutput);
+                        }
+                        break;
+                    case cmdVoltageCheckOutput:
+                        //输出校验检验电压
+                        break;
+                    case cmdVoltageProofCheck:
+                        int VoltageTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                        if ((VoltageTestValue >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue3) && (VoltageTestValue <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue3)) //判断是否在误差范围内
+                        {
+                            //记录校验成功检验时断路器反馈的值
+                            WriteMemory(MemoryAddress.VoltageCheckValue, VoltageTestValue);
+                            SetCmdCode(cmdVoltageEnd); //调试完成
+                        }
+                        else
+                        {
+                            //不在误差范围内
+                            VoltageSetResult(ngProofFail);
+                        }
+                        break;
+
+                    case cmdVoltageEnd:  //电压校对测试结束
+                        proofErro = 0;
+                        break;
+                    case cmdResidualCurrentStart:    //开始测试环节
+                        proofErro = 0;
+                        break;
+
+                    case cmdResidualCurrentCommunicationTest:
+                        if (suyi.CommunicationTest()) //通信测试环节
+                        {
+                            SetCmdCode(cmdJudgeSwitchStateResidualCurrent);
+                        }
+                        else
+                        {
+                            ResidualCurrentSetResult(ngCommunication);
+                            
+                        }
+                        break;
+                    case cmdJudgeSwitchStateResidualCurrent:
+                        //plc输出判断分合闸状态
+                        break;
+                    case cmdEnterResidualCurrentProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.EnterResidualCurrentDebuggingMode))//进入调试模式成功
+                        {
+                            ///给plc里写设定的输出值
+                            WriteMemory(MemoryAddress.ResidualCurrentProofNum, Global.currentProofNum);
+                            WriteMemory(MemoryAddress.Preset1ResidualCurrentValue, Global.presetResidualCurrentValue1);
+                            WriteMemory(MemoryAddress.Preset2ResidualCurrentValue, Global.presetResidualCurrentValue2);
+                            WriteMemory(MemoryAddress.Preset3ResidualCurrentValue, Global.presetResidualCurrentValue3);
+                            WriteMemory(MemoryAddress.Preset4ResidualCurrentValue, Global.presetResidualCurrentValue4);
+                            WriteMemory(MemoryAddress.Preset5ResidualCurrentValue, Global.presetResidualCurrentValue5);
+                            if (Global.doResidualCurrent1)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput1);  //输出预设值1
+                            }
+                            else if (Global.doResidualCurrent2)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput2);  //输出预设值2
+                            }
+                            else if (Global.doResidualCurrent3)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doResidualCurrent4)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doResidualCurrent5)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitResidualCurrentProof);
+                        }
+                        else
+                        {
+                            ResidualCurrentSetResult(ngEnterProof);
+                            
+                        }
+                        break;
+                    case cmdResidualCurrentOutput1:
+                        //输出预设剩余电流1
+                        break;
+
+                    case cmdResidualCurrentProof1Ready:
+                        //plc输出预设剩余电流1 记录输出值和产品校对前值
+                        int readResidualCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if (readResidualCurrent != -1) //获取当前剩余电流值
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof1Record1, readResidualCurrent); //记录校验前的值
+                            SetCmdCode(cmdResidualCurrentProof1Start);
+                        }
+                        break;
+                    ////////////////////////
+                    case cmdResidualCurrentProof1Start:    //校验1环节开始
+
+                        int proofResidualCurrentValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading1);
+                        WriteMemory(MemoryAddress.ResidualCurrentProof1Record2, proofResidualCurrentValue1);
+                        if ((proofResidualCurrentValue1 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue1) && (proofResidualCurrentValue1 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue1)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.doResidualCurrent2)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput2);//通知plc输出预设剩余电流2
+                            }
+                            else if (Global.doResidualCurrent3)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doResidualCurrent4)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doResidualCurrent5)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitResidualCurrentProof);
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                ResidualCurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdResidualCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+
+                    case cmdResidualCurrentOutput2:
+                        //输出剩余电流2
+                        break;
+
+                    case cmdResidualCurrentProof2Ready:
+                        readResidualCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if (readResidualCurrent != -1) //获取当前剩余电流值
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof2Record1, readResidualCurrent); //记录校验前的值
+                            SetCmdCode(cmdResidualCurrentProof2Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////////
+                    case cmdResidualCurrentProof2Start:  //校验2环节
+                        int proofResidualCurrentValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading2);
+                        WriteMemory(MemoryAddress.ResidualCurrentProof2Record2, proofResidualCurrentValue2);
+                        if ((proofResidualCurrentValue2 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue2) && (proofResidualCurrentValue2 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue2)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.doResidualCurrent3)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput3);  //输出预设值3
+                            }
+                            else if (Global.doResidualCurrent4)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput4);  //输出预设值4
+                            }
+                            else if (Global.doResidualCurrent5)
+                            {
+                                SetCmdCode(cmdResidualCurrentOutput5);  //输出预设值1
+                            }
+                            else SetCmdCode(cmdQuitResidualCurrentProof);
+                        }
+                        else
+                        {
+                            //SetCmdCode(cmdResidualCurrentOutput1);
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                ResidualCurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdResidualCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdResidualCurrentOutput3:
+                        //输出预设剩余电流3
+                        //plc要记录输出值
+                        break;
+                    case cmdResidualCurrentProof3Ready:
+                        readResidualCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if (readResidualCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof3Record1, readResidualCurrent); //记录校验前的值
+                            SetCmdCode(cmdResidualCurrentProof3Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////////////////////////////
+                    case cmdResidualCurrentProof3Start:  //校验3环节
+                        int proofResidualCurrentValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading3);
+                        WriteMemory(MemoryAddress.ResidualCurrentProof3Record2, proofResidualCurrentValue3);
+                        if ((proofResidualCurrentValue3 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3) && (proofResidualCurrentValue3 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.currentProofNum > 3)  //如果校验档位大于3
+                            {
+                                if (Global.doResidualCurrent4)
+                                {
+                                    SetCmdCode(cmdResidualCurrentOutput4);  //输出预设值4
+                                }
+                                else if (Global.currentProofNum == 5 && Global.doResidualCurrent5)
+                                {
+                                    SetCmdCode(cmdResidualCurrentOutput5);  //输出预设值5
+                                }
+                                else SetCmdCode(cmdQuitResidualCurrentProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitResidualCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                ResidualCurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdResidualCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdResidualCurrentOutput4:
+                        //输出预设剩余电流4
+                        break;
+                    case cmdResidualCurrentProof4Ready:
+                        readResidualCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if (readResidualCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof4Record1, readResidualCurrent); //记录校验前的值
+                            SetCmdCode(cmdResidualCurrentProof4Start);
+                        }
+                        break;
+                    //////////////////////////////////////////////////////
+                    case cmdResidualCurrentProof4Start:  //校验4环节
+                        int proofResidualCurrentValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading4);
+                        WriteMemory(MemoryAddress.ResidualCurrentProof4Record2, proofResidualCurrentValue4);
+                        if ((proofResidualCurrentValue4 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue4) && (proofResidualCurrentValue4 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue4)) //反馈的值在误差范围内
+                        {
+                            
+                            if (Global.currentProofNum > 4)  //如果校验档位大于4
+                            {
+                                if (Global.doResidualCurrent5)
+                                {
+                                    SetCmdCode(cmdResidualCurrentOutput5);//通知plc输出预设电流5
+                                }
+                                else SetCmdCode(cmdQuitResidualCurrentProof);
+                            }
+                            else
+                            {
+                                SetCmdCode(cmdQuitResidualCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                ResidualCurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdResidualCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdResidualCurrentOutput5:
+                        //输出预设剩余电流5
+                        break;
+                    case cmdResidualCurrentProof5Ready:
+                        readResidualCurrent = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if (readResidualCurrent != -1) //获取当前电流值
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof5Record1, readResidualCurrent); //记录校验前的值
+                            SetCmdCode(cmdResidualCurrentProof5Start);
+                        }
+                        break;
+                    /////////////////////////////////////////////////////////
+                    case cmdResidualCurrentProof5Start:  //校验5环节
+                        int proofResidualCurrentValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading5);
+                        if ((proofResidualCurrentValue5 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue5) && (proofResidualCurrentValue5 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue5)) //反馈的值在误差范围内
+                        {
+                            WriteMemory(MemoryAddress.ResidualCurrentProof5Record2, proofResidualCurrentValue5);
+                            if (Global.currentProofNum == 5)  //如果校验档位等于5
+                            {
+                                SetCmdCode(cmdQuitResidualCurrentProof);
+                            }
+                        }
+                        else
+                        {
+                            proofErro++;
+                            if (proofErro > 3)
+                            {
+                                ResidualCurrentSetResult(ngProofFail);
+                                
+                            }
+                            else SetCmdCode(cmdResidualCurrentOutput1);//从校对1重新开始做
+                        }
+                        break;
+                    case cmdQuitResidualCurrentProof:
+                        if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitResidualCurrentDebuggingMode))//退出电流校对模式
+                        {
+                            SetCmdCode(cmdResidualCurrentCheckOutput);
+                        }
+                        break;
+                    case cmdResidualCurrentCheckOutput:
+                        break;
+                    case cmdResidualCurrentProofCheck:
+                        int ResidualCurrentTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                        if ((ResidualCurrentTestValue >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3) && (ResidualCurrentTestValue <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3)) //判断是否在误差范围内
+                        {
+                            //记录校验成功检验时断路器反馈的值
+                            WriteMemory(MemoryAddress.ResidualCurrentCheckValue, ResidualCurrentTestValue);
+                            SetCmdCode(cmdResidualCurrentEnd); //调试完成
+                        }
+                        else
+                        {
+                            //不在误差范围内
+                            ResidualCurrentSetResult(ngProofFail);
+                        }
+                        break;
+
+                    case cmdResidualCurrentEnd:  //剩余电流校对测试结束
+                        proofErro = 0;
+                        break;
+                }
+            }
+            
+        }
+     /// <summary>
+     /// 开始电流调试
+     /// </summary>
+        public void CurrentProofStart()
+        {
+            suyi.Debugging(SuyiMCCB.DataIdentification.EnterCurrentDebuggingMode);
+            WriteMemory(MemoryAddress.Preset1CurrentValue, Global.presetCurrentValue1);
+            WriteMemory(MemoryAddress.Preset2CurrentValue, Global.presetCurrentValue2);
+            WriteMemory(MemoryAddress.Preset3CurrentValue, Global.presetCurrentValue3);
+            WriteMemory(MemoryAddress.Preset4CurrentValue, Global.presetCurrentValue4);
+            WriteMemory(MemoryAddress.Preset5CurrentValue, Global.presetCurrentValue5);
+        }
+        /// <summary>
+        /// 电流调试1
+        /// </summary>
+        public void CurrentProof1()
+        {
+            int proofCurrentValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading1);
+            if ((proofCurrentValue1 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue1) && (proofCurrentValue1 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue1)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.CurrentProof1Record2, proofCurrentValue1);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电流调试2
+        /// </summary>
+        public void CurrentProof2()
+        {
+            int proofCurrentValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading2);
+            if ((proofCurrentValue2 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue2) && (proofCurrentValue2 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue2)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.CurrentProof2Record2, proofCurrentValue2);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电流调试3
+        /// </summary>
+        public void CurrentProof3()
+        {
+            int proofCurrentValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading3);
+            if ((proofCurrentValue3 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue3) && (proofCurrentValue3 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue3)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.CurrentProof3Record2, proofCurrentValue3);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电流调试4
+        /// </summary>
+        public void CurrentProof4()
+        {
+            int proofCurrentValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading4);
+            if ((proofCurrentValue4 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue4) && (proofCurrentValue4 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue4)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.CurrentProof4Record2, proofCurrentValue4);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电流调试5
+        /// </summary>
+        public void CurrentProof5()
+        {
+            int proofCurrentValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.CurrentProofreading5);
+            if ((proofCurrentValue5 >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue5) && (proofCurrentValue5 <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue5)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.CurrentProof5Record2, proofCurrentValue5);
+            }
+            else
+            {
+                //校对错误的操作
+            }
+        }
+        /// <summary>
+        /// 电流调试结束
+        /// </summary>
+        public void CurrentProofEnd()
+        {
+            if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitCurrentDebuggingMode))//退出电流校对模式
+            {
+                int CurrentTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadCurrent);
+                if ((CurrentTestValue >= (1 - Global.proofCurrentErrorRange) * Global.presetCurrentValue3) && (CurrentTestValue <= (1 + Global.proofCurrentErrorRange) * Global.presetCurrentValue3)) //判断是否在误差范围内
+                {
+                     //校对检验成功
+                }
+                else
+                {
+                    //校对检验失败
+                }
+            }
+        }
+        /// <summary>
+        /// 开始电压调试
+        /// </summary>
+        public void VoltageProofStart()
+        {
+            suyi.Debugging(SuyiMCCB.DataIdentification.EnterVoltageDebuggingMode);
+            WriteMemory(MemoryAddress.Preset1VoltageValue, Global.presetVoltageValue1);
+            WriteMemory(MemoryAddress.Preset2VoltageValue, Global.presetVoltageValue2);
+            WriteMemory(MemoryAddress.Preset3VoltageValue, Global.presetVoltageValue3);
+            WriteMemory(MemoryAddress.Preset4VoltageValue, Global.presetVoltageValue4);
+            WriteMemory(MemoryAddress.Preset5VoltageValue, Global.presetVoltageValue5);
+        }
+        /// <summary>
+        /// 电压调试1
+        /// </summary>
+        public void VoltageProof1()
+        {
+            int proofVoltageValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading1);
+            if ((proofVoltageValue1 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue1) && (proofVoltageValue1 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue1)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.VoltageProof1Record2, proofVoltageValue1);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电压调试2
+        /// </summary>
+        public void VoltageProof2()
+        {
+            int proofVoltageValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading2);
+            if ((proofVoltageValue2 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue2) && (proofVoltageValue2 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue2)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.VoltageProof2Record2, proofVoltageValue2);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电压调试3
+        /// </summary>
+        public void VoltageProof3()
+        {
+            int proofVoltageValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading3);
+            if ((proofVoltageValue3 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue3) && (proofVoltageValue3 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue3)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.VoltageProof3Record2, proofVoltageValue3);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电压调试4
+        /// </summary>
+        public void VoltageProof4()
+        {
+            int proofVoltageValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading4);
+            if ((proofVoltageValue4 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue4) && (proofVoltageValue4 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue4)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.VoltageProof4Record2, proofVoltageValue4);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 电压调试5
+        /// </summary>
+        public void VoltageProof5()
+        {
+            int proofVoltageValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.VoltageProofreading5);
+            if ((proofVoltageValue5 >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue5) && (proofVoltageValue5 <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue5)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.VoltageProof5Record2, proofVoltageValue5);
+            }
+            else
+            {
+
+                //校对错误的操作
+            }
+        }
+        /// <summary>
+        /// 电压调试结束
+        /// </summary>
+        public void VoltageProofEnd()
+        {
+            if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitVoltageDebuggingMode))//退出电流校对模式
+            {
+                int VoltageTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadVoltage);
+                if ((VoltageTestValue >= (1 - Global.proofVoltageErrorRange) * Global.presetVoltageValue3) && (VoltageTestValue <= (1 + Global.proofVoltageErrorRange) * Global.presetVoltageValue3)) //判断是否在误差范围内
+                {
+                    //校对检验成功
+
+
+                }
+                else
+                {
+                    //校对检验失败
+                }
+            }
+        }
+        /// <summary>
+        /// 开始剩余电流调试
+        /// </summary>
+        public void ResidualCurrentProofStart()
+        {
+            suyi.Debugging(SuyiMCCB.DataIdentification.EnterResidualCurrentDebuggingMode);
+            WriteMemory(MemoryAddress.Preset1ResidualCurrentValue, Global.presetResidualCurrentValue1);
+            WriteMemory(MemoryAddress.Preset2ResidualCurrentValue, Global.presetResidualCurrentValue2);
+            WriteMemory(MemoryAddress.Preset3ResidualCurrentValue, Global.presetResidualCurrentValue3);
+            WriteMemory(MemoryAddress.Preset4ResidualCurrentValue, Global.presetResidualCurrentValue4);
+            WriteMemory(MemoryAddress.Preset5ResidualCurrentValue, Global.presetResidualCurrentValue5);
+        }
+        /// <summary>
+        /// 剩余电流调试1
+        /// </summary>
+        public void ResidualCurrentProof1()
+        {
+            int proofResidualCurrentValue1 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading1);
+            if ((proofResidualCurrentValue1 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue1) && (proofResidualCurrentValue1 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue1)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentProof1Record2, proofResidualCurrentValue1);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 剩余电流调试2
+        /// </summary>
+        public void ResidualCurrentProof2()
+        {
+            int proofResidualCurrentValue2 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading2);
+            if ((proofResidualCurrentValue2 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue2) && (proofResidualCurrentValue2 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue2)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentProof2Record2, proofResidualCurrentValue2);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 剩余电流调试3
+        /// </summary>
+        public void ResidualCurrentProof3()
+        {
+            int proofResidualCurrentValue3 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading3);
+            if ((proofResidualCurrentValue3 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3) && (proofResidualCurrentValue3 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentProof3Record2, proofResidualCurrentValue3);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 剩余电流调试4
+        /// </summary>
+        public void ResidualCurrentProof4()
+        {
+            int proofResidualCurrentValue4 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading4);
+            if ((proofResidualCurrentValue4 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue4) && (proofResidualCurrentValue4 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue4)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentProof4Record2, proofResidualCurrentValue4);
+            }
+            else
+            {
+                //校对错误的操作
+
+            }
+        }
+        /// <summary>
+        /// 剩余电流调试5
+        /// </summary>
+        public void ResidualCurrentProof5()
+        {
+            int proofResidualCurrentValue5 = suyi.Proof(0x00, SuyiMCCB.DataIdentification.ResidualCurrentProofreading5);
+            if ((proofResidualCurrentValue5 >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue5) && (proofResidualCurrentValue5 <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue5)) //反馈的值在误差范围内
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentProof5Record2, proofResidualCurrentValue5);
+            }
+            else
+            {
+                //校对错误的操作
+            }
+        }
+        /// <summary>
+        /// 剩余电流调试结束
+        /// </summary>
+        public void ResidualCurrentProofEnd()
+        {
+            if (suyi.Debugging(SuyiMCCB.DataIdentification.QuitResidualCurrentDebuggingMode))//退出电流校对模式
+            {
+                int ResidualCurrentTestValue = suyi.Read(SuyiMCCB.DataIdentification.ReadResidualCurrent);
+                if ((ResidualCurrentTestValue >= (1 - Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3) && (ResidualCurrentTestValue <= (1 + Global.proofResidualCurrentErrorRange) * Global.presetResidualCurrentValue3)) //判断是否在误差范围内
+                {
+                    //校对检验成功
+                }
+                else
+                {
+                    //校对检验失败
+                }
+            }
+        }
+        private int GetWorkState()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.workState.ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+        private int GetCmdCode()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.CmdCode.ToString());
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+
+        }
+        private void SetCmdCode(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.CmdCode, data);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private bool CurrentGetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.CurrentTestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void CurrentSetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.CurrentTestResult, data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private bool VoltageGetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.VoltageTestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void VoltageSetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.VoltageTestResult, data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private bool ResidualCurrentGetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.ResidualCurrentTestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void ResidualCurrentSetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.ResidualCurrentTestResult, data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private void WriteMemory(MemoryAddress address, int data)
+        {
+            try
+            {
+                Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private int ReadMemory(string address)
+        {
+            try
+            {
+                return Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
+        }
+
+        public enum MemoryAddress : int
+        {
+            workState,
+            CmdCode,
+            CurrentTestResult,
+            VoltageTestResult,
+            ResidualCurrentTestResult,
+            CurrentProofNum,
+            Preset1CurrentValue,
+            Preset2CurrentValue,
+            Preset3CurrentValue,
+            Preset4CurrentValue,
+            Preset5CurrentValue,
+            CurrentProof1Record1, //1代表记录前 2代表记录后
+            CurrentProof2Record1,
+            CurrentProof3Record1,
+            CurrentProof4Record1,
+            CurrentProof5Record1,
+            CurrentProof1Record2,
+            CurrentProof2Record2,
+            CurrentProof3Record2,
+            CurrentProof4Record2,
+            CurrentProof5Record2,
+            CurrentCheckValue,
+            /// <summary>
+            /// 电压
+            /// </summary>
+            VoltageProofNum,
+            Preset1VoltageValue,
+            Preset2VoltageValue,
+            Preset3VoltageValue,
+            Preset4VoltageValue,
+            Preset5VoltageValue,
+            VoltageProof1Record1, //1代表记录前 2代表记录后
+            VoltageProof2Record1,
+            VoltageProof3Record1,
+            VoltageProof4Record1,
+            VoltageProof5Record1,
+            VoltageProof1Record2,
+            VoltageProof2Record2,
+            VoltageProof3Record2,
+            VoltageProof4Record2,
+            VoltageProof5Record2,
+            VoltageCheckValue,
+            /// <summary>
+            /// 剩余电流
+            /// </summary>
+            ResidualCurrentProofNum,
+            Preset1ResidualCurrentValue,
+            Preset2ResidualCurrentValue,
+            Preset3ResidualCurrentValue,
+            Preset4ResidualCurrentValue,
+            Preset5ResidualCurrentValue,
+            ResidualCurrentProof1Record1,//1代表记录前 2代表记录后
+            ResidualCurrentProof2Record1,
+            ResidualCurrentProof3Record1,
+            ResidualCurrentProof4Record1,
+            ResidualCurrentProof5Record1,
+            ResidualCurrentProof1Record2,
+            ResidualCurrentProof2Record2,
+            ResidualCurrentProof3Record2,
+            ResidualCurrentProof4Record2,
+            ResidualCurrentProof5Record2,
+            ResidualCurrentCheckValue,
+            ResidualCurrentCheckReturn,
+        }
+    }
+}
+

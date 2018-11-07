@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+
+namespace Aca_System_WholeTest
+{
+    public partial class FrmMain : Form
+    {
+        public FrmMain()
+        {
+            InitializeComponent();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Global.kv.Connect())
+                {
+                    MessageBox.Show("PLC通信错误，请检查通信");
+                    
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("通信错误，请检查通信");
+            }
+        }
+        private void BtnManual_Click(object sender, EventArgs e)
+        {
+            FrmManual1 frmManual1 = new FrmManual1();
+            frmManual1.ShowDialog();
+        }
+
+        private void BtnFunction_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void BtnAuto_Click(object sender, EventArgs e)
+        {
+            FrmAuto frmAuto = new FrmAuto();
+            frmAuto.ShowDialog();
+        }
+
+        private void BtnSemiAuto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnReady_Click(object sender, EventArgs e)
+        {
+            FrmReady1 frmReady1 = new FrmReady1();
+            frmReady1.ShowDialog();
+        }
+
+        private void BtnManual2_Click(object sender, EventArgs e)
+        {
+            FrmManual2 frmManual2 = new FrmManual2();
+            frmManual2.ShowDialog();
+        }
+
+        private void BtnManual3_Click(object sender, EventArgs e)
+        {
+            FrmManual3 frmManual3 = new FrmManual3();
+            frmManual3.ShowDialog();
+        }
+
+        private void BtnManual4_Click(object sender, EventArgs e)
+        {
+            FrmManual4 frmManual4 = new FrmManual4();
+            frmManual4.ShowDialog();
+        }
+
+        private void BtnManual5_Click(object sender, EventArgs e)
+        {
+            FrmManual5 frmManual5 = new FrmManual5();
+            frmManual5.ShowDialog();
+        }
+
+        private void BtnManual6_Click(object sender, EventArgs e)
+        {
+            FrmManual6 frmManual6 = new FrmManual6();
+            frmManual6.ShowDialog();
+        }
+
+        private void BtnManual7_Click(object sender, EventArgs e)
+        {
+            FrmManual7 frmManual7 = new FrmManual7();
+            frmManual7.ShowDialog();
+        }
+
+        private void BtnManual8_Click(object sender, EventArgs e)
+        {
+            FrmManual8 frmManual8 = new FrmManual8();
+            frmManual8.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmManual9 frmManual9 = new FrmManual9();
+            frmManual9.ShowDialog();
+        }
+    }
+}

@@ -1,0 +1,410 @@
+﻿namespace ACA_System.UI
+{
+    partial class FrmVoltage
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnNo5 = new System.Windows.Forms.Button();
+            this.BtnOk5 = new System.Windows.Forms.Button();
+            this.BtnNo4 = new System.Windows.Forms.Button();
+            this.BtnOk4 = new System.Windows.Forms.Button();
+            this.BtnNo3 = new System.Windows.Forms.Button();
+            this.BtnOk3 = new System.Windows.Forms.Button();
+            this.BtnNo2 = new System.Windows.Forms.Button();
+            this.BtnOk2 = new System.Windows.Forms.Button();
+            this.BtnNo1 = new System.Windows.Forms.Button();
+            this.BtnOk1 = new System.Windows.Forms.Button();
+            this.ChkNoAutoLine = new System.Windows.Forms.CheckBox();
+            this.ChkAutoLine = new System.Windows.Forms.CheckBox();
+            this.ChkManual = new System.Windows.Forms.CheckBox();
+            this.ChkAuto = new System.Windows.Forms.CheckBox();
+            this.ChkNoCommunication = new System.Windows.Forms.CheckBox();
+            this.ChkCommunicaton = new System.Windows.Forms.CheckBox();
+            this.buttonNew1 = new ACA_Common.ButtonNew();
+            this.BtnExit = new ACA_Common.ButtonNew();
+            this.BtnTestComplete = new ACA_Common.ButtonNew();
+            this.BtnOutput5 = new ACA_Common.ButtonNew();
+            this.BtnOutput4 = new ACA_Common.ButtonNew();
+            this.BtnOutput3 = new ACA_Common.ButtonNew();
+            this.BtnOutput2 = new ACA_Common.ButtonNew();
+            this.BtnOutput1 = new ACA_Common.ButtonNew();
+            this.BtnStart = new ACA_Common.ButtonNew();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnNo5);
+            this.groupBox1.Controls.Add(this.BtnOk5);
+            this.groupBox1.Controls.Add(this.BtnNo4);
+            this.groupBox1.Controls.Add(this.BtnOk4);
+            this.groupBox1.Controls.Add(this.BtnNo3);
+            this.groupBox1.Controls.Add(this.BtnOk3);
+            this.groupBox1.Controls.Add(this.BtnNo2);
+            this.groupBox1.Controls.Add(this.BtnOk2);
+            this.groupBox1.Controls.Add(this.BtnNo1);
+            this.groupBox1.Controls.Add(this.BtnOk1);
+            this.groupBox1.Controls.Add(this.ChkNoAutoLine);
+            this.groupBox1.Controls.Add(this.ChkAutoLine);
+            this.groupBox1.Controls.Add(this.ChkManual);
+            this.groupBox1.Controls.Add(this.ChkAuto);
+            this.groupBox1.Controls.Add(this.ChkNoCommunication);
+            this.groupBox1.Controls.Add(this.ChkCommunicaton);
+            this.groupBox1.Controls.Add(this.buttonNew1);
+            this.groupBox1.Controls.Add(this.BtnExit);
+            this.groupBox1.Controls.Add(this.BtnTestComplete);
+            this.groupBox1.Controls.Add(this.BtnOutput5);
+            this.groupBox1.Controls.Add(this.BtnOutput4);
+            this.groupBox1.Controls.Add(this.BtnOutput3);
+            this.groupBox1.Controls.Add(this.BtnOutput2);
+            this.groupBox1.Controls.Add(this.BtnOutput1);
+            this.groupBox1.Controls.Add(this.BtnStart);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(996, 621);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "手动操作";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // BtnNo5
+            // 
+            this.BtnNo5.Location = new System.Drawing.Point(798, 508);
+            this.BtnNo5.Name = "BtnNo5";
+            this.BtnNo5.Size = new System.Drawing.Size(117, 66);
+            this.BtnNo5.TabIndex = 36;
+            this.BtnNo5.Text = "不合格";
+            this.BtnNo5.UseVisualStyleBackColor = true;
+            // 
+            // BtnOk5
+            // 
+            this.BtnOk5.Location = new System.Drawing.Point(624, 508);
+            this.BtnOk5.Name = "BtnOk5";
+            this.BtnOk5.Size = new System.Drawing.Size(117, 66);
+            this.BtnOk5.TabIndex = 35;
+            this.BtnOk5.Text = "合格";
+            this.BtnOk5.UseVisualStyleBackColor = true;
+            // 
+            // BtnNo4
+            // 
+            this.BtnNo4.Location = new System.Drawing.Point(798, 410);
+            this.BtnNo4.Name = "BtnNo4";
+            this.BtnNo4.Size = new System.Drawing.Size(117, 66);
+            this.BtnNo4.TabIndex = 34;
+            this.BtnNo4.Text = "不合格";
+            this.BtnNo4.UseVisualStyleBackColor = true;
+            // 
+            // BtnOk4
+            // 
+            this.BtnOk4.Location = new System.Drawing.Point(624, 410);
+            this.BtnOk4.Name = "BtnOk4";
+            this.BtnOk4.Size = new System.Drawing.Size(117, 66);
+            this.BtnOk4.TabIndex = 33;
+            this.BtnOk4.Text = "合格";
+            this.BtnOk4.UseVisualStyleBackColor = true;
+            // 
+            // BtnNo3
+            // 
+            this.BtnNo3.Location = new System.Drawing.Point(798, 313);
+            this.BtnNo3.Name = "BtnNo3";
+            this.BtnNo3.Size = new System.Drawing.Size(117, 66);
+            this.BtnNo3.TabIndex = 32;
+            this.BtnNo3.Text = "不合格";
+            this.BtnNo3.UseVisualStyleBackColor = true;
+            // 
+            // BtnOk3
+            // 
+            this.BtnOk3.Location = new System.Drawing.Point(624, 313);
+            this.BtnOk3.Name = "BtnOk3";
+            this.BtnOk3.Size = new System.Drawing.Size(117, 66);
+            this.BtnOk3.TabIndex = 31;
+            this.BtnOk3.Text = "合格";
+            this.BtnOk3.UseVisualStyleBackColor = true;
+            // 
+            // BtnNo2
+            // 
+            this.BtnNo2.Location = new System.Drawing.Point(798, 216);
+            this.BtnNo2.Name = "BtnNo2";
+            this.BtnNo2.Size = new System.Drawing.Size(117, 66);
+            this.BtnNo2.TabIndex = 30;
+            this.BtnNo2.Text = "不合格";
+            this.BtnNo2.UseVisualStyleBackColor = true;
+            // 
+            // BtnOk2
+            // 
+            this.BtnOk2.Location = new System.Drawing.Point(624, 216);
+            this.BtnOk2.Name = "BtnOk2";
+            this.BtnOk2.Size = new System.Drawing.Size(117, 66);
+            this.BtnOk2.TabIndex = 29;
+            this.BtnOk2.Text = "合格";
+            this.BtnOk2.UseVisualStyleBackColor = true;
+            // 
+            // BtnNo1
+            // 
+            this.BtnNo1.Location = new System.Drawing.Point(798, 122);
+            this.BtnNo1.Name = "BtnNo1";
+            this.BtnNo1.Size = new System.Drawing.Size(117, 66);
+            this.BtnNo1.TabIndex = 28;
+            this.BtnNo1.Text = "不合格";
+            this.BtnNo1.UseVisualStyleBackColor = true;
+            // 
+            // BtnOk1
+            // 
+            this.BtnOk1.Location = new System.Drawing.Point(624, 122);
+            this.BtnOk1.Name = "BtnOk1";
+            this.BtnOk1.Size = new System.Drawing.Size(117, 66);
+            this.BtnOk1.TabIndex = 27;
+            this.BtnOk1.Text = "合格";
+            this.BtnOk1.UseVisualStyleBackColor = true;
+            // 
+            // ChkNoAutoLine
+            // 
+            this.ChkNoAutoLine.AutoSize = true;
+            this.ChkNoAutoLine.Location = new System.Drawing.Point(412, 44);
+            this.ChkNoAutoLine.Name = "ChkNoAutoLine";
+            this.ChkNoAutoLine.Size = new System.Drawing.Size(128, 28);
+            this.ChkNoAutoLine.TabIndex = 26;
+            this.ChkNoAutoLine.Text = "人工接线";
+            this.ChkNoAutoLine.UseVisualStyleBackColor = true;
+            // 
+            // ChkAutoLine
+            // 
+            this.ChkAutoLine.AutoSize = true;
+            this.ChkAutoLine.Location = new System.Drawing.Point(244, 44);
+            this.ChkAutoLine.Name = "ChkAutoLine";
+            this.ChkAutoLine.Size = new System.Drawing.Size(128, 28);
+            this.ChkAutoLine.TabIndex = 25;
+            this.ChkAutoLine.Text = "自动接线";
+            this.ChkAutoLine.UseVisualStyleBackColor = true;
+            // 
+            // ChkManual
+            // 
+            this.ChkManual.AutoSize = true;
+            this.ChkManual.Location = new System.Drawing.Point(777, 44);
+            this.ChkManual.Name = "ChkManual";
+            this.ChkManual.Size = new System.Drawing.Size(128, 28);
+            this.ChkManual.TabIndex = 24;
+            this.ChkManual.Text = "手动上料";
+            this.ChkManual.UseVisualStyleBackColor = true;
+            // 
+            // ChkAuto
+            // 
+            this.ChkAuto.AutoSize = true;
+            this.ChkAuto.Location = new System.Drawing.Point(591, 44);
+            this.ChkAuto.Name = "ChkAuto";
+            this.ChkAuto.Size = new System.Drawing.Size(128, 28);
+            this.ChkAuto.TabIndex = 23;
+            this.ChkAuto.Text = "自动上料";
+            this.ChkAuto.UseVisualStyleBackColor = true;
+            // 
+            // ChkNoCommunication
+            // 
+            this.ChkNoCommunication.AutoSize = true;
+            this.ChkNoCommunication.Location = new System.Drawing.Point(42, 96);
+            this.ChkNoCommunication.Name = "ChkNoCommunication";
+            this.ChkNoCommunication.Size = new System.Drawing.Size(104, 28);
+            this.ChkNoCommunication.TabIndex = 22;
+            this.ChkNoCommunication.Text = "不通迅";
+            this.ChkNoCommunication.UseVisualStyleBackColor = true;
+            // 
+            // ChkCommunicaton
+            // 
+            this.ChkCommunicaton.AutoSize = true;
+            this.ChkCommunicaton.Location = new System.Drawing.Point(42, 44);
+            this.ChkCommunicaton.Name = "ChkCommunicaton";
+            this.ChkCommunicaton.Size = new System.Drawing.Size(152, 28);
+            this.ChkCommunicaton.TabIndex = 21;
+            this.ChkCommunicaton.Text = "通讯并上传";
+            this.ChkCommunicaton.UseVisualStyleBackColor = true;
+            // 
+            // buttonNew1
+            // 
+            this.buttonNew1.Address = null;
+            this.buttonNew1.Location = new System.Drawing.Point(84, 413);
+            this.buttonNew1.Name = "buttonNew1";
+            this.buttonNew1.Size = new System.Drawing.Size(224, 63);
+            this.buttonNew1.StateAddress = null;
+            this.buttonNew1.TabIndex = 10;
+            this.buttonNew1.Text = "夹具进";
+            this.buttonNew1.UseVisualStyleBackColor = true;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Address = null;
+            this.BtnExit.Location = new System.Drawing.Point(84, 515);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(224, 59);
+            this.BtnExit.StateAddress = null;
+            this.BtnExit.TabIndex = 9;
+            this.BtnExit.Text = "退出";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // BtnTestComplete
+            // 
+            this.BtnTestComplete.Address = "120806";
+            this.BtnTestComplete.Location = new System.Drawing.Point(84, 318);
+            this.BtnTestComplete.Name = "BtnTestComplete";
+            this.BtnTestComplete.Size = new System.Drawing.Size(224, 61);
+            this.BtnTestComplete.StateAddress = "220706";
+            this.BtnTestComplete.TabIndex = 6;
+            this.BtnTestComplete.Text = "手动调试完成";
+            this.BtnTestComplete.UseVisualStyleBackColor = true;
+            // 
+            // BtnOutput5
+            // 
+            this.BtnOutput5.Address = "120905";
+            this.BtnOutput5.Location = new System.Drawing.Point(381, 515);
+            this.BtnOutput5.Name = "BtnOutput5";
+            this.BtnOutput5.Size = new System.Drawing.Size(191, 59);
+            this.BtnOutput5.StateAddress = "2260605";
+            this.BtnOutput5.TabIndex = 5;
+            this.BtnOutput5.Text = "输出预设电压5";
+            this.BtnOutput5.UseVisualStyleBackColor = true;
+            this.BtnOutput5.Click += new System.EventHandler(this.BtnOutput5_Click);
+            // 
+            // BtnOutput4
+            // 
+            this.BtnOutput4.Address = "120904";
+            this.BtnOutput4.Location = new System.Drawing.Point(381, 413);
+            this.BtnOutput4.Name = "BtnOutput4";
+            this.BtnOutput4.Size = new System.Drawing.Size(191, 63);
+            this.BtnOutput4.StateAddress = "220704";
+            this.BtnOutput4.TabIndex = 4;
+            this.BtnOutput4.Text = "输出预设电压4";
+            this.BtnOutput4.UseVisualStyleBackColor = true;
+            this.BtnOutput4.Click += new System.EventHandler(this.BtnOutput4_Click);
+            // 
+            // BtnOutput3
+            // 
+            this.BtnOutput3.Address = "120903";
+            this.BtnOutput3.Location = new System.Drawing.Point(381, 318);
+            this.BtnOutput3.Name = "BtnOutput3";
+            this.BtnOutput3.Size = new System.Drawing.Size(191, 61);
+            this.BtnOutput3.StateAddress = "220703";
+            this.BtnOutput3.TabIndex = 3;
+            this.BtnOutput3.Text = "输出预设电压3";
+            this.BtnOutput3.UseVisualStyleBackColor = true;
+            this.BtnOutput3.Click += new System.EventHandler(this.BtnOutput3_Click);
+            // 
+            // BtnOutput2
+            // 
+            this.BtnOutput2.Address = "120902";
+            this.BtnOutput2.Location = new System.Drawing.Point(381, 219);
+            this.BtnOutput2.Name = "BtnOutput2";
+            this.BtnOutput2.Size = new System.Drawing.Size(191, 61);
+            this.BtnOutput2.StateAddress = "220702";
+            this.BtnOutput2.TabIndex = 2;
+            this.BtnOutput2.Text = "输出预设电压2";
+            this.BtnOutput2.UseVisualStyleBackColor = true;
+            this.BtnOutput2.Click += new System.EventHandler(this.BtnOutput2_Click);
+            // 
+            // BtnOutput1
+            // 
+            this.BtnOutput1.Address = "120901";
+            this.BtnOutput1.Location = new System.Drawing.Point(381, 122);
+            this.BtnOutput1.Name = "BtnOutput1";
+            this.BtnOutput1.Size = new System.Drawing.Size(191, 63);
+            this.BtnOutput1.StateAddress = "220701";
+            this.BtnOutput1.TabIndex = 1;
+            this.BtnOutput1.Text = "输出预设电压1";
+            this.BtnOutput1.UseVisualStyleBackColor = true;
+            this.BtnOutput1.Click += new System.EventHandler(this.BtnOutput1_Click);
+            // 
+            // BtnStart
+            // 
+            this.BtnStart.Address = "120900";
+            this.BtnStart.Location = new System.Drawing.Point(84, 219);
+            this.BtnStart.Name = "BtnStart";
+            this.BtnStart.Size = new System.Drawing.Size(224, 61);
+            this.BtnStart.StateAddress = "220700";
+            this.BtnStart.TabIndex = 0;
+            this.BtnStart.Text = "电压手动调试开始";
+            this.BtnStart.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(341, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(283, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "电压测试半自动";
+            // 
+            // FrmVoltage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmVoltage";
+            this.Text = "电压测试半自动";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private ACA_Common.ButtonNew BtnExit;
+        private ACA_Common.ButtonNew BtnOutput5;
+        private ACA_Common.ButtonNew BtnOutput4;
+        private ACA_Common.ButtonNew BtnOutput3;
+        private ACA_Common.ButtonNew BtnOutput2;
+        private ACA_Common.ButtonNew BtnOutput1;
+        private ACA_Common.ButtonNew BtnStart;
+        private System.Windows.Forms.Label label1;
+        private ACA_Common.ButtonNew BtnTestComplete;
+        private ACA_Common.ButtonNew buttonNew1;
+        private System.Windows.Forms.CheckBox ChkManual;
+        private System.Windows.Forms.CheckBox ChkAuto;
+        private System.Windows.Forms.CheckBox ChkNoCommunication;
+        private System.Windows.Forms.CheckBox ChkCommunicaton;
+        private System.Windows.Forms.CheckBox ChkNoAutoLine;
+        private System.Windows.Forms.CheckBox ChkAutoLine;
+        private System.Windows.Forms.Button BtnNo5;
+        private System.Windows.Forms.Button BtnOk5;
+        private System.Windows.Forms.Button BtnNo4;
+        private System.Windows.Forms.Button BtnOk4;
+        private System.Windows.Forms.Button BtnNo3;
+        private System.Windows.Forms.Button BtnOk3;
+        private System.Windows.Forms.Button BtnNo2;
+        private System.Windows.Forms.Button BtnOk2;
+        private System.Windows.Forms.Button BtnNo1;
+        private System.Windows.Forms.Button BtnOk1;
+    }
+}

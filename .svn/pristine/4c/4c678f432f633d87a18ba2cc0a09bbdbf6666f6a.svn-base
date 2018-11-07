@@ -1,0 +1,847 @@
+﻿namespace ACA_System.UI
+{
+    partial class FrmSetParameter
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.GbxCurrentParameter = new System.Windows.Forms.GroupBox();
+            this.TxtCurrentErrorRange = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CmbCurrentProofNum = new System.Windows.Forms.ComboBox();
+            this.TxtCurrent5 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtCurrent4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtCurrent3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtCurrent2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtCurrent1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GbxVoltageParameter = new System.Windows.Forms.GroupBox();
+            this.TxtCloseSwitchVoltage = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.TxtVoltageErrorRange = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CmbVoltageProofNum = new System.Windows.Forms.ComboBox();
+            this.TxtVoltage5 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TxtVoltage4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TxtVoltage3 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TxtVoltage2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TxtVoltage1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.GbxResidualCurrntParameter = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.TxtResidualCurrentErrorRange = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.CmbResidualCurrentProofNum = new System.Windows.Forms.ComboBox();
+            this.TxtResidualCurrent5 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.TxtResidualCurrent4 = new System.Windows.Forms.TextBox();
+            this.TxtResidualCurrent3 = new System.Windows.Forms.TextBox();
+            this.TxtResidualCurrent2 = new System.Windows.Forms.TextBox();
+            this.TxtResidualCurrent1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.BtnOK = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.TxtCheckValue1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TxtCheckValue2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TxtCheckValue3 = new System.Windows.Forms.TextBox();
+            this.lable16 = new System.Windows.Forms.Label();
+            this.GbxCurrentParameter.SuspendLayout();
+            this.GbxVoltageParameter.SuspendLayout();
+            this.GbxResidualCurrntParameter.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // GbxCurrentParameter
+            // 
+            this.GbxCurrentParameter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GbxCurrentParameter.Controls.Add(this.TxtCheckValue1);
+            this.GbxCurrentParameter.Controls.Add(this.label17);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrentErrorRange);
+            this.GbxCurrentParameter.Controls.Add(this.label7);
+            this.GbxCurrentParameter.Controls.Add(this.CmbCurrentProofNum);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrent5);
+            this.GbxCurrentParameter.Controls.Add(this.label6);
+            this.GbxCurrentParameter.Controls.Add(this.label5);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrent4);
+            this.GbxCurrentParameter.Controls.Add(this.label4);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrent3);
+            this.GbxCurrentParameter.Controls.Add(this.label3);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrent2);
+            this.GbxCurrentParameter.Controls.Add(this.label2);
+            this.GbxCurrentParameter.Controls.Add(this.TxtCurrent1);
+            this.GbxCurrentParameter.Controls.Add(this.label1);
+            this.GbxCurrentParameter.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxCurrentParameter.Location = new System.Drawing.Point(13, 110);
+            this.GbxCurrentParameter.Margin = new System.Windows.Forms.Padding(4);
+            this.GbxCurrentParameter.Name = "GbxCurrentParameter";
+            this.GbxCurrentParameter.Padding = new System.Windows.Forms.Padding(4);
+            this.GbxCurrentParameter.Size = new System.Drawing.Size(325, 567);
+            this.GbxCurrentParameter.TabIndex = 0;
+            this.GbxCurrentParameter.TabStop = false;
+            this.GbxCurrentParameter.Text = "电流检测参数设置";
+            // 
+            // TxtCurrentErrorRange
+            // 
+            this.TxtCurrentErrorRange.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrentErrorRange.Location = new System.Drawing.Point(156, 399);
+            this.TxtCurrentErrorRange.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrentErrorRange.Name = "TxtCurrentErrorRange";
+            this.TxtCurrentErrorRange.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrentErrorRange.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(19, 401);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(129, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "电流误差范围";
+            // 
+            // CmbCurrentProofNum
+            // 
+            this.CmbCurrentProofNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CmbCurrentProofNum.FormattingEnabled = true;
+            this.CmbCurrentProofNum.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.CmbCurrentProofNum.Location = new System.Drawing.Point(156, 49);
+            this.CmbCurrentProofNum.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbCurrentProofNum.Name = "CmbCurrentProofNum";
+            this.CmbCurrentProofNum.Size = new System.Drawing.Size(147, 28);
+            this.CmbCurrentProofNum.TabIndex = 0;
+            this.CmbCurrentProofNum.SelectionChangeCommitted += new System.EventHandler(this.CmbCurrentProofNum_SelectionChangeCommitted);
+            // 
+            // TxtCurrent5
+            // 
+            this.TxtCurrent5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrent5.Location = new System.Drawing.Point(156, 344);
+            this.TxtCurrent5.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrent5.Name = "TxtCurrent5";
+            this.TxtCurrent5.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrent5.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(19, 52);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 20);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "电流校验档位";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(19, 347);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "预设电流5";
+            // 
+            // TxtCurrent4
+            // 
+            this.TxtCurrent4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrent4.Location = new System.Drawing.Point(156, 282);
+            this.TxtCurrent4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrent4.Name = "TxtCurrent4";
+            this.TxtCurrent4.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrent4.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(19, 285);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "预设电流4";
+            // 
+            // TxtCurrent3
+            // 
+            this.TxtCurrent3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrent3.Location = new System.Drawing.Point(156, 226);
+            this.TxtCurrent3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrent3.Name = "TxtCurrent3";
+            this.TxtCurrent3.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrent3.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(19, 229);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "预设电流3";
+            // 
+            // TxtCurrent2
+            // 
+            this.TxtCurrent2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrent2.Location = new System.Drawing.Point(156, 167);
+            this.TxtCurrent2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrent2.Name = "TxtCurrent2";
+            this.TxtCurrent2.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrent2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(19, 170);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "预设电流2";
+            // 
+            // TxtCurrent1
+            // 
+            this.TxtCurrent1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCurrent1.Location = new System.Drawing.Point(156, 108);
+            this.TxtCurrent1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCurrent1.Name = "TxtCurrent1";
+            this.TxtCurrent1.Size = new System.Drawing.Size(147, 30);
+            this.TxtCurrent1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(19, 111);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "预设电流1";
+            // 
+            // GbxVoltageParameter
+            // 
+            this.GbxVoltageParameter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GbxVoltageParameter.Controls.Add(this.TxtCheckValue2);
+            this.GbxVoltageParameter.Controls.Add(this.label18);
+            this.GbxVoltageParameter.Controls.Add(this.TxtCloseSwitchVoltage);
+            this.GbxVoltageParameter.Controls.Add(this.label33);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltageErrorRange);
+            this.GbxVoltageParameter.Controls.Add(this.label8);
+            this.GbxVoltageParameter.Controls.Add(this.CmbVoltageProofNum);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltage5);
+            this.GbxVoltageParameter.Controls.Add(this.label9);
+            this.GbxVoltageParameter.Controls.Add(this.label10);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltage4);
+            this.GbxVoltageParameter.Controls.Add(this.label11);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltage3);
+            this.GbxVoltageParameter.Controls.Add(this.label12);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltage2);
+            this.GbxVoltageParameter.Controls.Add(this.label13);
+            this.GbxVoltageParameter.Controls.Add(this.TxtVoltage1);
+            this.GbxVoltageParameter.Controls.Add(this.label14);
+            this.GbxVoltageParameter.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxVoltageParameter.Location = new System.Drawing.Point(346, 110);
+            this.GbxVoltageParameter.Margin = new System.Windows.Forms.Padding(4);
+            this.GbxVoltageParameter.Name = "GbxVoltageParameter";
+            this.GbxVoltageParameter.Padding = new System.Windows.Forms.Padding(4);
+            this.GbxVoltageParameter.Size = new System.Drawing.Size(313, 567);
+            this.GbxVoltageParameter.TabIndex = 1;
+            this.GbxVoltageParameter.TabStop = false;
+            this.GbxVoltageParameter.Text = "电压检测参数设置";
+            // 
+            // TxtCloseSwitchVoltage
+            // 
+            this.TxtCloseSwitchVoltage.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCloseSwitchVoltage.Location = new System.Drawing.Point(158, 507);
+            this.TxtCloseSwitchVoltage.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCloseSwitchVoltage.Name = "TxtCloseSwitchVoltage";
+            this.TxtCloseSwitchVoltage.Size = new System.Drawing.Size(147, 30);
+            this.TxtCloseSwitchVoltage.TabIndex = 27;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("宋体", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label33.Location = new System.Drawing.Point(9, 516);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(133, 14);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "低压合闸电压设定值";
+            // 
+            // TxtVoltageErrorRange
+            // 
+            this.TxtVoltageErrorRange.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltageErrorRange.Location = new System.Drawing.Point(158, 401);
+            this.TxtVoltageErrorRange.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltageErrorRange.Name = "TxtVoltageErrorRange";
+            this.TxtVoltageErrorRange.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltageErrorRange.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(8, 404);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 20);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "电压误差范围";
+            // 
+            // CmbVoltageProofNum
+            // 
+            this.CmbVoltageProofNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CmbVoltageProofNum.FormattingEnabled = true;
+            this.CmbVoltageProofNum.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.CmbVoltageProofNum.Location = new System.Drawing.Point(158, 49);
+            this.CmbVoltageProofNum.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbVoltageProofNum.Name = "CmbVoltageProofNum";
+            this.CmbVoltageProofNum.Size = new System.Drawing.Size(147, 28);
+            this.CmbVoltageProofNum.TabIndex = 13;
+            this.CmbVoltageProofNum.SelectionChangeCommitted += new System.EventHandler(this.CmbVoltageProofNum_SelectionChangeCommitted);
+            // 
+            // TxtVoltage5
+            // 
+            this.TxtVoltage5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltage5.Location = new System.Drawing.Point(158, 344);
+            this.TxtVoltage5.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltage5.Name = "TxtVoltage5";
+            this.TxtVoltage5.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltage5.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(8, 52);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "电压校验档位";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(21, 347);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "预设电压5";
+            // 
+            // TxtVoltage4
+            // 
+            this.TxtVoltage4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltage4.Location = new System.Drawing.Point(158, 282);
+            this.TxtVoltage4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltage4.Name = "TxtVoltage4";
+            this.TxtVoltage4.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltage4.TabIndex = 20;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(21, 285);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 20);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "预设电压4";
+            // 
+            // TxtVoltage3
+            // 
+            this.TxtVoltage3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltage3.Location = new System.Drawing.Point(158, 226);
+            this.TxtVoltage3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltage3.Name = "TxtVoltage3";
+            this.TxtVoltage3.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltage3.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(21, 229);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(99, 20);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "预设电压3";
+            // 
+            // TxtVoltage2
+            // 
+            this.TxtVoltage2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltage2.Location = new System.Drawing.Point(158, 167);
+            this.TxtVoltage2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltage2.Name = "TxtVoltage2";
+            this.TxtVoltage2.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltage2.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(21, 175);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 20);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "预设电压2";
+            // 
+            // TxtVoltage1
+            // 
+            this.TxtVoltage1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtVoltage1.Location = new System.Drawing.Point(158, 108);
+            this.TxtVoltage1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtVoltage1.Name = "TxtVoltage1";
+            this.TxtVoltage1.Size = new System.Drawing.Size(147, 30);
+            this.TxtVoltage1.TabIndex = 14;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(21, 111);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(99, 20);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "预设电压1";
+            // 
+            // GbxResidualCurrntParameter
+            // 
+            this.GbxResidualCurrntParameter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtCheckValue3);
+            this.GbxResidualCurrntParameter.Controls.Add(this.lable16);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label32);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label31);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label30);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label29);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrentErrorRange);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label15);
+            this.GbxResidualCurrntParameter.Controls.Add(this.CmbResidualCurrentProofNum);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrent5);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label16);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrent4);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrent3);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrent2);
+            this.GbxResidualCurrntParameter.Controls.Add(this.TxtResidualCurrent1);
+            this.GbxResidualCurrntParameter.Controls.Add(this.label21);
+            this.GbxResidualCurrntParameter.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxResidualCurrntParameter.Location = new System.Drawing.Point(665, 110);
+            this.GbxResidualCurrntParameter.Margin = new System.Windows.Forms.Padding(4);
+            this.GbxResidualCurrntParameter.Name = "GbxResidualCurrntParameter";
+            this.GbxResidualCurrntParameter.Padding = new System.Windows.Forms.Padding(4);
+            this.GbxResidualCurrntParameter.Size = new System.Drawing.Size(354, 567);
+            this.GbxResidualCurrntParameter.TabIndex = 2;
+            this.GbxResidualCurrntParameter.TabStop = false;
+            this.GbxResidualCurrntParameter.Text = "剩余电流检测参数设置";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(27, 347);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(139, 20);
+            this.label32.TabIndex = 36;
+            this.label32.Text = "预设剩余电流5";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(27, 285);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(139, 20);
+            this.label31.TabIndex = 34;
+            this.label31.Text = "预设剩余电流4";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(27, 229);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(139, 20);
+            this.label30.TabIndex = 32;
+            this.label30.Text = "预设剩余电流3";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(27, 170);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(139, 20);
+            this.label29.TabIndex = 30;
+            this.label29.Text = "预设剩余电流2";
+            // 
+            // TxtResidualCurrentErrorRange
+            // 
+            this.TxtResidualCurrentErrorRange.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrentErrorRange.Location = new System.Drawing.Point(199, 401);
+            this.TxtResidualCurrentErrorRange.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrentErrorRange.Name = "TxtResidualCurrentErrorRange";
+            this.TxtResidualCurrentErrorRange.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrentErrorRange.TabIndex = 25;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(22, 404);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(169, 20);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "剩余电流误差范围";
+            // 
+            // CmbResidualCurrentProofNum
+            // 
+            this.CmbResidualCurrentProofNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CmbResidualCurrentProofNum.FormattingEnabled = true;
+            this.CmbResidualCurrentProofNum.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5"});
+            this.CmbResidualCurrentProofNum.Location = new System.Drawing.Point(199, 49);
+            this.CmbResidualCurrentProofNum.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbResidualCurrentProofNum.Name = "CmbResidualCurrentProofNum";
+            this.CmbResidualCurrentProofNum.Size = new System.Drawing.Size(147, 28);
+            this.CmbResidualCurrentProofNum.TabIndex = 13;
+            this.CmbResidualCurrentProofNum.SelectionChangeCommitted += new System.EventHandler(this.CmbResidualCurrentProofNum_SelectionChangeCommitted);
+            // 
+            // TxtResidualCurrent5
+            // 
+            this.TxtResidualCurrent5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrent5.Location = new System.Drawing.Point(199, 344);
+            this.TxtResidualCurrent5.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrent5.Name = "TxtResidualCurrent5";
+            this.TxtResidualCurrent5.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrent5.TabIndex = 22;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.Location = new System.Drawing.Point(27, 52);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(169, 20);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "剩余电流校验档位";
+            // 
+            // TxtResidualCurrent4
+            // 
+            this.TxtResidualCurrent4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrent4.Location = new System.Drawing.Point(199, 282);
+            this.TxtResidualCurrent4.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrent4.Name = "TxtResidualCurrent4";
+            this.TxtResidualCurrent4.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrent4.TabIndex = 20;
+            // 
+            // TxtResidualCurrent3
+            // 
+            this.TxtResidualCurrent3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrent3.Location = new System.Drawing.Point(199, 226);
+            this.TxtResidualCurrent3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrent3.Name = "TxtResidualCurrent3";
+            this.TxtResidualCurrent3.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrent3.TabIndex = 18;
+            // 
+            // TxtResidualCurrent2
+            // 
+            this.TxtResidualCurrent2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrent2.Location = new System.Drawing.Point(199, 167);
+            this.TxtResidualCurrent2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrent2.Name = "TxtResidualCurrent2";
+            this.TxtResidualCurrent2.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrent2.TabIndex = 16;
+            // 
+            // TxtResidualCurrent1
+            // 
+            this.TxtResidualCurrent1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtResidualCurrent1.Location = new System.Drawing.Point(199, 108);
+            this.TxtResidualCurrent1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtResidualCurrent1.Name = "TxtResidualCurrent1";
+            this.TxtResidualCurrent1.Size = new System.Drawing.Size(147, 30);
+            this.TxtResidualCurrent1.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label21.Location = new System.Drawing.Point(27, 111);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(139, 20);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "预设剩余电流1";
+            // 
+            // BtnOK
+            // 
+            this.BtnOK.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnOK.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnOK.Location = new System.Drawing.Point(680, 9);
+            this.BtnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.Size = new System.Drawing.Size(135, 75);
+            this.BtnOK.TabIndex = 5;
+            this.BtnOK.Text = "参数确认";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnCancel.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnCancel.Location = new System.Drawing.Point(865, 9);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(130, 73);
+            this.BtnCancel.TabIndex = 6;
+            this.BtnCancel.Text = "取消设置";
+            this.BtnCancel.UseVisualStyleBackColor = true;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label22.Location = new System.Drawing.Point(407, 9);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(169, 38);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "参数配置";
+            // 
+            // TxtCheckValue1
+            // 
+            this.TxtCheckValue1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCheckValue1.Location = new System.Drawing.Point(156, 454);
+            this.TxtCheckValue1.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCheckValue1.Name = "TxtCheckValue1";
+            this.TxtCheckValue1.Size = new System.Drawing.Size(147, 30);
+            this.TxtCheckValue1.TabIndex = 13;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(19, 457);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(109, 20);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "检测输出值";
+            // 
+            // TxtCheckValue2
+            // 
+            this.TxtCheckValue2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCheckValue2.Location = new System.Drawing.Point(158, 454);
+            this.TxtCheckValue2.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCheckValue2.Name = "TxtCheckValue2";
+            this.TxtCheckValue2.Size = new System.Drawing.Size(147, 30);
+            this.TxtCheckValue2.TabIndex = 29;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label18.Location = new System.Drawing.Point(21, 457);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(109, 20);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "检测输出值";
+            // 
+            // TxtCheckValue3
+            // 
+            this.TxtCheckValue3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtCheckValue3.Location = new System.Drawing.Point(199, 454);
+            this.TxtCheckValue3.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtCheckValue3.Name = "TxtCheckValue3";
+            this.TxtCheckValue3.Size = new System.Drawing.Size(147, 30);
+            this.TxtCheckValue3.TabIndex = 37;
+            // 
+            // lable16
+            // 
+            this.lable16.AutoSize = true;
+            this.lable16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lable16.Location = new System.Drawing.Point(41, 457);
+            this.lable16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lable16.Name = "lable16";
+            this.lable16.Size = new System.Drawing.Size(109, 20);
+            this.lable16.TabIndex = 38;
+            this.lable16.Text = "检测输出值";
+            // 
+            // FrmSetParameter
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.BtnCancel);
+            this.Controls.Add(this.BtnOK);
+            this.Controls.Add(this.GbxResidualCurrntParameter);
+            this.Controls.Add(this.GbxVoltageParameter);
+            this.Controls.Add(this.GbxCurrentParameter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FrmSetParameter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "参数配置界面";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmSetParameter_Load);
+            this.GbxCurrentParameter.ResumeLayout(false);
+            this.GbxCurrentParameter.PerformLayout();
+            this.GbxVoltageParameter.ResumeLayout(false);
+            this.GbxVoltageParameter.PerformLayout();
+            this.GbxResidualCurrntParameter.ResumeLayout(false);
+            this.GbxResidualCurrntParameter.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+            TxtCurrent1.Enter += new System.EventHandler(Txt_Enter);
+            TxtCurrent2.Enter += new System.EventHandler(Txt_Enter);
+            TxtCurrent3.Enter += new System.EventHandler(Txt_Enter);
+            TxtCurrent4.Enter += new System.EventHandler(Txt_Enter);
+            TxtCurrent5.Enter += new System.EventHandler(Txt_Enter);
+            TxtCurrentErrorRange.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltage1.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltage2.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltage3.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltage4.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltage5.Enter += new System.EventHandler(Txt_Enter);
+            TxtCloseSwitchVoltage.Enter += new System.EventHandler(Txt_Enter);
+            TxtVoltageErrorRange.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrent1.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrent2.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrent3.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrent4.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrent5.Enter += new System.EventHandler(Txt_Enter);
+            TxtResidualCurrentErrorRange.Enter += new System.EventHandler(Txt_Enter);
+            TxtCheckValue1.Enter += new System.EventHandler(Txt_Enter);
+            TxtCheckValue2.Enter += new System.EventHandler(Txt_Enter);
+            TxtCheckValue3.Enter += new System.EventHandler(Txt_Enter);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox GbxCurrentParameter;
+        private System.Windows.Forms.GroupBox GbxVoltageParameter;
+        private System.Windows.Forms.GroupBox GbxResidualCurrntParameter;
+        private System.Windows.Forms.Button BtnOK;
+        private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.TextBox TxtCurrentErrorRange;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox CmbCurrentProofNum;
+        private System.Windows.Forms.TextBox TxtCurrent5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtCurrent4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtCurrent3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtCurrent2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtCurrent1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtVoltageErrorRange;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CmbVoltageProofNum;
+        private System.Windows.Forms.TextBox TxtVoltage5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TxtVoltage4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox TxtVoltage3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TxtVoltage2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TxtVoltage1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox TxtResidualCurrentErrorRange;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox CmbResidualCurrentProofNum;
+        private System.Windows.Forms.TextBox TxtResidualCurrent5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox TxtResidualCurrent4;
+        private System.Windows.Forms.TextBox TxtResidualCurrent3;
+        private System.Windows.Forms.TextBox TxtResidualCurrent2;
+        private System.Windows.Forms.TextBox TxtResidualCurrent1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox TxtCloseSwitchVoltage;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox TxtCheckValue1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox TxtCheckValue2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox TxtCheckValue3;
+        private System.Windows.Forms.Label lable16;
+    }
+}

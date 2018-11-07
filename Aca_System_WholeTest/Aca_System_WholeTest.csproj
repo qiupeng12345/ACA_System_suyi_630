@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B62402D-7396-44D0-9776-E5B019BDCE1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Aca_System_WholeTest</RootNamespace>
+    <AssemblyName>Aca_System_WholeTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAuto.Designer.cs">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFunction.Designer.cs">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual1.Designer.cs">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual2.Designer.cs">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual3.Designer.cs">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual4.Designer.cs">
+      <DependentUpon>FrmManual4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual5.Designer.cs">
+      <DependentUpon>FrmManual5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual6.Designer.cs">
+      <DependentUpon>FrmManual6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual7.Designer.cs">
+      <DependentUpon>FrmManual7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual8.Designer.cs">
+      <DependentUpon>FrmManual8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual9.Designer.cs">
+      <DependentUpon>FrmManual9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManualSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManualSelect.Designer.cs">
+      <DependentUpon>FrmManualSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParameter.Designer.cs">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReady1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReady1.Designer.cs">
+      <DependentUpon>FrmReady1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReady2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReady2.Designer.cs">
+      <DependentUpon>FrmReady2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReady3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReady3.Designer.cs">
+      <DependentUpon>FrmReady3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSemiAuto1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSemiAuto1.Designer.cs">
+      <DependentUpon>FrmSemiAuto1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Portal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAuto.resx">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFunction.resx">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual1.resx">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual2.resx">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual3.resx">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual4.resx">
+      <DependentUpon>FrmManual4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual5.resx">
+      <DependentUpon>FrmManual5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual6.resx">
+      <DependentUpon>FrmManual6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual7.resx">
+      <DependentUpon>FrmManual7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual8.resx">
+      <DependentUpon>FrmManual8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual9.resx">
+      <DependentUpon>FrmManual9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManualSelect.resx">
+      <DependentUpon>FrmManualSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParameter.resx">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReady1.resx">
+      <DependentUpon>FrmReady1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReady2.resx">
+      <DependentUpon>FrmReady2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReady3.resx">
+      <DependentUpon>FrmReady3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSemiAuto1.resx">
+      <DependentUpon>FrmSemiAuto1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACA_BreakCommunication - 01\ACA_BreakCommunication\ACA_Communication.csproj">
+      <Project>{9f0c33a7-a35b-4674-8dde-4c5ba1396df2}</Project>
+      <Name>ACA_Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACA_WorkCell\ACA_Common.csproj">
+      <Project>{686aae1f-33e4-49a0-8c7b-3649eef36699}</Project>
+      <Name>ACA_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeyBoard\KeyBoard.csproj">
+      <Project>{bf49154f-8bbd-40d9-807d-9579caf4601f}</Project>
+      <Name>KeyBoard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="DATABUILDERAXLibLB">
+      <Guid>{78ABE6E0-D2A0-4546-9743-7619E303CE23}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

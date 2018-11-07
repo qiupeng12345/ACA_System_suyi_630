@@ -1,0 +1,258 @@
+﻿namespace ACA_System_InTest
+{
+    partial class FrmFunction
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ChkManualCommunication = new System.Windows.Forms.CheckBox();
+            this.ChkModel2 = new System.Windows.Forms.CheckBox();
+            this.ChkAutoCommunication = new System.Windows.Forms.CheckBox();
+            this.ChkModel1 = new System.Windows.Forms.CheckBox();
+            this.ChkSetMeachineAge = new System.Windows.Forms.CheckBox();
+            this.ChkMeachineAge = new System.Windows.Forms.CheckBox();
+            this.ChkManualJudge = new System.Windows.Forms.CheckBox();
+            this.ChkBarCode = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(391, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 50);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "功能选择";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox1.Location = new System.Drawing.Point(405, 479);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(228, 36);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "B相输出十倍电流";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox2.Location = new System.Drawing.Point(741, 359);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(229, 36);
+            this.checkBox2.TabIndex = 2;
+            this.checkBox2.Text = "C相输出十倍电流";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox3.Location = new System.Drawing.Point(159, 479);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(230, 36);
+            this.checkBox3.TabIndex = 3;
+            this.checkBox3.Text = "A相输出十倍电流";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox4.Location = new System.Drawing.Point(741, 479);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(137, 36);
+            this.checkBox4.TabIndex = 4;
+            this.checkBox4.Text = "低倍电流";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.checkBox5.Location = new System.Drawing.Point(154, 595);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(137, 36);
+            this.checkBox5.TabIndex = 5;
+            this.checkBox5.Text = "高倍电流";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(822, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 83);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "退出 <<";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // ChkManualCommunication
+            // 
+            this.ChkManualCommunication.AutoSize = true;
+            this.ChkManualCommunication.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkManualCommunication.Location = new System.Drawing.Point(741, 146);
+            this.ChkManualCommunication.Name = "ChkManualCommunication";
+            this.ChkManualCommunication.Size = new System.Drawing.Size(137, 36);
+            this.ChkManualCommunication.TabIndex = 21;
+            this.ChkManualCommunication.Text = "手动通讯";
+            this.ChkManualCommunication.UseVisualStyleBackColor = true;
+            // 
+            // ChkModel2
+            // 
+            this.ChkModel2.AutoSize = true;
+            this.ChkModel2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkModel2.Location = new System.Drawing.Point(159, 248);
+            this.ChkModel2.Name = "ChkModel2";
+            this.ChkModel2.Size = new System.Drawing.Size(132, 36);
+            this.ChkModel2.TabIndex = 20;
+            this.ChkModel2.Text = "型号630";
+            this.ChkModel2.UseVisualStyleBackColor = true;
+            // 
+            // ChkAutoCommunication
+            // 
+            this.ChkAutoCommunication.AutoSize = true;
+            this.ChkAutoCommunication.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkAutoCommunication.Location = new System.Drawing.Point(741, 237);
+            this.ChkAutoCommunication.Name = "ChkAutoCommunication";
+            this.ChkAutoCommunication.Size = new System.Drawing.Size(137, 36);
+            this.ChkAutoCommunication.TabIndex = 22;
+            this.ChkAutoCommunication.Text = "自动通讯";
+            this.ChkAutoCommunication.UseVisualStyleBackColor = true;
+            // 
+            // ChkModel1
+            // 
+            this.ChkModel1.AutoSize = true;
+            this.ChkModel1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkModel1.Location = new System.Drawing.Point(159, 146);
+            this.ChkModel1.Name = "ChkModel1";
+            this.ChkModel1.Size = new System.Drawing.Size(132, 36);
+            this.ChkModel1.TabIndex = 19;
+            this.ChkModel1.Text = "型号400";
+            this.ChkModel1.UseVisualStyleBackColor = true;
+            // 
+            // ChkSetMeachineAge
+            // 
+            this.ChkSetMeachineAge.AutoSize = true;
+            this.ChkSetMeachineAge.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkSetMeachineAge.Location = new System.Drawing.Point(405, 359);
+            this.ChkSetMeachineAge.Name = "ChkSetMeachineAge";
+            this.ChkSetMeachineAge.Size = new System.Drawing.Size(237, 36);
+            this.ChkSetMeachineAge.TabIndex = 26;
+            this.ChkSetMeachineAge.Text = "设置机械寿命次数";
+            this.ChkSetMeachineAge.UseVisualStyleBackColor = true;
+            // 
+            // ChkMeachineAge
+            // 
+            this.ChkMeachineAge.AutoSize = true;
+            this.ChkMeachineAge.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkMeachineAge.Location = new System.Drawing.Point(159, 359);
+            this.ChkMeachineAge.Name = "ChkMeachineAge";
+            this.ChkMeachineAge.Size = new System.Drawing.Size(137, 36);
+            this.ChkMeachineAge.TabIndex = 25;
+            this.ChkMeachineAge.Text = "机械寿命";
+            this.ChkMeachineAge.UseVisualStyleBackColor = true;
+            // 
+            // ChkManualJudge
+            // 
+            this.ChkManualJudge.AutoSize = true;
+            this.ChkManualJudge.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkManualJudge.Location = new System.Drawing.Point(405, 146);
+            this.ChkManualJudge.Name = "ChkManualJudge";
+            this.ChkManualJudge.Size = new System.Drawing.Size(137, 36);
+            this.ChkManualJudge.TabIndex = 24;
+            this.ChkManualJudge.Text = "人工判断";
+            this.ChkManualJudge.UseVisualStyleBackColor = true;
+            // 
+            // ChkBarCode
+            // 
+            this.ChkBarCode.AutoSize = true;
+            this.ChkBarCode.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ChkBarCode.Location = new System.Drawing.Point(405, 248);
+            this.ChkBarCode.Name = "ChkBarCode";
+            this.ChkBarCode.Size = new System.Drawing.Size(87, 36);
+            this.ChkBarCode.TabIndex = 23;
+            this.ChkBarCode.Text = "扫码";
+            this.ChkBarCode.UseVisualStyleBackColor = true;
+            // 
+            // FrmFunction
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.ChkSetMeachineAge);
+            this.Controls.Add(this.ChkMeachineAge);
+            this.Controls.Add(this.ChkManualJudge);
+            this.Controls.Add(this.ChkBarCode);
+            this.Controls.Add(this.ChkManualCommunication);
+            this.Controls.Add(this.ChkModel2);
+            this.Controls.Add(this.ChkAutoCommunication);
+            this.Controls.Add(this.ChkModel1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmFunction";
+            this.Text = "功能选择";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox ChkManualCommunication;
+        private System.Windows.Forms.CheckBox ChkModel2;
+        private System.Windows.Forms.CheckBox ChkAutoCommunication;
+        private System.Windows.Forms.CheckBox ChkModel1;
+        private System.Windows.Forms.CheckBox ChkSetMeachineAge;
+        private System.Windows.Forms.CheckBox ChkMeachineAge;
+        private System.Windows.Forms.CheckBox ChkManualJudge;
+        private System.Windows.Forms.CheckBox ChkBarCode;
+    }
+}

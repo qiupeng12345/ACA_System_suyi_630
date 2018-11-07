@@ -1,0 +1,237 @@
+﻿namespace ACA_System_InTest
+{
+    partial class FrmAuto
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.GbxState = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelNew1 = new ACA_Common.LabelNew();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LblTime = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BtnStart = new System.Windows.Forms.Button();
+            this.BtnStop = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnAlarm = new System.Windows.Forms.Button();
+            this.GbxState.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // GbxState
+            // 
+            this.GbxState.Controls.Add(this.label4);
+            this.GbxState.Controls.Add(this.label3);
+            this.GbxState.Controls.Add(this.label2);
+            this.GbxState.Controls.Add(this.labelNew1);
+            this.GbxState.Controls.Add(this.label1);
+            this.GbxState.Controls.Add(this.LblTime);
+            this.GbxState.Controls.Add(this.label11);
+            this.GbxState.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GbxState.Location = new System.Drawing.Point(4, 8);
+            this.GbxState.Name = "GbxState";
+            this.GbxState.Size = new System.Drawing.Size(1016, 237);
+            this.GbxState.TabIndex = 0;
+            this.GbxState.TabStop = false;
+            this.GbxState.Text = "工作状态";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(280, 175);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(180, 28);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "当前工作状态";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(496, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 24);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "ma";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(59, 175);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 28);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "当前工作状态";
+            // 
+            // labelNew1
+            // 
+            this.labelNew1.Address = null;
+            this.labelNew1.AutoSize = true;
+            this.labelNew1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelNew1.Location = new System.Drawing.Point(280, 113);
+            this.labelNew1.Name = "labelNew1";
+            this.labelNew1.Size = new System.Drawing.Size(152, 28);
+            this.labelNew1.StateAddress = null;
+            this.labelNew1.TabIndex = 13;
+            this.labelNew1.Text = "当前电流值";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(59, 116);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 28);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "当前电流";
+            // 
+            // LblTime
+            // 
+            this.LblTime.AutoSize = true;
+            this.LblTime.Location = new System.Drawing.Point(832, 42);
+            this.LblTime.Name = "LblTime";
+            this.LblTime.Size = new System.Drawing.Size(106, 24);
+            this.LblTime.TabIndex = 11;
+            this.LblTime.Text = "当前时间";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.Location = new System.Drawing.Point(370, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(245, 38);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "瞬时检测单元";
+            // 
+            // BtnStart
+            // 
+            this.BtnStart.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnStart.Location = new System.Drawing.Point(53, 576);
+            this.BtnStart.Name = "BtnStart";
+            this.BtnStart.Size = new System.Drawing.Size(173, 81);
+            this.BtnStart.TabIndex = 1;
+            this.BtnStart.Text = "启动";
+            this.BtnStart.UseVisualStyleBackColor = true;
+            // 
+            // BtnStop
+            // 
+            this.BtnStop.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnStop.Location = new System.Drawing.Point(305, 576);
+            this.BtnStop.Name = "BtnStop";
+            this.BtnStop.Size = new System.Drawing.Size(173, 81);
+            this.BtnStop.TabIndex = 2;
+            this.BtnStop.Text = "停止";
+            this.BtnStop.UseVisualStyleBackColor = true;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnExit.Location = new System.Drawing.Point(793, 576);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(173, 81);
+            this.BtnExit.TabIndex = 3;
+            this.BtnExit.Text = "退出";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(4, 251);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1016, 302);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "报警记录";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(8, 25);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1002, 271);
+            this.textBox1.TabIndex = 0;
+            // 
+            // BtnAlarm
+            // 
+            this.BtnAlarm.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnAlarm.Location = new System.Drawing.Point(549, 576);
+            this.BtnAlarm.Name = "BtnAlarm";
+            this.BtnAlarm.Size = new System.Drawing.Size(173, 81);
+            this.BtnAlarm.TabIndex = 19;
+            this.BtnAlarm.Text = "停止";
+            this.BtnAlarm.UseVisualStyleBackColor = true;
+            // 
+            // FrmAuto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.BtnAlarm);
+            this.Controls.Add(this.BtnExit);
+            this.Controls.Add(this.BtnStop);
+            this.Controls.Add(this.BtnStart);
+            this.Controls.Add(this.GbxState);
+            this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FrmAuto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "自动瞬时检测";
+            this.Load += new System.EventHandler(this.FrmAuto_Load);
+            this.GbxState.ResumeLayout(false);
+            this.GbxState.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox GbxState;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button BtnStart;
+        private System.Windows.Forms.Button BtnStop;
+        private System.Windows.Forms.Label LblTime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnExit;
+        private ACA_Common.LabelNew labelNew1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtnAlarm;
+    }
+}

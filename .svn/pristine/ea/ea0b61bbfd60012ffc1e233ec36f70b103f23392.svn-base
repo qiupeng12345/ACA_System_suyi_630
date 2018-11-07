@@ -1,0 +1,320 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WHC.Framework.BaseUI;
+using WHC.Framework.Commons;
+using System.Configuration;
+using System.Diagnostics;
+
+namespace ACA_System.UI
+{
+    public partial class FrmSetParameter : Form
+    {
+        private KeyBoard.KeyNum keyNum = new KeyBoard.KeyNum();
+        public FrmSetParameter()
+        {
+            InitializeComponent();
+            this.TxtCurrent1.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtCurrent2.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtCurrent3.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtCurrent4.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtCurrent5.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtCurrentErrorRange.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltage1.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltage2.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltage3.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltage4.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltage5.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtVoltageErrorRange.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrent1.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrent2.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrent3.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrent4.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrent5.Enter += new System.EventHandler(this.Txt_Enter);
+            this.TxtResidualCurrentErrorRange.Enter += new System.EventHandler(this.Txt_Enter);
+            ParameterInitialization();
+            ToParameter();
+            CmbCurrentProofNum_SelectionChangeCommitted(null, null);
+            CmbVoltageProofNum_SelectionChangeCommitted(null, null);
+            CmbResidualCurrentProofNum_SelectionChangeCommitted(null, null);
+        }
+
+        private void ParameterInitialization()
+        {
+            CmbCurrentProofNum.SelectedItem = ConfigurationManager.AppSettings["CurrentProofNum"];
+            CmbVoltageProofNum.SelectedItem = ConfigurationManager.AppSettings["VoltageProofNum"];
+            CmbResidualCurrentProofNum.SelectedItem = ConfigurationManager.AppSettings["ResidualCurrentProofNum"];
+            TxtCurrent1.Text = ConfigurationManager.AppSettings["PresetCurrent1"];
+            TxtCurrent2.Text = ConfigurationManager.AppSettings["PresetCurrent2"];
+            TxtCurrent3.Text = ConfigurationManager.AppSettings["PresetCurrent3"];
+            TxtCurrent4.Text = ConfigurationManager.AppSettings["PresetCurrent4"];
+            TxtCurrent5.Text = ConfigurationManager.AppSettings["PresetCurrent5"];
+            TxtVoltage1.Text = ConfigurationManager.AppSettings["PresetVoltage1"];
+            TxtVoltage2.Text = ConfigurationManager.AppSettings["PresetVoltage2"];
+            TxtVoltage3.Text = ConfigurationManager.AppSettings["PresetVoltage3"];
+            TxtVoltage4.Text = ConfigurationManager.AppSettings["PresetVoltage4"];
+            TxtVoltage5.Text = ConfigurationManager.AppSettings["PresetVoltage5"];
+            TxtResidualCurrent1.Text = ConfigurationManager.AppSettings["PresetResidualCurrent1"];
+            TxtResidualCurrent2.Text = ConfigurationManager.AppSettings["PresetResidualCurrent2"];
+            TxtResidualCurrent3.Text = ConfigurationManager.AppSettings["PresetResidualCurrent3"];
+            TxtResidualCurrent4.Text = ConfigurationManager.AppSettings["PresetResidualCurrent4"];
+            TxtResidualCurrent5.Text = ConfigurationManager.AppSettings["PresetResidualCurrent5"];
+            TxtCurrentErrorRange.Text = ConfigurationManager.AppSettings["CurrentErrorRange"];
+            TxtVoltageErrorRange.Text = ConfigurationManager.AppSettings["VoltageErrorRange"];
+            TxtResidualCurrentErrorRange.Text = ConfigurationManager.AppSettings["ResidualCurrentErrorRange"];
+        }
+
+        private void CmbCurrentProofNum_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (CmbCurrentProofNum.SelectedItem.ToString()=="3")
+            {
+                
+                TxtCurrent4.Enabled = false;
+                TxtCurrent5.Enabled = false;
+            }
+            else if (CmbCurrentProofNum.SelectedItem.ToString() == "4")
+            {
+                TxtCurrent4.Enabled = true;
+                TxtCurrent5.Enabled = false;
+            }
+            else
+            {
+                TxtCurrent4.Enabled = true;
+                TxtCurrent5.Enabled = true;
+            }
+            
+        }
+
+        private void CmbVoltageProofNum_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (CmbVoltageProofNum.SelectedItem.ToString()=="3")
+            {
+                TxtVoltage4.Enabled = false;
+                TxtVoltage5.Enabled = false;
+            }
+            else if (CmbVoltageProofNum.SelectedItem.ToString()=="4")
+            {
+                TxtVoltage4.Enabled = true;
+                TxtVoltage5.Enabled = false;
+            }
+            else 
+            {
+                TxtVoltage4.Enabled = true;
+                TxtVoltage5.Enabled = true;
+            }
+        }
+
+        private void CmbResidualCurrentProofNum_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (CmbResidualCurrentProofNum.SelectedItem.ToString()=="3")
+            {
+                TxtResidualCurrent4.Enabled = false;
+                TxtResidualCurrent5.Enabled = false;
+            }
+            else if (CmbResidualCurrentProofNum.SelectedItem.ToString()=="4")
+            {
+                TxtResidualCurrent4.Enabled = true;
+                TxtResidualCurrent5.Enabled = false;
+            }
+            else
+            {
+                TxtResidualCurrent4.Enabled = true;
+                TxtResidualCurrent5.Enabled = true;
+            }
+        }
+
+        private void BtnOK_Click(object sender, EventArgs e)
+        {
+            if(MessageUtil.ShowYesNoAndTips("确定配置当前参数")==DialogResult.Yes)
+            {
+                if (TextCheck())
+                {
+                    ToParameter();
+                    ToConfig();
+                    this.Close();
+                }
+                else
+                {
+                    MessageUtil.ShowError("请确认参数是否全部正确设置");
+                }
+            }
+            
+        }
+        private void ToConfig()
+        {
+            try
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings["CurrentProofNum"].Value = CmbCurrentProofNum.SelectedItem.ToString();
+                config.AppSettings.Settings["VoltageProofNum"].Value = CmbVoltageProofNum.SelectedItem.ToString();
+                config.AppSettings.Settings["ResidualCurrentProofNum"].Value = CmbCurrentProofNum.SelectedItem.ToString();
+                config.AppSettings.Settings["PresetCurrent1"].Value = TxtCurrent1.Text;
+                config.AppSettings.Settings["PresetCurrent2"].Value = TxtCurrent2.Text;
+                config.AppSettings.Settings["PresetCurrent3"].Value = TxtCurrent3.Text;
+                config.AppSettings.Settings["PresetCurrent4"].Value = TxtCurrent4.Text;
+                config.AppSettings.Settings["PresetCurrent5"].Value = TxtCurrent5.Text;
+                config.AppSettings.Settings["PresetVoltage1"].Value = TxtVoltage1.Text;
+                config.AppSettings.Settings["PresetVoltage2"].Value = TxtVoltage2.Text;
+                config.AppSettings.Settings["PresetVoltage3"].Value = TxtVoltage3.Text;
+                config.AppSettings.Settings["PresetVoltage4"].Value = TxtVoltage4.Text;
+                config.AppSettings.Settings["PresetVoltage5"].Value = TxtVoltage5.Text;
+                config.AppSettings.Settings["PresetResidualCurrent1"].Value = TxtResidualCurrent1.Text;
+                config.AppSettings.Settings["PresetResidualCurrent2"].Value = TxtResidualCurrent2.Text;
+                config.AppSettings.Settings["PresetResidualCurrent3"].Value = TxtResidualCurrent3.Text;
+                config.AppSettings.Settings["PresetResidualCurrent4"].Value = TxtResidualCurrent4.Text;
+                config.AppSettings.Settings["PresetResidualCurrent5"].Value = TxtResidualCurrent5.Text;
+                config.AppSettings.Settings["CurrentErrorRange"].Value = TxtCurrentErrorRange.Text;
+                config.AppSettings.Settings["VoltageErrorRange"].Value = TxtVoltageErrorRange.Text;
+                config.AppSettings.Settings["ResidualCurrentErrorRange"].Value = TxtResidualCurrentErrorRange.Text;
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
+        private void ToParameter()
+        {
+            //预设值
+            Global.PresetCurrent1 = Convert.ToInt32(TxtCurrent1.Text);
+            Global.PresetCurrent2 = Convert.ToInt32(TxtCurrent2.Text);
+            Global.PresetCurrent3 = Convert.ToInt32(TxtCurrent3.Text);
+            Global.PresetCurrent4 = Convert.ToInt32(TxtCurrent4.Text);
+            Global.PresetCurrent5 = Convert.ToInt32(TxtCurrent5.Text);
+            Global.PresetVoltage1 = Convert.ToInt32(TxtVoltage1.Text);
+            Global.PresetVoltage2 = Convert.ToInt32(TxtVoltage2.Text);
+            Global.PresetVoltage3 = Convert.ToInt32(TxtVoltage3.Text);
+            Global.PresetVoltage4 = Convert.ToInt32(TxtVoltage4.Text);
+            Global.PresetVoltage5 = Convert.ToInt32(TxtVoltage5.Text);
+            Global.PresetResidualCurrent1 = Convert.ToInt32(TxtResidualCurrent1.Text);
+            Global.PresetResidualCurrent2 = Convert.ToInt32(TxtResidualCurrent2.Text);
+            Global.PresetResidualCurrent3 = Convert.ToInt32(TxtResidualCurrent3.Text);
+            Global.PresetResidualCurrent4 = Convert.ToInt32(TxtResidualCurrent4.Text);
+            Global.PresetResidualCurrent5 = Convert.ToInt32(TxtResidualCurrent5.Text);
+            // 一些必要参数
+            Global.CurrentProofNum = Convert.ToInt32(CmbCurrentProofNum.SelectedItem);
+            Global.VoltageProofNum = Convert.ToInt32(CmbVoltageProofNum.SelectedItem);
+            Global.ResidualCurrentProofNum = Convert.ToInt32(CmbResidualCurrentProofNum.SelectedItem);
+            Global.CurrentErrorRange = Convert.ToInt32(TxtCurrentErrorRange.Text);
+            Global.VoltageErrorRange = Convert.ToInt32(TxtVoltageErrorRange.Text);
+            Global.ResidualCurrentRange = Convert.ToInt32(TxtResidualCurrentErrorRange.Text);
+        }
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            if(MessageUtil.ShowYesNoAndTips("是否退出参数设置")==DialogResult.Yes)
+            {
+                Close();
+            }
+            
+            
+        }
+        private  bool TextCheck() //检查参数是否全部设置
+        {
+            if (CmbCurrentProofNum.SelectedItem.ToString()=="4")
+            {
+                if (TxtCurrent4.Text=="")
+                {
+                    return false;
+                }
+            }
+            if (CmbCurrentProofNum.SelectedItem.ToString()=="5")
+            {
+                if (TxtCurrent4.Text=="" || TxtCurrent5.Text=="")
+                {
+                    return false;
+                }
+            }
+            if (CmbResidualCurrentProofNum.SelectedItem.ToString()=="4")
+            {
+                if (TxtResidualCurrent4.Text=="")
+                {
+                    return false;
+
+                }
+            }
+            if (CmbResidualCurrentProofNum.SelectedItem.ToString()=="5")
+            {
+                if (TxtResidualCurrent4.Text=="" || TxtResidualCurrent5.Text=="")
+                {
+                    return false;
+                }                                                               
+            }
+            if (CmbVoltageProofNum.SelectedItem.ToString()=="4")
+            {
+                if (TxtVoltage4.Text=="")
+                {
+                    return false;
+                }
+            }
+            if (CmbVoltageProofNum.SelectedItem.ToString()=="5")
+            {
+                if (TxtVoltage4.Text=="" || TxtVoltage5.Text=="")
+                {
+                    return false;
+                }
+            }
+            if (CmbCurrentProofNum.Text!="")
+            {
+                if (TxtCurrent1.Text!="")
+                {
+                    if (TxtCurrent2.Text!="")
+                    {
+                        if (TxtCurrent3.Text!="")
+                        {
+                            if (CmbVoltageProofNum.Text!="")
+                            {
+                                if (TxtVoltage1.Text!="")
+                                {
+                                    if (TxtVoltage2.Text!="")
+                                    {
+                                        if (TxtVoltage3.Text!="")
+                                        {
+                                            if (CmbResidualCurrentProofNum.Text!="")
+                                            {
+                                                if (TxtResidualCurrent1.Text!="")
+                                                {
+                                                    if (TxtResidualCurrent2.Text!="")
+                                                    {
+                                                        if (TxtResidualCurrent3.Text!="")
+                                                        {
+                                                            return true;
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+            return false;
+        }
+
+        private void TxtCurrent1_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Txt_Enter(object sender, EventArgs e)
+        {
+            TextBox tbx = (TextBox)sender;
+            keyNum.TxtString = tbx.Text;
+            keyNum.ShowDialog();
+            tbx.Text= keyNum.TxtString;
+            keyNum.TxtString = "";
+        }
+    }
+}

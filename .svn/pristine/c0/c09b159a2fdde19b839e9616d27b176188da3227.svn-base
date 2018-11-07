@@ -1,0 +1,209 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+
+namespace ACA_System.UI
+{
+    public partial class FrmFunction : Form
+    {
+        private bool[] Funcitondo = new bool[23];
+        private CheckBox[] checkBoxes = new CheckBox[23];
+        public FrmFunction()
+        {
+            InitializeComponent();
+            InitializeParameter();
+        }
+
+        private void ChkCurrent_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox chkFunction = (CheckBox)sender;
+            if (chkFunction.Checked)
+            {
+                Funcitondo[chkFunction.TabIndex] = true;
+            }
+            else Funcitondo[chkFunction.TabIndex] = false;
+        }
+
+        private void FrmFunction_Load(object sender, EventArgs e)
+        {
+            Funcitondo[0] = Global.doCurrent1;
+            Funcitondo[1] = Global.doCurrent2;
+            Funcitondo[2] = Global.doCurrent3;
+            Funcitondo[3] = Global.doCurrent4;
+            Funcitondo[4] = Global.doCurrent5;
+            Funcitondo[5] = Global.doVoltage1;
+            Funcitondo[6] = Global.doVoltage2;
+            Funcitondo[7] = Global.doVoltage3;
+            Funcitondo[8] = Global.doVoltage4;
+            Funcitondo[9] = Global.doVoltage5;
+            Funcitondo[10] = Global.doResidualCurrent1;
+            Funcitondo[11] = Global.doResidualCurrent2;
+            Funcitondo[12] = Global.doResidualCurrent3;
+            Funcitondo[13] = Global.doResidualCurrent4;
+            Funcitondo[14] = Global.doResidualCurrent5;
+            Funcitondo[15] = Global.model1Select;
+            Funcitondo[16] = Global.model2Select;
+            Funcitondo[17] = Global.manualCommunication;
+            Funcitondo[18] = Global.autoCommunication;
+            Funcitondo[19] = Global.scan;
+            Funcitondo[20] = Global.manualJudge;
+            Funcitondo[21] = Global.meachineAge;
+            Funcitondo[22] = Global.setMeachineAge;
+            checkBoxes[0] = ChkCurrent1;
+            checkBoxes[1] = ChkCurrent2;
+            checkBoxes[2] = ChkCurrent3;
+            checkBoxes[3] = ChkCurrent4;
+            checkBoxes[4] = ChkCurrent5;
+            checkBoxes[5] = ChkVoltage1;
+            checkBoxes[6] = ChkVoltage2;
+            checkBoxes[7] = ChkVoltage3;
+            checkBoxes[8] = ChkVoltage4;
+            checkBoxes[9] = ChkVoltage5;
+            checkBoxes[10] = ChkResidualCurrent1;
+            checkBoxes[11] = ChkResidualCurrent2;
+            checkBoxes[12] = ChkResidualCurrent3;
+            checkBoxes[13] = ChkResidualCurrent4;
+            checkBoxes[14] = ChkResidualCurrent5;
+            checkBoxes[15] = ChkModel1;
+            checkBoxes[16] = ChkModel2;
+            checkBoxes[17] = ChkManualCommunication;
+            checkBoxes[18] = ChkAutoCommunication;
+            checkBoxes[19] = ChkBarCode;
+            checkBoxes[20] = ChkManualJudge;
+            checkBoxes[21] = ChkMeachineAge;
+            checkBoxes[22] = ChkSetMeachineAge;
+            for (int i = 0; i < checkBoxes.Length; i++)
+            {
+                checkBoxes[i].Checked = Funcitondo[i];
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            ToConfig();
+            Close();
+        }
+        private void InitializeParameter()
+        {
+            try
+            {
+                Global.currentProofNum = Convert.ToInt32(ConfigurationManager.AppSettings["CurrentProofNum"]);
+                Global.voltageProofNum = Convert.ToInt32(ConfigurationManager.AppSettings["VoltageProofNum"]);
+                Global.residualCurrentProofNum = Convert.ToInt32(ConfigurationManager.AppSettings["ResidualCurrentProofNum"]);
+                Global.presetCurrentValue1 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetCurrent1"]);
+                Global.presetCurrentValue2 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetCurrent2"]);
+                Global.presetCurrentValue3 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetCurrent3"]);
+                Global.presetCurrentValue4 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetCurrent4"]);
+                Global.presetCurrentValue5 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetCurrent5"]);
+                Global.presetVoltageValue1 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetVoltage1"]);
+                Global.presetVoltageValue2 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetVoltage2"]);
+                Global.presetVoltageValue3 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetVoltage3"]);
+                Global.presetVoltageValue4 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetVoltage4"]);
+                Global.presetVoltageValue5 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetVoltage5"]);
+                Global.closeSwitchVoltage = Convert.ToInt32(ConfigurationManager.AppSettings["CloseSwitchVoltage"]);
+                Global.presetResidualCurrentValue1 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetResidualCurrent1"]);
+                Global.presetResidualCurrentValue2 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetResidualCurrent2"]);
+                Global.presetResidualCurrentValue3 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetResidualCurrent3"]);
+                Global.presetResidualCurrentValue4 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetResidualCurrent4"]);
+                Global.presetResidualCurrentValue5 = Convert.ToInt32(ConfigurationManager.AppSettings["PresetResidualCurrent5"]);
+                Global.proofCurrentErrorRange = Convert.ToInt32(ConfigurationManager.AppSettings["CurrentErrorRange"]);
+                Global.proofVoltageErrorRange = Convert.ToInt32(ConfigurationManager.AppSettings["VoltageErrorRange"]);
+                Global.proofResidualCurrentErrorRange = Convert.ToInt32(ConfigurationManager.AppSettings["ResidualCurrentErrorRange"]);
+                Global.doCurrent1 = GetBool(ConfigurationManager.AppSettings["DoCurrent1"]);
+                Global.doCurrent2 = GetBool(ConfigurationManager.AppSettings["DoCurrent2"]);
+                Global.doCurrent3 = GetBool(ConfigurationManager.AppSettings["DoCurrent3"]);
+                Global.doCurrent4 = GetBool(ConfigurationManager.AppSettings["DoCurrent4"]);
+                Global.doCurrent5 = GetBool(ConfigurationManager.AppSettings["DoCurrent5"]);
+                Global.doVoltage1 = GetBool(ConfigurationManager.AppSettings["DoVoltage1"]);
+                Global.doVoltage2 = GetBool(ConfigurationManager.AppSettings["DoVoltage2"]);
+                Global.doVoltage3 = GetBool(ConfigurationManager.AppSettings["DoVoltage3"]);
+                Global.doVoltage4 = GetBool(ConfigurationManager.AppSettings["DoVoltage4"]);
+                Global.doVoltage5 = GetBool(ConfigurationManager.AppSettings["DoVoltage5"]);
+                Global.doResidualCurrent1 = GetBool(ConfigurationManager.AppSettings["DoResidualCurrent1"]);
+                Global.doResidualCurrent2 = GetBool(ConfigurationManager.AppSettings["DoResidualCurrent2"]);
+                Global.doResidualCurrent3 = GetBool(ConfigurationManager.AppSettings["DoResidualCurrent3"]);
+                Global.doResidualCurrent4 = GetBool(ConfigurationManager.AppSettings["DoResidualCurrent4"]);
+                Global.doResidualCurrent5 = GetBool(ConfigurationManager.AppSettings["DoResidualCurrent5"]);
+                Global.model1Select = GetBool(ConfigurationManager.AppSettings["Model1"]);
+                Global.model2Select = GetBool(ConfigurationManager.AppSettings["Model2"]);
+                Global.manualCommunication = GetBool(ConfigurationManager.AppSettings["ManualCom"]);
+                Global.autoCommunication = GetBool(ConfigurationManager.AppSettings["AutoCom"]);
+                Global.scan = GetBool(ConfigurationManager.AppSettings["Scan"]);
+                Global.manualJudge = GetBool(ConfigurationManager.AppSettings["ManualJudge"]);
+                Global.meachineAge = GetBool(ConfigurationManager.AppSettings["MeachineAge"]);
+                Global.setMeachineAge = GetBool(ConfigurationManager.AppSettings["SetMeachineAge"]);
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+        }
+        private bool GetBool(string value)
+        {
+            if (value == "1")
+            {
+                return true;
+            }
+            else return false;
+        }
+        private void ToConfig()
+        {
+            try
+            {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings["DoCurrent1"].Value = GetCheck(ChkCurrent1);
+                config.AppSettings.Settings["DoCurrent2"].Value = GetCheck(ChkCurrent2);
+                config.AppSettings.Settings["DoCurrent3"].Value = GetCheck(ChkCurrent3);
+                config.AppSettings.Settings["DoCurrent4"].Value = GetCheck(ChkCurrent4);
+                config.AppSettings.Settings["DoCurrent5"].Value = GetCheck(ChkCurrent5);
+                config.AppSettings.Settings["DoVoltage1"].Value = GetCheck(ChkVoltage1);
+                config.AppSettings.Settings["DoVoltage2"].Value = GetCheck(ChkVoltage2);
+                config.AppSettings.Settings["DoVoltage3"].Value = GetCheck(ChkVoltage3);
+                config.AppSettings.Settings["DoVoltage4"].Value = GetCheck(ChkVoltage4);
+                config.AppSettings.Settings["DoVoltage5"].Value = GetCheck(ChkVoltage5);
+                config.AppSettings.Settings["DoResidualCurrent1"].Value = GetCheck(ChkResidualCurrent1);
+                config.AppSettings.Settings["DoResidualCurrent2"].Value = GetCheck(ChkResidualCurrent2);
+                config.AppSettings.Settings["DoResidualCurrent3"].Value = GetCheck(ChkResidualCurrent3);
+                config.AppSettings.Settings["DoResidualCurrent4"].Value = GetCheck(ChkResidualCurrent4);
+                config.AppSettings.Settings["DoResidualCurrent5"].Value = GetCheck(ChkResidualCurrent5);
+                config.AppSettings.Settings["Model1"].Value = GetCheck(ChkModel1);
+                config.AppSettings.Settings["Model2"].Value = GetCheck(ChkModel2);
+                config.AppSettings.Settings["ManualCom"].Value = GetCheck(ChkManualCommunication);
+                config.AppSettings.Settings["AutoCom"].Value = GetCheck(ChkAutoCommunication);
+                config.AppSettings.Settings["Scan"].Value = GetCheck(ChkBarCode);
+                config.AppSettings.Settings["ManualJudge"].Value = GetCheck(ChkManualJudge);
+                config.AppSettings.Settings["MeachineAge"].Value = GetCheck(ChkMeachineAge);
+                config.AppSettings.Settings["SetMeachineAge"].Value = GetCheck(ChkSetMeachineAge);
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private string GetCheck(CheckBox check)
+        {
+            if (check.Checked)
+            {
+                return "1";
+            }
+            else return "0";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+using ACA_Common;
+
+namespace ACA_System.UI
+{
+    public partial class FrmReady : Form
+    {
+        private LabelNew[] lblArray = new LabelNew[16];
+        public FrmReady()
+        {
+            InitializeComponent();
+
+    }
+        /// <summary>
+        /// 循环刷新就绪状态
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TmrReady_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < lblArray.Length; i++)
+                {
+                    if (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM_B,lblArray[i].Address)==1)//已经就绪
+                    {
+                        lblArray[i].BackColor = Color.GreenYellow;
+                    }
+                    else lblArray[i].BackColor = Color.FromArgb(212, 208, 200);
+                }
+            }
+            catch (Exception)
+            {
+                //MessageBox.Show("plc通信出现异常");
+            }
+        }
+
+        private void FrmReady_Load(object sender, EventArgs e)
+        {
+            lblArray[0] = LblReady1;
+            lblArray[1] = LblReady2;
+            lblArray[2] = LblReady3;
+            lblArray[3] = LblReady4;
+            lblArray[4] = LblReady5;
+            lblArray[5] = LblReady6;
+            lblArray[6] = LblReady7;
+            lblArray[7] = LblReady8;
+            lblArray[8] = LblReady9;
+            lblArray[9] = LblReady10;
+            lblArray[10] = LblReady11;
+            lblArray[11] = LblReady12;
+            lblArray[12] = LblReady13;
+            lblArray[13] = LblReady14;
+            lblArray[14] = LblReady15;
+            lblArray[15] = LblReady16;
+            TmrReady.Enabled = true;
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            
+            TmrReady.Enabled = false;
+            Hide();
+            FrmMain frmMain = new FrmMain();
+            frmMain.ShowDialog();
+        }
+
+    }
+}

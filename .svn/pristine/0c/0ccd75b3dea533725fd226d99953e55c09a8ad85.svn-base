@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_BreakCommunication;
+
+namespace ACA_System.UI
+{
+    public partial class FrmAuto : Form
+    {
+        private KVDH1 kvState = new KVDH1();
+        public FrmAuto()
+        {
+            InitializeComponent();
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GbxState_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAuto_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void TmrState_Tick(object sender, EventArgs e)
+        {
+            int stateId = kvState.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, Common.ProofTest.MemoryAddress.CmdCode.ToString()); //读取寄存器中的命令值，来知道当前处于什么工作状态
+            switch (stateId)
+            {
+
+                default:
+                    break;
+            }
+        }
+         /// <summary>
+         /// 按下启动按钮
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+        private void BtnStart_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+         /// <summary>
+         /// 松开启动按钮
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+        private void BtnStart_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+    }
+}

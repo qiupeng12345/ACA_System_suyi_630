@@ -1,0 +1,132 @@
+﻿using ACA_Common.Class;
+using System;
+using System.Configuration;
+using System.Windows.Forms;
+
+namespace ACA_System.UI
+{
+    public partial class FrmMain : Form
+    {
+        public FrmMain()
+        {
+            InitializeComponent();
+        }
+
+        private void BtnSetParameter_Click(object sender, EventArgs e)
+        {
+            FrmSetParameter frmSet = new FrmSetParameter();
+            frmSet.ShowDialog();
+        }
+
+        private void BtnAuto_Click(object sender, EventArgs e)
+        {
+            FrmAuto frmAuto = new FrmAuto();
+            frmAuto.ShowDialog();
+        }
+
+        private void BtnManual_Click(object sender, EventArgs e)
+        {
+            FrmManual1 frmManual1 = new FrmManual1();
+            frmManual1.ShowDialog();
+        }
+
+        private void BtnCurrentTest_Click(object sender, EventArgs e)
+        {
+            FrmCurrent frmCurrent = new FrmCurrent();
+            frmCurrent.ShowDialog();
+        }
+
+        private void BtnVoltageTest_Click(object sender, EventArgs e)
+        {
+            FrmVoltage frmVoltage = new FrmVoltage();
+            frmVoltage.ShowDialog();
+        }
+
+        private void BtnResidualCurrent_Click(object sender, EventArgs e)
+        {
+            FrmResidualCurrent frmResidualCurrent = new FrmResidualCurrent();
+            frmResidualCurrent.ShowDialog();
+        }
+        /// <summary>
+        /// 获取保存的用户设置参数
+        /// </summary>
+        
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnReady_Click(object sender, EventArgs e)
+        {
+            FrmReady frmReady = new FrmReady();
+            frmReady.ShowDialog();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            if (Global.kv.Connect())
+            {
+                MessageBox.Show("plc连接成功");
+            }
+            else MessageBox.Show("plc连接失败");
+            
+        }
+
+
+        private void BtnAutoSelect_Click(object sender, EventArgs e)
+        {
+            FrmFunction frmFunction = new FrmFunction();
+            frmFunction.ShowDialog();
+        }
+
+        private void BtnManual2_Click(object sender, EventArgs e)
+        {
+            FrmManual2 frmManual2 = new FrmManual2();
+            frmManual2.ShowDialog();
+        }
+
+        private void BtnManual3_Click(object sender, EventArgs e)
+        {
+            FrmManual3 frmManual3 = new FrmManual3();
+            frmManual3.ShowDialog();
+        }
+
+        private void BtnConnect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Global.kv.Active)
+                {
+                    MessageBox.Show("plc" + "处于连接状态，不需要在此连接");
+                }
+                else
+                {
+                    Global.kv.Connect();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            
+        }
+
+        private void TmrState_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Global.kv.Active)
+                {
+                    //MessageBox.Show("PLC通信错误，请检查通信");
+                    label2.Text = "通信错误";
+                }
+                else label2.Text = "通信正常";
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+    }
+}

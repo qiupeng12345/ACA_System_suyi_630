@@ -1,0 +1,259 @@
+﻿namespace Aca_System_WholeTest
+{
+    partial class FrmMain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.BtnAuto = new System.Windows.Forms.Button();
+            this.BtnSemiAuto = new System.Windows.Forms.Button();
+            this.BtnParameter = new System.Windows.Forms.Button();
+            this.BtnManual1 = new System.Windows.Forms.Button();
+            this.BtnFunction = new System.Windows.Forms.Button();
+            this.BtnReady = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.Button();
+            this.BtnManual2 = new System.Windows.Forms.Button();
+            this.BtnManual4 = new System.Windows.Forms.Button();
+            this.BtnManual3 = new System.Windows.Forms.Button();
+            this.BtnManual6 = new System.Windows.Forms.Button();
+            this.BtnManual5 = new System.Windows.Forms.Button();
+            this.BtnManual8 = new System.Windows.Forms.Button();
+            this.BtnManual7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // BtnAuto
+            // 
+            this.BtnAuto.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnAuto.Location = new System.Drawing.Point(315, 98);
+            this.BtnAuto.Name = "BtnAuto";
+            this.BtnAuto.Size = new System.Drawing.Size(161, 84);
+            this.BtnAuto.TabIndex = 0;
+            this.BtnAuto.Text = "自动瞬时检测";
+            this.BtnAuto.UseVisualStyleBackColor = true;
+            this.BtnAuto.Click += new System.EventHandler(this.BtnAuto_Click);
+            // 
+            // BtnSemiAuto
+            // 
+            this.BtnSemiAuto.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnSemiAuto.Location = new System.Drawing.Point(544, 98);
+            this.BtnSemiAuto.Name = "BtnSemiAuto";
+            this.BtnSemiAuto.Size = new System.Drawing.Size(164, 84);
+            this.BtnSemiAuto.TabIndex = 1;
+            this.BtnSemiAuto.Text = "半自动瞬时检测";
+            this.BtnSemiAuto.UseVisualStyleBackColor = true;
+            this.BtnSemiAuto.Click += new System.EventHandler(this.BtnSemiAuto_Click);
+            // 
+            // BtnParameter
+            // 
+            this.BtnParameter.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnParameter.Location = new System.Drawing.Point(84, 243);
+            this.BtnParameter.Name = "BtnParameter";
+            this.BtnParameter.Size = new System.Drawing.Size(161, 86);
+            this.BtnParameter.TabIndex = 2;
+            this.BtnParameter.Text = "瞬时检测参数配置";
+            this.BtnParameter.UseVisualStyleBackColor = true;
+            // 
+            // BtnManual1
+            // 
+            this.BtnManual1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual1.Location = new System.Drawing.Point(541, 243);
+            this.BtnManual1.Name = "BtnManual1";
+            this.BtnManual1.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual1.TabIndex = 3;
+            this.BtnManual1.Text = "上料气缸手动";
+            this.BtnManual1.UseVisualStyleBackColor = true;
+            this.BtnManual1.Click += new System.EventHandler(this.BtnManual_Click);
+            // 
+            // BtnFunction
+            // 
+            this.BtnFunction.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnFunction.Location = new System.Drawing.Point(87, 98);
+            this.BtnFunction.Name = "BtnFunction";
+            this.BtnFunction.Size = new System.Drawing.Size(161, 84);
+            this.BtnFunction.TabIndex = 4;
+            this.BtnFunction.Text = "自动功能选择";
+            this.BtnFunction.UseVisualStyleBackColor = true;
+            this.BtnFunction.Click += new System.EventHandler(this.BtnFunction_Click);
+            // 
+            // BtnReady
+            // 
+            this.BtnReady.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnReady.Location = new System.Drawing.Point(312, 243);
+            this.BtnReady.Name = "BtnReady";
+            this.BtnReady.Size = new System.Drawing.Size(161, 84);
+            this.BtnReady.TabIndex = 5;
+            this.BtnReady.Text = "就绪界面";
+            this.BtnReady.UseVisualStyleBackColor = true;
+            this.BtnReady.Click += new System.EventHandler(this.BtnReady_Click);
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnExit.Location = new System.Drawing.Point(776, 97);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(161, 84);
+            this.BtnExit.TabIndex = 6;
+            this.BtnExit.Text = "退出";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // BtnManual2
+            // 
+            this.BtnManual2.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual2.Location = new System.Drawing.Point(773, 243);
+            this.BtnManual2.Name = "BtnManual2";
+            this.BtnManual2.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual2.TabIndex = 7;
+            this.BtnManual2.Text = "工位1/2手动";
+            this.BtnManual2.UseVisualStyleBackColor = true;
+            this.BtnManual2.Click += new System.EventHandler(this.BtnManual2_Click);
+            // 
+            // BtnManual4
+            // 
+            this.BtnManual4.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual4.Location = new System.Drawing.Point(312, 387);
+            this.BtnManual4.Name = "BtnManual4";
+            this.BtnManual4.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual4.TabIndex = 9;
+            this.BtnManual4.Text = "工位5/6手动";
+            this.BtnManual4.UseVisualStyleBackColor = true;
+            this.BtnManual4.Click += new System.EventHandler(this.BtnManual4_Click);
+            // 
+            // BtnManual3
+            // 
+            this.BtnManual3.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual3.Location = new System.Drawing.Point(80, 386);
+            this.BtnManual3.Name = "BtnManual3";
+            this.BtnManual3.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual3.TabIndex = 8;
+            this.BtnManual3.Text = "工位3/4手动";
+            this.BtnManual3.UseVisualStyleBackColor = true;
+            this.BtnManual3.Click += new System.EventHandler(this.BtnManual3_Click);
+            // 
+            // BtnManual6
+            // 
+            this.BtnManual6.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual6.Location = new System.Drawing.Point(773, 386);
+            this.BtnManual6.Name = "BtnManual6";
+            this.BtnManual6.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual6.TabIndex = 11;
+            this.BtnManual6.Text = "接触器手动-1";
+            this.BtnManual6.UseVisualStyleBackColor = true;
+            this.BtnManual6.Click += new System.EventHandler(this.BtnManual6_Click);
+            // 
+            // BtnManual5
+            // 
+            this.BtnManual5.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual5.Location = new System.Drawing.Point(544, 386);
+            this.BtnManual5.Name = "BtnManual5";
+            this.BtnManual5.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual5.TabIndex = 10;
+            this.BtnManual5.Text = "机械手手动";
+            this.BtnManual5.UseVisualStyleBackColor = true;
+            this.BtnManual5.Click += new System.EventHandler(this.BtnManual5_Click);
+            // 
+            // BtnManual8
+            // 
+            this.BtnManual8.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual8.Location = new System.Drawing.Point(312, 529);
+            this.BtnManual8.Name = "BtnManual8";
+            this.BtnManual8.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual8.TabIndex = 13;
+            this.BtnManual8.Text = "接触器手动-3";
+            this.BtnManual8.UseVisualStyleBackColor = true;
+            this.BtnManual8.Click += new System.EventHandler(this.BtnManual8_Click);
+            // 
+            // BtnManual7
+            // 
+            this.BtnManual7.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnManual7.Location = new System.Drawing.Point(80, 528);
+            this.BtnManual7.Name = "BtnManual7";
+            this.BtnManual7.Size = new System.Drawing.Size(164, 86);
+            this.BtnManual7.TabIndex = 12;
+            this.BtnManual7.Text = "接触器手动-2";
+            this.BtnManual7.UseVisualStyleBackColor = true;
+            this.BtnManual7.Click += new System.EventHandler(this.BtnManual7_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(541, 528);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 86);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "接触器手动-4";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FrmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1032, 701);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnManual8);
+            this.Controls.Add(this.BtnManual7);
+            this.Controls.Add(this.BtnManual6);
+            this.Controls.Add(this.BtnManual5);
+            this.Controls.Add(this.BtnManual4);
+            this.Controls.Add(this.BtnManual3);
+            this.Controls.Add(this.BtnManual2);
+            this.Controls.Add(this.BtnExit);
+            this.Controls.Add(this.BtnReady);
+            this.Controls.Add(this.BtnFunction);
+            this.Controls.Add(this.BtnManual1);
+            this.Controls.Add(this.BtnParameter);
+            this.Controls.Add(this.BtnSemiAuto);
+            this.Controls.Add(this.BtnAuto);
+            this.Name = "FrmMain";
+            this.Text = "主界面";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button BtnAuto;
+        private System.Windows.Forms.Button BtnSemiAuto;
+        private System.Windows.Forms.Button BtnParameter;
+        private System.Windows.Forms.Button BtnManual1;
+        private System.Windows.Forms.Button BtnFunction;
+        private System.Windows.Forms.Button BtnReady;
+        private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.Button BtnManual2;
+        private System.Windows.Forms.Button BtnManual4;
+        private System.Windows.Forms.Button BtnManual3;
+        private System.Windows.Forms.Button BtnManual6;
+        private System.Windows.Forms.Button BtnManual5;
+        private System.Windows.Forms.Button BtnManual8;
+        private System.Windows.Forms.Button BtnManual7;
+        private System.Windows.Forms.Button button1;
+    }
+}

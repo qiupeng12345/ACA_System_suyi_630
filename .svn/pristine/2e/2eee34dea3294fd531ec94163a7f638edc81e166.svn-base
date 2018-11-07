@@ -1,0 +1,140 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_Common.Class;
+
+namespace ACA_System.UI
+{
+    public partial class FrmCurrent : Form
+    {
+        private ProofTest ProofTest = new ProofTest();
+        public FrmCurrent()
+        {
+            InitializeComponent();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void ChkCommunicaton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkCommunicaton.Checked)
+            {
+                Global.communicationUseCurrent = true;
+            }
+            else Global.communicationUseCurrent = false;
+        }
+
+        private void ChkNoCommunication_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkNoCommunication.Checked)
+            {
+                Global.communicationUseCurrent = false;
+            }
+            else Global.communicationUseCurrent = true;
+        }
+
+        private void ChkAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkAuto.Checked)
+            {
+                Global.autoLoadingCurrent = true;
+            }
+            else Global.autoLoadingCurrent = false;
+        }
+
+        private void ChkManual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkManual.Checked)
+            {
+                Global.autoLoadingCurrent = false;
+            }
+            else Global.autoLoadingCurrent = true;
+        }
+
+        private void BtnStart_Click(object sender, EventArgs e)
+        {
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnStart.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProofStart();
+            }
+        }
+
+
+        private void FrmCurrent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnOutput1_Click(object sender, EventArgs e)
+        {
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnOutput1.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProof1();
+            }
+        }
+
+        private void BtnOutput2_Click(object sender, EventArgs e)
+        {
+
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnOutput2.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProof2();
+            }
+        }
+
+        private void BtnOutput3_Click(object sender, EventArgs e)
+        {
+
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnOutput3.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProof3();
+            }
+        }
+
+        private void BtnOutput4_Click(object sender, EventArgs e)
+        {
+
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnOutput4.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProof4();
+            }
+        }
+
+        private void BtnOutput5_Click(object sender, EventArgs e)
+        {
+
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnOutput5.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProof5();
+            }
+        }
+
+        private void BtnTestComplete_Click(object sender, EventArgs e)
+        {
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnTestComplete.Address, 1);
+            if (Global.communicationUseCurrent)
+            {
+                ProofTest.CurrentProofEnd();
+            }
+        }
+
+        private void BtnJigs_Click(object sender, EventArgs e)
+        {
+            Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, BtnJigs.Address, 1);
+        }
+    }
+}

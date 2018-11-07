@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C40BE8AC-A9B9-4E1C-B367-5A81663586F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ACA_System</RootNamespace>
+    <AssemblyName>ACA_System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.DATABUILDERAXLibLB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\ACA_BreakCommunication - 01\ACA_BreakCommunication\bin\Debug\Interop.DATABUILDERAXLibLB.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WHC.Framework.BaseUI">
+      <HintPath>..\..\..\c#学习资料\Winform 开发框架源码 devexpress 管理系统源码 C# .NET 多主题\Winform 开发框架源码 devexpress 管理系统源码 C# .NET 多主题\Reference\WHC.Framework.BaseUI.dll</HintPath>
+    </Reference>
+    <Reference Include="WHC.Framework.Commons">
+      <HintPath>..\..\..\c#学习资料\Winform 开发框架源码 devexpress 管理系统源码 C# .NET 多主题\Winform 开发框架源码 devexpress 管理系统源码 C# .NET 多主题\01-仓库系统框架\WHC.WareHouseMis\bin\Debug\WHC.Framework.Commons.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Other\Portal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAuto.Designer.cs">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSemiAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSemiAuto.Designer.cs">
+      <DependentUpon>FrmSemiAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmFunction.Designer.cs">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmManual1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmManual1.Designer.cs">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmManual2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmManual2.Designer.cs">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmManual3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmManual3.Designer.cs">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmReady.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmReady.Designer.cs">
+      <DependentUpon>FrmReady.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSetParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSetParameter.Designer.cs">
+      <DependentUpon>FrmSetParameter.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAuto.resx">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSemiAuto.resx">
+      <DependentUpon>FrmSemiAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmFunction.resx">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmManual1.resx">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmManual2.resx">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmManual3.resx">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmReady.resx">
+      <DependentUpon>FrmReady.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSetParameter.resx">
+      <DependentUpon>FrmSetParameter.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\参数设置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20180129091624.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\检测报告.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\事件记录.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\统计分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\用户管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\运行监控.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACA_BreakCommunication - 01\ACA_BreakCommunication\ACA_Communication.csproj">
+      <Project>{9f0c33a7-a35b-4674-8dde-4c5ba1396df2}</Project>
+      <Name>ACA_Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACA_WorkCell\ACA_Common.csproj">
+      <Project>{686aae1f-33e4-49a0-8c7b-3649eef36699}</Project>
+      <Name>ACA_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeyBoard\KeyBoard.csproj">
+      <Project>{bf49154f-8bbd-40d9-807d-9579caf4601f}</Project>
+      <Name>KeyBoard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

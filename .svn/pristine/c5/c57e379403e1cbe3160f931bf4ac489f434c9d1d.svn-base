@@ -1,0 +1,408 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+using System.Threading;
+
+namespace ACA_System.Common
+{
+    class WholeTest //整机测试单元
+    {
+        private SuyiMCCB suyi;
+        private KVDH1 kv;
+        private int actionTest1Current;
+        private int actionTest1Time;
+        private int actionTest2StartCurrent;
+        private int actionTest2Time;
+        private int actionTest2EndCurrent;
+        private int actionTest3Current;     
+        private int actionTest3Time;
+        private int overVoltageValue;
+        private int underVoltageValue;
+        private int lowVoltageValue;
+        private int zeroPhase;
+        private const int auto = 1;
+        private const int semiAuto = 2;
+        private const int stop = 3;
+        private const int cmdPlcReady = 0;
+        private const int cmdWholeTestStart = 1;
+        private const int cmdCommunicationTest = 2;
+        private const int cmdActionTest1 = 3;
+        private const int cmdCloseSwitch1 = 4;
+        private const int cmdActionTest2 = 5;
+        private const int cmdCloseSwitch2 = 6;
+        private const int cmdOverVoltage = 7;
+        private const int cmdCloseSwitch3 = 8;
+        private const int cmdUnderVoltage = 9;
+        private const int cmdCloseSwitch4 = 10;
+        private const int cmdLowVoltage = 11;
+        private const int cmdCloseSwitch5 = 12;
+        private const int cmdLosePhase = 13;
+        private const int cmdCloseSwitch6 = 14;
+        private const int cmdZeroPhase = 15;
+        private const int cmdCloseSwitch7 = 16;
+        private const int cmdWholeTestEnd = 17;
+        private const int cmdFactorySet = 18;
+        private const int cmdCloseSwitch = 19;
+        private const int cmdRecoveryFactorySet = 20;
+        private const int ngReset = 0;
+        private const int ngCommunication = 1;
+        private const int ngRecoveryFactory = 2;
+        private const int ngCloseSwitch = 3;
+        private const int ngActionTest1 = 4;
+        private const int ngActionTest2 = 5;
+        private const int ngActionTest3 = 6;
+        private const int ngOverVoltage = 7;
+        private const int ngUnderVoltage = 8;
+        private const int ngLowVoltage = 9;
+        private const int ngLosePhase = 10;
+        private const int ngZeroPhase = 11;
+        private const int ngFactorySet= 12;
+
+        public SuyiMCCB Suyi { get => suyi; set => suyi = value; }
+        public KVDH1 Kv { get => kv; set => kv = value; }
+        public int ActionTest1Current { get => actionTest1Current; set => actionTest1Current = value; }
+        public int ActionTest1Time { get => actionTest1Time; set => actionTest1Time = value; }
+        public int ActionTest2StartCurrent { get => actionTest2StartCurrent; set => actionTest2StartCurrent = value; }
+        public int ActionTest2Time { get => actionTest2Time; set => actionTest2Time = value; }
+        public int ActionTest3Current { get => actionTest3Current; set => actionTest3Current = value; }
+        public int ActionTest3Time { get => actionTest3Time; set => actionTest3Time = value; }
+        public int OverVoltageValue { get => overVoltageValue; set => overVoltageValue = value; }
+        public int UnderVoltageValue { get => underVoltageValue; set => underVoltageValue = value; }
+        public int LowVoltageValue { get => lowVoltageValue; set => lowVoltageValue = value; }
+        public int ZeroPhase { get => zeroPhase; set => zeroPhase = value; }
+        public int ActionTest2EndCurrent { get => actionTest2EndCurrent; set => actionTest2EndCurrent = value; }
+
+        public void AutoWholeTest() //自动整机测试
+        {
+            int closeSwitchErro = 0;
+            ParameterToPlc();//往plc里面写入设置参数
+            while (GetWorkState()==auto)
+            {
+                if (GetResult())//没有NG
+                {
+                    int cmdId = GetCmdCode();
+                    switch (cmdId)
+                    {
+                        case cmdPlcReady:
+
+                            break;
+                        case cmdWholeTestStart:
+                            break;
+                        case cmdCommunicationTest:
+                            if (suyi.CommunicationTest()) //通信测试环节
+                            {
+                                SetCmdCode(cmdCloseSwitch);
+                            }
+                            else SetResult(ngCommunication);
+                            break;
+                        case cmdCloseSwitch:
+                            if (suyi.ReadSwitchState() == 1)  //如果是合闸状态
+                            {
+                                SetCmdCode(cmdRecoveryFactorySet);
+                            }
+                            else
+                            {
+                                for (int i = 0; i < 30; i++)
+                                {
+                                    if (suyi.CloseSwitch())
+                                    {
+                                        if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                        {
+                                            SetCmdCode(cmdRecoveryFactorySet);
+                                            closeSwitchErro = 0;
+                                            break;
+                                        }
+                                        else closeSwitchErro++;
+                                        if (closeSwitchErro == 30) //如果合闸失败次数达到30次
+                                        {
+                                            SetResult(ngCloseSwitch);//告诉plc NG
+                                        }
+                                        Thread.Sleep(2000);
+                                    }
+                                }
+                            }
+                            break;
+                        case cmdRecoveryFactorySet:
+                            if (suyi.RecoveryFactorySet())//恢复出厂参数设置
+                            {
+                                SetCmdCode(cmdActionTest1);  //输出预设值1
+                            }
+                            else SetResult(ngRecoveryFactory);
+                            break;
+
+                        case cmdCloseSwitch1:
+
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdActionTest2);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch2:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdOverVoltage);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch3:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdUnderVoltage);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch4:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdLowVoltage);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch5:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdLosePhase);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch6:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdZeroPhase);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdCloseSwitch7:
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (suyi.CloseSwitch())
+                                {
+                                    if (suyi.ReadSwitchState() == 1) //如果已经合闸
+                                    {
+                                        SetCmdCode(cmdFactorySet);  //输出预设值1
+                                        closeSwitchErro = 0;
+                                        break;
+                                    }
+                                    else closeSwitchErro++;
+                                    if (closeSwitchErro == 5) //如果合闸失败次数达到5次
+                                    {
+                                        SetResult(ngCloseSwitch);//告诉plc NG
+                                    }
+                                    Thread.Sleep(2000);
+                                }
+                            }
+                            break;
+                        case cmdFactorySet:  //出厂参数设置具体怎么实现(需要联系苏益)
+
+                            break;
+                        case cmdWholeTestEnd:  //整机测试一个流程完成
+                            closeSwitchErro = 0;
+                            break;
+
+
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        private void ParameterToPlc()
+        {
+            WriteMemory(MemoryAddress.ActionTest1Current.ToString(), actionTest1Current);
+            WriteMemory(MemoryAddress.ActionTest1Time.ToString(), actionTest1Time);
+            WriteMemory(MemoryAddress.ActionTest2StartCurrent.ToString(), actionTest2StartCurrent);
+            WriteMemory(MemoryAddress.ActionTest2Time.ToString(), actionTest2Time);
+            WriteMemory(MemoryAddress.ActionTest2EndCurrent.ToString(), ActionTest2EndCurrent);
+            WriteMemory(MemoryAddress.ActionTest3Current.ToString(), actionTest3Current);
+            WriteMemory(MemoryAddress.ActionTest3Time.ToString(), actionTest3Time);
+            WriteMemory(MemoryAddress.OverVoltageValue.ToString(), overVoltageValue);
+            WriteMemory(MemoryAddress.UnderVoltageValue.ToString(), underVoltageValue);
+            WriteMemory(MemoryAddress.LowVoltageValue.ToString(), lowVoltageValue);
+        }
+        private int GetWorkState()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.workState.ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+        private int GetCmdCode()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.CmdCode.ToString());
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+
+        }
+        private void SetCmdCode(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.CmdCode.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private bool GetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.TestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void SetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.TestResult.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        private void WriteMemory(string address, int data)
+        {
+            try
+            {
+                kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address, data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private int ReadMemory(string address)
+        {
+            try
+            {
+                return kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
+        }
+        private enum MemoryAddress : int
+        {
+            workState,
+            CmdCode,
+            TestResult,
+            ActionTest1Current,
+            ActionTest1Time,
+            ActionTest2StartCurrent,
+            ActionTest2Time,
+            ActionTest2EndCurrent,
+            ActionTest3Current,
+            ActionTest3Time,
+            OverVoltageValue,
+            UnderVoltageValue,
+            LowVoltageValue,
+        }
+    }
+}

@@ -1,0 +1,328 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+using System.Threading;
+
+namespace ACA_Common.Class
+{
+    class WholeTest //整机测试单元
+    {
+        private SuyiMCCB suyi;
+        private const int auto = 1;
+        private const int semiAuto = 2;
+        private const int stop = 3;
+        private const int cmdWholeTestStart = 1;
+        private const int cmdCommunicationTest = 2;
+        private const int cmdRecoveryFactorySet = 3;
+        private const int cmdActionTest1 = 4;
+        private const int cmdActionTest2 = 5;
+        private const int cmdCloseSwitch1 = 6;
+        private const int cmdJudgeSwitchState1 = 7;
+        private const int cmdCloseSwitch2 = 8;
+        private const int cmdJudgeSwitchState2 = 9;
+        private const int cmdOverVoltage = 10;
+        private const int cmdCloseSwitch3 = 11;
+        private const int cmdJudgeSwitchState3 =12;
+        private const int cmdUnderVoltage = 13;
+        private const int cmdCloseSwitch4 = 14;
+        private const int cmdJudgeSwitchState4 = 15;
+        private const int cmdLowVoltage = 16;
+        private const int cmdOpenSwitch = 17;
+        private const int cmdCloseSwitch5 = 17;
+        private const int cmdJudgeSwitchState5 = 18;
+        private const int cmdLosePhase = 19;
+        private const int cmdCloseSwitch6 = 20;
+        private const int cmdJudgeSwitchState6 = 21;
+        private const int cmdZeroPhase = 22;
+        private const int cmdCloseSwitch7 = 23;
+        private const int cmdJudgeSwitchState7 = 24;
+        private const int cmdClearTest = 25;
+        private const int cmdWholeTestEnd = 26;
+        private const int ngReset = 0;
+        private const int ngCommunication = 1;
+        private const int ngRecoveryFactory = 2;
+        private const int ngCloseSwitch = 3;
+        private const int ngActionTest1 = 4;
+        private const int ngActionTest2 = 5;
+        private const int ngActionTest3 = 6;
+        private const int ngOverVoltage = 7;
+        private const int ngUnderVoltage = 8;
+        private const int ngLowVoltage = 9;
+        private const int ngLosePhase = 10;
+        private const int ngZeroPhase = 11;
+        private const int ngClearTest = 12;
+
+        public SuyiMCCB Suyi { get => suyi; set => suyi = value; }
+
+        public void AutoWholeTest() //自动整机测试
+        {
+            
+            while (GetWorkState() == auto)
+            {
+                if (GetResult())//没有NG
+                {
+                    int cmdId = GetCmdCode();
+                    switch (cmdId)
+                    {
+                        case cmdWholeTestStart:
+                            ParameterToPlc();//往plc里面写入设置参数
+                            break;
+                        case cmdCommunicationTest:
+                            if (suyi.CommunicationTest()) //通信测试环节（命令代码由苏益给出)
+                            {
+                                SetCmdCode(cmdRecoveryFactorySet);
+                            }
+                            else SetResult(ngCommunication);
+                            break;
+                        case cmdRecoveryFactorySet:
+                            //发送恢复出场设置指令
+                            if (suyi.RecoveryFactorySet())
+                            {
+                                SetCmdCode(cmdActionTest1);
+                            }
+                            else SetResult(ngRecoveryFactory);
+                            break;
+                        case cmdActionTest1: //极限不驱动测试
+                            ///plc进行极限不驱动测试
+                            ///
+                            break;
+                        case cmdCloseSwitch1:
+                            
+                            break;
+                        case cmdJudgeSwitchState1:
+                            //plc判断合闸
+                            break;
+                        case cmdActionTest2: //漏电流动作事件测试
+                            ///plc进行测试2（漏电流动作事件测试）
+                            break;
+                        case cmdCloseSwitch2:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState2);
+                            }
+                            else SetResult(ngCloseSwitch);
+                            break;
+                        case cmdJudgeSwitchState2: //需要上位机和plc都进行合闸判断
+                            //Thread.Sleep(Global.wholeTestCloseSwitchTime);
+                            if (suyi.ReadSwitchState() == 1)
+                            {
+                                SetCmdCode(cmdOverVoltage);
+                            }
+                            break;
+                        case cmdCloseSwitch3:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState3);
+                            }
+                            else SetResult(ngCloseSwitch);
+                            break;
+                        case cmdJudgeSwitchState3:
+                            //Thread.Sleep(Global.wholeTestCloseSwitchTime);
+                            if (suyi.ReadSwitchState()==1)
+                            {
+                                SetCmdCode(cmdUnderVoltage);
+                            }
+                            break;
+                        case cmdCloseSwitch4:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState4);
+                            }
+                            else SetResult(ngCloseSwitch);
+                            break;
+                        case cmdJudgeSwitchState4:
+                            Thread.Sleep(Global.wholeTestCloseSwitchTime);
+                            if (suyi.ReadSwitchState()==1)
+                            {
+                                SetCmdCode(ngLowVoltage);
+                            }
+                            break;
+                        case cmdOpenSwitch:
+                            if (suyi.OpenSwitch())
+                            {
+                                SetCmdCode(cmdCloseSwitch5);
+                            }
+                            break;
+                        ////case cmdCloseSwitch5:
+                        //    if (suyi.CloseSwitch())
+                        //    {
+                        //        SetCmdCode(cmdJudgeSwitchState5);
+                        //    }
+                        //    break;
+                        case cmdJudgeSwitchState5:
+                            if (suyi.ReadSwitchState()==1)
+                            {
+                                SetCmdCode(cmdLosePhase);
+                            }
+                            break;
+                        case cmdLosePhase:
+
+                            break;
+                        case cmdCloseSwitch6:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState6);
+                            }
+                            break;
+                        case cmdJudgeSwitchState6:
+                            if (suyi.ReadSwitchState()==1)
+                            {
+                                if (Global.zeroPhase)
+                                {
+                                    SetCmdCode(cmdZeroPhase);
+                                }
+                                else SetCmdCode(cmdClearTest);
+                            }
+                            break;
+                        case cmdZeroPhase:
+                            break;
+                        case cmdCloseSwitch7:
+                            if (suyi.CloseSwitch())
+                            {
+                                SetCmdCode(cmdJudgeSwitchState7);
+                            }
+                            break;
+                        case cmdJudgeSwitchState7:
+                            if (suyi.ReadSwitchState()==1)
+                            {
+                                SetCmdCode(cmdClearTest);
+                            }
+                            break;
+                        case cmdClearTest:
+                            if (suyi.ClearTestRecord())
+                            {
+                                SetCmdCode(cmdWholeTestEnd);
+                            }
+                            break;
+                        case cmdWholeTestEnd:  //整机测试一个流程完成
+
+                            break;
+
+
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        private void ParameterToPlc()
+        {
+            WriteMemory(MemoryAddress.ActionTest1Current.ToString(), Global.actionTest1Current);
+            WriteMemory(MemoryAddress.ActionTest1Time.ToString(), Global.actionTest1Time);
+            WriteMemory(MemoryAddress.ActionTest2StartCurrent.ToString(), Global.actionTest2StartCurrent);
+            WriteMemory(MemoryAddress.ActionTest2Time.ToString(), Global.actionTest2Time);
+            WriteMemory(MemoryAddress.ActionTest2EndCurrent.ToString(), Global.actionTest2EndCurrent);
+            WriteMemory(MemoryAddress.ActionTest3Current.ToString(), Global.actionTest3Current);
+            WriteMemory(MemoryAddress.ActionTest3Time.ToString(), Global.actionTest3Time);
+            WriteMemory(MemoryAddress.OverVoltageValue.ToString(), Global.overVoltageValue);
+            WriteMemory(MemoryAddress.UnderVoltageValue.ToString(), Global.underVoltageValue);
+            WriteMemory(MemoryAddress.LowVoltageValue.ToString(), Global.lowVoltageValue);
+        }
+        private int GetWorkState()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.workState.ToString());
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+
+        }
+        private int GetCmdCode()
+        {
+            try
+            {
+                return ReadMemory(MemoryAddress.CmdCode.ToString());
+            }
+            catch (Exception)
+            {
+
+                return 0;
+            }
+
+        }
+        private void SetCmdCode(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.CmdCode.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        private bool GetResult()
+        {
+            try
+            {
+                if (ReadMemory(MemoryAddress.TestResult.ToString()) == ngReset)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        private void SetResult(int data)
+        {
+            try
+            {
+                WriteMemory(MemoryAddress.TestResult.ToString(), data);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        private void WriteMemory(string address, int data)
+        {
+            try
+            {
+                Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address, data);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        private int ReadMemory(string address)
+        {
+            try
+            {
+                return Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM, address);
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+
+        }
+        private enum MemoryAddress : int
+        {
+            workState,
+            CmdCode,
+            TestResult,
+            ActionTest1Current,
+            ActionTest1Time,
+            ActionTest2StartCurrent,
+            ActionTest2Time,
+            ActionTest2EndCurrent,
+            ActionTest3Current,
+            ActionTest3Time,
+            OverVoltageValue,
+            UnderVoltageValue,
+            LowVoltageValue,
+        }
+    }
+}

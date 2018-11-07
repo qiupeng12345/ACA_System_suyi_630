@@ -1,0 +1,284 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ACA_BreakCommunication;
+using ACA_Common.Class;
+using ACA_Common;
+using System.Threading;
+using System.Configuration;
+
+namespace ACA_System.UI
+{
+    public partial class FrmAuto : Form
+    {
+        ProofTest proof = new ProofTest();
+        ButtonNew[] btnArray = new ButtonNew[3];
+        LabelNew[] lblArray = new LabelNew[7];
+        string[] alarmString = new string[26];
+        string[] stateString = new string[90];
+        Dictionary<int, string> dicState = new Dictionary<int, string>();
+        List<AlarmObject> list;
+        string stateAddress = "3601"; //获取状态的地址
+        string address1 = "3900";
+        string address2 = "3901";
+        BindingList<AlarmInfo> listAlarm;
+        Dictionary<string, AlarmInfo> dicAlarm = new Dictionary<string, AlarmInfo>();
+        public FrmAuto()
+        {
+            InitializeComponent();
+            GetConfig();
+            ListGet();
+            
+        }
+
+        private void FrmAuto_Load(object sender, EventArgs e)
+        {
+            lblArray[0] = LblCurrent;
+            lblArray[1] = LblTime;
+            lblArray[2] = LblVoltageA;
+            lblArray[3] = LblVoltageB;
+            lblArray[4] = LblVoltageC;
+            lblArray[5] = LblLeakCurrent;
+            lblArray[6] = LblLeakCurrentTime;
+            btnArray[0] = BtnStart;
+            btnArray[1] = BtnStop;
+            btnArray[2] = BtnAlarm;
+            listAlarm = new BindingList<AlarmInfo>();
+            DgvAlarm.DataSource = listAlarm;
+            TmrState.Enabled = true;
+        }
+
+        private void TmrState_Tick(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //Display();
+                //Alarm();
+                if (Global.kv.Active)
+                {
+                    Display();
+                    StateDisplay();
+                    Alarm();
+
+                }
+            }
+            catch (Exception )
+            {
+
+
+            }
+
+        }
+        private void ListGet()
+        {
+            list = new List<AlarmObject>()
+            {
+                new AlarmObject("390000", alarmString[0],false),new AlarmObject("390001", alarmString[1], false),
+                new AlarmObject("390002", alarmString[2], false),new AlarmObject("390003", alarmString[3], false),
+                new AlarmObject("390004", alarmString[4], false),new AlarmObject("390005", alarmString[5], false),
+                new AlarmObject("390006", alarmString[6], false),new AlarmObject("390007", alarmString[7], false),
+                new AlarmObject("390008", alarmString[8], false),new AlarmObject("390009", alarmString[9], false),
+                new AlarmObject("390010", alarmString[10], false),new AlarmObject("390011", alarmString[11], false),
+                new AlarmObject("390012", alarmString[12], false),new AlarmObject("390013", alarmString[13], false),
+                new AlarmObject("390014", alarmString[14], false),new AlarmObject("390015", alarmString[15], false),
+                new AlarmObject("390100", alarmString[16], false),new AlarmObject("390101", alarmString[17], false),
+                new AlarmObject("390102", alarmString[18], false),new AlarmObject("390103", alarmString[19], false),
+                new AlarmObject("390104", alarmString[20], false),new AlarmObject("390105", alarmString[21], false),
+                new AlarmObject("390106", alarmString[22], false),new AlarmObject("390107", alarmString[23], false),
+                new AlarmObject("390108", alarmString[24], false),new AlarmObject("390109", alarmString[25], false)
+            };
+        }
+        private void GetConfig()
+        {
+            try
+            {
+                for (int i = 0; i < alarmString.Length; i++)
+                {
+                    alarmString[i] = ConfigurationManager.AppSettings["alarm" + i.ToString()];
+                }
+                for(int i=0;i<stateString.Length;i++)
+                {
+                    stateString[i]= ConfigurationManager.AppSettings["state"+(i+1).ToString()];
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        /// <summary>
+        /// 获取当前工作状态
+        /// </summary>
+        //private void GetState()
+        //{
+        //      (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_DM,stateAddress)
+
+        //}
+        private void StateDisplay()
+        {
+            LblState.Text = stateString[(Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM, stateAddress))-1];
+        }
+        /// <summary>
+        /// 界面显示
+        /// </summary>
+        private void Display()
+        {
+            for (int i = 0; i < lblArray.Length; i++)
+            {
+                lblArray[i].Text = DoubleConvert.Dint_to_Real((uint)Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM, lblArray[i].StateAddress)
+                 , (uint)Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM, lblArray[i].Address)).ToString("0.00");
+                Thread.Sleep(10);
+            }
+            for (int i = 0; i < btnArray.Length; i++)
+            {
+                if ((Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_RLY_B, btnArray[i].StateAddress) == 1))
+                {
+                    btnArray[i].BackColor = Color.Green;
+                }
+                else btnArray[i].BackColor = Color.Red;
+            }
+        }
+        /// <summary>
+        /// 显示报警信息
+        /// </summary>
+        private void Alarm()
+        {
+            if (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM, address1) != 0 || Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM, address2) != 0)
+            {
+                foreach (var item in list)
+                {
+                    if (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM_B, item.AlarmAddress) == 1) //读取该位为1（报警）
+                    {
+                        if (!item.IsAlarming) //没有标记为报警
+                        {
+                            AlarmInfo info = new AlarmInfo(DateTime.Now, item.AlarmTip);
+                            listAlarm.Add(info);
+                            dicAlarm.Add(item.AlarmAddress, info);
+                            item.IsAlarming = true;
+                        }
+                    }
+                    else if (Global.kv.ReadMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7K_EM_B, item.AlarmAddress) == 0)
+                    {
+                        if (item.IsAlarming) //标记为正在报警
+                        {
+                            listAlarm.Remove(dicAlarm[item.AlarmAddress]);
+                            dicAlarm.Remove(item.AlarmAddress);
+                            item.IsAlarming = false;
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 按下启动/停止按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_MouseDown(object sender, MouseEventArgs e)
+        {
+            ButtonNew btn = (ButtonNew)sender;
+            try
+            {
+                if (Global.kv.Active)
+                {
+                    if (!Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7KXYM_RLY_B, btn.Address, 1))
+                    {
+                        MessageBox.Show("plc通信异常");
+                    }
+                }
+                else MessageBox.Show("plc断开连接");
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+        /// <summary>
+        /// 松开启动按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_MouseUp(object sender, MouseEventArgs e)
+        {
+            ButtonNew btn = (ButtonNew)sender;
+            try
+            {
+                if (Global.kv.Active)
+                {
+                    if (!Global.kv.WriteMemory(DATABUILDERAXLibLB.DBPlcDevice.DKV7KXYM_RLY_B, btn.Address, 0))
+                    {
+                        MessageBox.Show("plc通信异常");
+                    }
+
+                }
+                else MessageBox.Show("plc断开连接");
+                if (btn.Text=="启动")
+                {
+                    proof.AutoWork = true;
+                    Thread thAuto = new Thread(proof.AutoTest);
+                    thAuto.IsBackground = true;
+                    thAuto.Start();
+                }
+                else if (btn.Text=="停止")
+                {
+                    proof.AutoWork = false;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            TmrState.Enabled = false;
+            Close();
+        }
+
+    }
+    /// <summary>
+    /// 用于记录报警信息的类
+    /// </summary>
+    public class AlarmInfo
+    {
+        private DateTime time;
+        private string info;
+        public AlarmInfo(DateTime dt, string inf)
+        {
+            Time = dt;
+            Info = inf;
+        }
+
+        public DateTime Time { get => time; set => time = value; }
+        public string Info { get => info; set => info = value; }
+    }
+    /// <summary>
+    /// 用于对应寄存器地址来判断是否报警
+    /// </summary>
+    public class AlarmObject
+    {
+        private string alarmAddress;
+        private string alarmTip;
+        private bool isAlarming;
+        public string AlarmAddress { get => alarmAddress; set => alarmAddress = value; }
+        public string AlarmTip { get => alarmTip; set => alarmTip = value; }
+        public bool IsAlarming { get => isAlarming; set => isAlarming = value; }
+        public AlarmObject(string alarmaddress, string alarmtip, bool isalarming)
+        {
+            AlarmAddress = alarmaddress;
+            AlarmTip = alarmtip;
+            IsAlarming = isalarming;
+        }
+    }
+}
+

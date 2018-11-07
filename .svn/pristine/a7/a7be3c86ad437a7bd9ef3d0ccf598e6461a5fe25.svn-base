@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EEA26051-3A12-48F6-BA9F-9A14C101EBDD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ACA_System_InTest</RootNamespace>
+    <AssemblyName>ACA_System_InTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.DATABUILDERAXLibLB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\ACA_BreakCommunication - 01\ACA_BreakCommunication\obj\Debug\Interop.DATABUILDERAXLibLB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAuto.Designer.cs">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFunction.Designer.cs">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual1.Designer.cs">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual2.Designer.cs">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManual3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManual3.Designer.cs">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParameter.Designer.cs">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReady.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReady.Designer.cs">
+      <DependentUpon>FrmReady.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSemi-Auto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSemi-Auto.Designer.cs">
+      <DependentUpon>FrmSemi-Auto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAuto.resx">
+      <DependentUpon>FrmAuto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFunction.resx">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual1.resx">
+      <DependentUpon>FrmManual1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual2.resx">
+      <DependentUpon>FrmManual2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManual3.resx">
+      <DependentUpon>FrmManual3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParameter.resx">
+      <DependentUpon>FrmParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReady.resx">
+      <DependentUpon>FrmReady.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSemi-Auto.resx">
+      <DependentUpon>FrmSemi-Auto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ACA_BreakCommunication - 01\ACA_BreakCommunication\ACA_BreakCommunication.csproj">
+      <Project>{9f0c33a7-a35b-4674-8dde-4c5ba1396df2}</Project>
+      <Name>ACA_BreakCommunication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ACA_WorkCell\ACA_Common.csproj">
+      <Project>{686aae1f-33e4-49a0-8c7b-3649eef36699}</Project>
+      <Name>ACA_Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

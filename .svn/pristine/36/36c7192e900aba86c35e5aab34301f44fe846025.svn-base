@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ACA_BreakCommunication;
+
+namespace ACA_System
+{
+   public class Global  //定义全局变量
+    {
+        public static int CurrentProofNum;
+        public static int VoltageProofNum;
+        public static int ResidualCurrentProofNum;
+        public static int ErroCount = 3;
+        public static int PresetCurrent1;
+        public static int PresetCurrent2;
+        public static int PresetCurrent3;
+        public static int PresetCurrent4;
+        public static int PresetCurrent5;
+        public static int PresetVoltage1;
+        public static int PresetVoltage2;
+        public static int PresetVoltage3;
+        public static int PresetVoltage4;
+        public static int PresetVoltage5;
+        public static int PresetResidualCurrent1;
+        public static int PresetResidualCurrent2;
+        public static int PresetResidualCurrent3;
+        public static int PresetResidualCurrent4;
+        public static int PresetResidualCurrent5;
+        public static int CurrentErrorRange; //电流校对误差范围
+        public static int VoltageErrorRange; //电压校对误差范围
+        public static int ResidualCurrentRange;//剩余电流校对误差范围
+    }
+}
